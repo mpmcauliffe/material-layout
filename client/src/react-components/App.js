@@ -1,16 +1,13 @@
 import React from 'react'
 import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
 import theme from './themes/themes'
-import Navbar from './layout/Navbar'
-import Sidebar from './layout/Sidebar'
+import LayoutPrime from './layout/LayoutPrime'
 
 
 export default () => 
     <MuiThemeProvider theme={theme}>
         <CssBaseline />    
 
-        <Navbar />
-
-        <Sidebar />
+        <LayoutPrime />
     </MuiThemeProvider>
     
