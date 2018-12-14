@@ -6,7 +6,7 @@ import {
     Navbar,
     Sidebar,
 } from './layout'
-import { members } from '../store/store'
+import { members, events } from '../store/store'
 
 
 const LayoutPrime = () => 
@@ -21,7 +21,9 @@ const LayoutPrime = () =>
             </Grid>
             <Grid item md={9} sm={12}>
                 <Grid item md={12}>
-                    <ActionBar />
+                    <ActionBar 
+                        events={events}
+                    />
                 </Grid>
                 <Grid item md={12}>
                     <LibraryBar />
