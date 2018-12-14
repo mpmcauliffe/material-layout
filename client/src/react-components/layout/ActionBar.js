@@ -3,8 +3,6 @@ import { Button, Grid, Paper } from '@material-ui/core'
 
 
 const ActionBar = ({ events }) => {
-    //const { id, book, location, time } = events
-
     return (
         <Paper square={true} elevation={0}>
             <div style={{ 
@@ -15,7 +13,7 @@ const ActionBar = ({ events }) => {
                     backgroundColor: '#efdcd5'
                 }}
             >
-                <h2 style={{ margin: 0, fontStyle: 'bold' }}>Events</h2>
+                <h2 style={{ margin: 0, fontStyle: 'bold', marginBottom: 2 }}>Events</h2>
                 <div style={{ padding: 13 }}>
                     <Grid container>
                         {events.map(event => 
@@ -25,13 +23,13 @@ const ActionBar = ({ events }) => {
                                 md={3} 
                                 key={event.id}
                             >
-                                <h3>{event.book}</h3>
-                                <h4>{event.location}</h4>
-                                <h4>{event.time}</h4>
+                                <h3 style={{ marginTop: 0, marginBottom: 15 }}>{event.book}</h3>
+                                <h4 style={{ marginTop: 0, marginBottom: 0 }}>{event.location}</h4>
+                                <h4 style={{ marginTop: 0, marginBottom: 0 }}>{event.time}</h4>
                                 <Button
                                     variant='outlined'
-                                    mini={true}
-                                    style={{ border: 'none' }}
+                                    //mini={true}
+                                    style={{ opacity: .5, marginTop: 15 }}
                                 >
                                     edit
                                 </Button>
@@ -39,7 +37,7 @@ const ActionBar = ({ events }) => {
                         )}
                         <Button 
                             variant="outlined"
-                            style={{ marginTop: '12vh' }}
+                            //style={{ marginTop: '12vh' }}
                         >
                             Add Event
                         </Button>    
