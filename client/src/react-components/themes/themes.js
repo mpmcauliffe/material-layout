@@ -10,12 +10,16 @@ const theme = createMuiTheme({
             dark: '#a59a96',
         },
         secondary: {
-            light: '#efdcd5',
-            main: '#bcaaa4',
-            dark: '#8c7b75',
+            main: '#efeced'
         }
     }
 })
 
 
 export default theme
+
+/*
+light: '#efdcd5',
+main: '#bcaaa4',
+dark: '#8c7b75',
+*/

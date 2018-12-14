@@ -5,9 +5,9 @@ import { Paper } from '@material-ui/core'
 const LibraryBar = () => 
     <Paper square={true} elevation={0}>
         <div style={{ 
-                height: '45.85vh',
+                height: '60.4vh',
                 width: '100%',
-                backgroundColor: '#f5f5f5',
+                backgroundColor: '#e4e4e5',
             }}
         >
         </div>
