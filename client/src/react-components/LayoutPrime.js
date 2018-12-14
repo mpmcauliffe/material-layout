@@ -1,9 +1,16 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
-import Navbar from './Navbar'
-import Sidebar from './Sidebar'
-import ActionBar from './ActionBar'
-import LibraryBar from './LibraryBar'
+// import Navbar from './layout/Navbar'
+// import Sidebar from './layout/Sidebar'
+// import ActionBar from './layout/ActionBar'
+// import LibraryBar from './layout/LibraryBar'
+
+import {
+    ActionBar,
+    LibraryBar,
+    Navbar,
+    Sidebar,
+} from './layout'
 
 
 const LayoutPrime = () => 
@@ -11,7 +18,7 @@ const LayoutPrime = () =>
         <Navbar />
 
         <Grid container>
-            <Grid item md={3}>
+            <Grid item md={3} sm={12}>
                 <Sidebar />
             </Grid>
             <Grid item md={9} sm={12}>

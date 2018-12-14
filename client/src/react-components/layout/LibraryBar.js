@@ -14,4 +14,4 @@ const LibraryBar = () =>
     </Paper>
 
 
-export default LibraryBar
+export { LibraryBar }

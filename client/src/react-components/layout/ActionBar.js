@@ -14,4 +14,4 @@ const ActionBar = () =>
     </Paper>
 
 
-export default ActionBar
+export { ActionBar }

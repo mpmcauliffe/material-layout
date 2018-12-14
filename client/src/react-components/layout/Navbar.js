@@ -1,15 +1,21 @@
 import React from 'react'
-import { AppBar, Toolbar } from '@material-ui/core'
+import { AppBar, IconButton, Toolbar } from '@material-ui/core'
+import { MenuIcon } from '@material-ui/icons/Menu'
 
 
 const Navbar = () =>
     <AppBar position="static" style={{ height: '8.3vh' }}>
         <Toolbar>
-        
-        
+            
         </Toolbar>
     </AppBar>
 
 
-export default Navbar 
+export { Navbar } 
     
+
+/*
+<IconButton color="inherit" aria-label="Menu">
+    <MenuIcon />
+</IconButton>
+*/
