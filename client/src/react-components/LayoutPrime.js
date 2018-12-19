@@ -2,11 +2,11 @@ import React from 'react'
 import { Grid } from '@material-ui/core'
 import {
     ActionBar,
-    LibraryBar,
+    Library,
     Navbar,
     Sidebar,
 } from './layout'
-import { members, events } from '../store/store'
+import { books, events, members } from '../store/store'
 
 
 const LayoutPrime = () => 
@@ -26,7 +26,7 @@ const LayoutPrime = () =>
                     />
                 </Grid>
                 <Grid item md={12}>
-                    <LibraryBar />
+                    <Library />
                 </Grid>
             </Grid>
         </Grid>        

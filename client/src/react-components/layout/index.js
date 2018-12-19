@@ -1,4 +1,4 @@
 export * from './ActionBar'
-export * from './LibraryBar'
+export * from './Library'
 export * from './Navbar'
 export * from './Sidebar'

@@ -6,7 +6,7 @@ const ActionBar = ({ events }) => {
     return (
         <Paper square={true} elevation={0}>
             <div style={{ 
-                    height: '31.3vh',
+                    height: '45.85vh',
                     width: '100%',
                     padding: 6,
                     //backgroundColor: '#fdebe4',
@@ -35,13 +35,13 @@ const ActionBar = ({ events }) => {
                                 </Button>
                             </Grid>
                         )}
-                        <Button 
-                            variant="outlined"
-                            //style={{ marginTop: '12vh' }}
-                        >
-                            Add Event
-                        </Button>    
                     </Grid>
+                    <Button 
+                        variant="outlined"
+                        style={{ float: 'right', marginTop: 30 }}
+                    >
+                        Add Event
+                    </Button>    
                 </div>
             </div>
         </Paper>
