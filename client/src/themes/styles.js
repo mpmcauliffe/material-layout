@@ -36,11 +36,11 @@ export const carousel = {
 }
 
 export const slideStyle = {
-    height: '5rem',
+    height: '13rem',
     width: '12rem',
     display: 'inline-block',
     verticalAlign: 'top',
-    padding: '3rem',
+    //padding: '3rem',
     whiteSpace: 'normal',
     marginLeft: '2rem',
     marginRight: '2rem',
