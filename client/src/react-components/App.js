@@ -1,13 +1,13 @@
 import React from 'react'
-import { CssBaseline, MuiThemeProvider } from '@material-ui/core'
-import theme from './themes/themes'
+import { MuiThemeProvider } from '@material-ui/core'
+import theme from '../themes/themes'
 import LayoutPrime from './LayoutPrime'
+import { globalStyle } from '../themes/styles'
 
 
 export default () => 
     <MuiThemeProvider theme={theme}>
-        <CssBaseline />    
 
-        <LayoutPrime />
+        <LayoutPrime style={globalStyle.html} />
     </MuiThemeProvider>
     

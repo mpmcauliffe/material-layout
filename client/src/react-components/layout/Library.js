@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { Paper } from '@material-ui/core'
+import { SideButton, Slide } from '../components'
+import { books } from '../../store/store'
 
 
 class Library extends Component { 
     render() {
+
         return (
             <Paper square={true} elevation={0}>
                 <div style={{ 
@@ -14,13 +17,19 @@ class Library extends Component {
                     }}
                 >
                     <h2 style={{ margin: 0, fontStyle: 'bold' }}>Reading List</h2>
-                    <img
-                        //key={index + 4}
-                        //id={index}
-                        src={require(`../../img/9.png`)}
-                        //className="cvr-img"
-                        alt='book cover'
-                    />
+                    <div>
+                        <div>
+                            {books.map(book =>
+                                <Slide
+                                    key={book.number}
+                                    number={book.number}
+                                    name={book.name}
+                                    author={book.author}    
+                                />
+                            )}
+                        </div>
+                    </div>
+                    
                 </div>
             </Paper>
         )

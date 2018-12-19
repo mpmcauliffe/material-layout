@@ -6,7 +6,7 @@ import {
     Navbar,
     Sidebar,
 } from './layout'
-import { books, events, members } from '../store/store'
+import { events, members } from '../store/store'
 
 
 const LayoutPrime = () => 
