@@ -14,9 +14,9 @@ export const carousel = {
     carouselViewport: {
         whiteSpace: 'nowrap',
         overflowY: 'hidden',
-        overflowX: 'hidden',
-        '&:hover': {
-            overflowX: 'scroll',
+        overflowX: 'auto',
+        '&::-webkit-scrollbar-thumb': {
+            background: '#888'
         }
     },
     carouselNav: {
@@ -42,7 +42,7 @@ export const carousel = {
 }
 
 export const slideStyle = {
-    height: '13rem',
+    height: '11rem',
     width: '10rem',
     display: 'inline-block',
     verticalAlign: 'top',
