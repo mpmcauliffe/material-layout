@@ -1,5 +1,5 @@
 import React from 'react'
-import { slideStyle } from '../../themes/styles'
+import { carousel, slideStyle } from '../../themes/styles'
 
 
 const Slide = ({ number, name, author }) => 
@@ -9,8 +9,11 @@ const Slide = ({ number, name, author }) =>
                 alt='book cover'
             />
             <div>
-                {name}
-                {author}
+                <p style={carousel.carouselLabel}>
+                    <em>{name}</em>
+                    <br />
+                    {author}
+                </p>
             </div>
         </div>
     

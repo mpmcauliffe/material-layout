@@ -8,13 +8,16 @@ export const globalStyle ={
 
 export const carousel = {
     container: {
-        display: 'flex'
+        display: 'flex',
+        padding: '1.5rem 3rem'
     },
     carouselViewport: {
         whiteSpace: 'nowrap',
         overflowY: 'hidden',
-        overflowX: 'auto',
-        border: '.1rem solid #000,'
+        overflowX: 'hidden',
+        '&:hover': {
+            overflowX: 'scroll',
+        }
     },
     carouselNav: {
         flexBasis: '4rem',
@@ -33,15 +36,17 @@ export const carousel = {
             border: '.1 solid #99ccff',
         }
     },
+    carouselLabel: {
+        margin: '.3rem 0'
+    }
 }
 
 export const slideStyle = {
     height: '13rem',
-    width: '12rem',
+    width: '10rem',
     display: 'inline-block',
     verticalAlign: 'top',
-    //padding: '3rem',
     whiteSpace: 'normal',
-    marginLeft: '2rem',
-    marginRight: '2rem',
+    marginLeft: '1rem',
+    marginRight: '1rem',
 }
