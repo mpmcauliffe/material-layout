@@ -9,22 +9,21 @@ export const globalStyle ={
 export const carousel = {
     container: {
         display: 'flex',
-        padding: '1.5rem 3rem'
+        padding: '1rem 3rem',
+        overflow: 'hidden',
     },
     carouselViewport: {
         whiteSpace: 'nowrap',
         overflowY: 'hidden',
         overflowX: 'auto',
-        '&::-webkit-scrollbar-thumb': {
-            background: '#888'
-        }
+        scrollbar: 'none',
     },
     carouselNav: {
         flexBasis: '4rem',
         flexGrow: 1,
         flexShrink: 0,
         backgroundColor: '#effffe',
-        padding:0,
+        padding: 0,
         border: '.1rem solid #bbeeff',
         opacity: .5,
         outline: 'none',
