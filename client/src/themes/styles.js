@@ -15,8 +15,9 @@ export const carousel = {
     carouselViewport: {
         whiteSpace: 'nowrap',
         overflowY: 'hidden',
-        overflowX: 'auto',
-        scrollbar: 'none',
+        //overflowX: 'hidden',
+        //scrollbar: 'none',
+        paddingBottom: '1rem',
     },
     carouselNav: {
         flexBasis: '4rem',

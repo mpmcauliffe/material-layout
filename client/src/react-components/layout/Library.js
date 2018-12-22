@@ -3,6 +3,8 @@ import { Paper } from '@material-ui/core'
 import { SideButton, Slide } from '../components'
 import { books } from '../../store/store'
 import { carousel } from '../../themes/styles'
+import SimpleBar from 'simplebar-react'
+import 'simplebar/dist/simplebar.min.css'
 
 
 class Library extends Component { 
@@ -19,7 +21,7 @@ class Library extends Component {
                 >
                     <h2 style={{ margin: 0, fontStyle: 'bold' }}>Reading List</h2>
                     <div style={carousel.container}>
-                        <div style={carousel.carouselViewport} ref='carouselViewport'>
+                        <SimpleBar style={carousel.carouselViewport}>
                             {books.map(book =>
                                 <Slide
                                     key={book.number}
@@ -28,7 +30,7 @@ class Library extends Component {
                                     author={book.author}    
                                 />
                             )}
-                        </div>
+                        </SimpleBar>
                     </div>
                     
                 </div>
