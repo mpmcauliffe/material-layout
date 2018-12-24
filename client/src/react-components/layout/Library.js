@@ -2,12 +2,11 @@ import React, { Component } from 'react'
 import { 
     Paper, 
     Tabs, 
-    withWidth,
 } from '@material-ui/core'
 import SimpleBar from 'simplebar-react'
 import { SideButton, Slide } from '../components'
 import { books } from '../../store/store'
-import { carousel } from '../../themes/styles'
+import { carousel, stretch } from '../../themes/styles'
 import 'simplebar/dist/simplebar.min.css'
 
 
