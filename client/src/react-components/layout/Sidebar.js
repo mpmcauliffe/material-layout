@@ -3,18 +3,12 @@ import {
     Button, 
     Paper, 
 } from '@material-ui/core'
+import { frame } from '../../themes/styles.js'
 
 
 const Sidebar = ({ members }) => 
     <Paper square={true} elevation={0}>
-        <div style={{ 
-                height: '91.7vh',
-                width: '100%',
-                padding: 6,
-                //backgroundColor: '#efdcd5',
-                backgroundColor: '#d6cbc7'
-            }}
-        >
+        <div style={frame.sidebar}>
             <h2 style={{ margin: 0, fontStyle: 'bold' }}>Members</h2>
             <div style={{ padding: 13 }}>
                 {members.map(member =>

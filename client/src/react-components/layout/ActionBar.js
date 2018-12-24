@@ -1,18 +1,12 @@
 import React from 'react'
 import { Button, Grid, Paper } from '@material-ui/core'
+import { frame } from '../../themes/styles'
 
 
 const ActionBar = ({ events }) => {
     return (
         <Paper square={true} elevation={0}>
-            <div style={{ 
-                    height: '45.85vh',
-                    width: '100%',
-                    padding: 6,
-                    //backgroundColor: '#fdebe4',
-                    backgroundColor: '#efdcd5'
-                }}
-            >
+            <div style={frame.actionbar}>
                 <h2 style={{ margin: 0, fontStyle: 'bold', marginBottom: 2 }}>Events</h2>
                 <div style={{ padding: 13 }}>
                     <Grid container>

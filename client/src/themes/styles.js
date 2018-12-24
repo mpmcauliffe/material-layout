@@ -2,23 +2,39 @@
 //import preset from 'jss-preset-default'
 
 
-export const globalStyle ={
-    html: {
-        boxSizing: 'border-box',
-        fontSize: '62.5%',
-    }
+export const frame = {
+    sidebar: {
+        height: 'calc(100vh - 7vh)',
+        width: '100%',
+        padding: '2rem',
+        backgroundColor: '#d6cbc7',
+    },
+    actionbar: { 
+        height: 'calc(50vh - (7vh / 2))',
+        width: '100%',
+        padding: '2rem',
+        backgroundColor: '#efdcd5',
+    },
+    library: {
+        height: 'calc(50vh - (7vh / 2))',        
+        width: '100%',
+        padding: '2rem',
+        backgroundColor: '#e4e4e5',
+    },
 }
 
 export const carousel = {
     container: {
+        //height: '25rem',
         display: 'flex',
         padding: '1rem 3.5rem',
         overflowY: 'hidden',
+        overflowX: 'hidden',
     },
     carouselViewport: {
         whiteSpace: 'nowrap',
         overflowY: 'hidden',
-        //overflowX: 'hidden',
+        overflowX: 'hidden',
         scrollbar: 'none',
         paddingBottom: '1rem',
     },
@@ -43,7 +59,7 @@ export const carousel = {
         margin: '.3rem 0'
     },
     carouselButton: {
-        height: '13rem',
+        height: '8rem',
         width: '2rem',
         border: '1px solid #000',
         '&:hover': {
@@ -53,11 +69,12 @@ export const carousel = {
 }
 
 export const slideStyle = {
-    height: '15rem',
+    height: '13rem',
     width: '10rem',
     display: 'inline-block',
     verticalAlign: 'top',
     whiteSpace: 'normal',
-    marginLeft: '2.5rem',
-    marginRight: '2.5rem',
+    marginLeft: '2.7rem',
+    marginRight: '2.7rem',
+    border: 'none',
 }
