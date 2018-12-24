@@ -1,3 +1,6 @@
+//import jss from 'jss'
+//import preset from 'jss-preset-default'
+
 
 export const globalStyle ={
     html: {
@@ -9,14 +12,14 @@ export const globalStyle ={
 export const carousel = {
     container: {
         display: 'flex',
-        padding: '1rem 3rem',
-        overflow: 'hidden',
+        padding: '1rem 3.5rem',
+        overflowY: 'hidden',
     },
     carouselViewport: {
         whiteSpace: 'nowrap',
         overflowY: 'hidden',
         //overflowX: 'hidden',
-        //scrollbar: 'none',
+        scrollbar: 'none',
         paddingBottom: '1rem',
     },
     carouselNav: {
@@ -38,7 +41,15 @@ export const carousel = {
     },
     carouselLabel: {
         margin: '.3rem 0'
-    }
+    },
+    carouselButton: {
+        height: '13rem',
+        width: '2rem',
+        border: '1px solid #000',
+        '&:hover': {
+            cursor: 'pointer',
+        }
+    },
 }
 
 export const slideStyle = {

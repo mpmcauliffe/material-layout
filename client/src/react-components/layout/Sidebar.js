@@ -1,5 +1,8 @@
 import React from 'react'
-import { Button, Paper } from '@material-ui/core'
+import { 
+    Button, 
+    Paper, 
+} from '@material-ui/core'
 
 
 const Sidebar = ({ members }) => 
