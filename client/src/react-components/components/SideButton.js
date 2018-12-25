@@ -1,5 +1,5 @@
 import React from 'react'
-import { carousel } from '../../themes/styles'
+import { carousel } from '../../assets/themes/styles'
 
 
 const SideButton = () => 

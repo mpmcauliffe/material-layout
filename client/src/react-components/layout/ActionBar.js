@@ -5,7 +5,7 @@ import {
     Paper, 
     Tabs, 
 } from '@material-ui/core'
-import { carousel, frame } from '../../themes/styles'
+import { carousel, frame } from '../../assets/themes/styles'
 
 
 const ActionBar = ({ events }) => {
@@ -38,7 +38,7 @@ const ActionBar = ({ events }) => {
                                         md={3} 
                                         key={event.id}
                                     >*/
-                                        <div style={{ width: 'px', marginLeft: '50px', marginRight: '50px', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
+                                        <div style={{ width: 'px', marginLeft: '50px', marginRight: '50px', }}>
                                             <h3 style={frame.infoText}><em>{event.book}</em></h3>
                                             <div style={{ marginTop: '2rem' }}>
                                                 <h4 style={frame.smallText}>{event.location}</h4>

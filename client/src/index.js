@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './react-components/App'
 import { CssBaseline } from '@material-ui/core'
-import './themes/base.css'
+import './assets/themes/base.css'
 
 
 ReactDOM.render (

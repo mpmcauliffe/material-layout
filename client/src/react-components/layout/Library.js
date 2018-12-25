@@ -5,9 +5,8 @@ import {
     Tabs, 
 } from '@material-ui/core'
 import { Slide } from '../components'
-import { books } from '../../store/store'
-import { carousel } from '../../themes/styles'
-import { frame } from '../../themes/styles'
+import { books } from '../../assets/store/store'
+import { carousel, frame } from '../../assets/themes/styles'
 
 
 class Library extends Component { 

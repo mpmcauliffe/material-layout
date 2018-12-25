@@ -1,11 +1,11 @@
 import React from 'react'
-import { carousel, slideStyle } from '../../themes/styles'
+import { carousel, slideStyle } from '../../assets/themes/styles'
 
 
 const Slide = ({ number, name, author }) => 
         <div style={slideStyle.card}>
             <img
-                src={require(`../../img/${number}.png`)}
+                src={require(`../../assets/img/${number}.png`)}
                 alt='book cover'
                 style={slideStyle.image}
             />
