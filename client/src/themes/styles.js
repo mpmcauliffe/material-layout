@@ -1,23 +1,24 @@
 import Color from 'color'
 const color = Color('#a59a96')
 
+
 export const frame = {
     sidebar: {
         height: 'calc(100vh - 7vh)',
         width: '100%',
-        padding: '2rem',
+        padding: '1rem',
         backgroundColor: '#d6cbc7',
     },
     actionbar: { 
         height: 'calc(50vh - (7vh / 2))',
         width: '100%',
-        padding: '2rem',
+        padding: '1rem',
         backgroundColor: '#efdcd5',
     },
     library: {
         height: 'calc(50vh - (7vh / 2))',        
         width: '100%',
-        padding: '2rem',
+        padding: '1rem',
         backgroundColor: '#e4e4e5',
     },
     header: {
@@ -38,17 +39,17 @@ export const frame = {
 export const carousel = {
     container: {
         display: 'flex',
-        padding: '1rem 3.5rem',
+        //padding: '1rem 3.5rem',
         overflowY: 'hidden',
         overflowX: 'hidden',
     },
     carouselViewport: {
-        height: '25vh',
+        //height: '37vh',
         whiteSpace: 'nowrap',
         overflowY: 'hidden',
         overflowX: 'hidden',
         scrollbar: 'none',
-        paddingBottom: '1rem',
+        //paddingBottom: '1rem',
     },
     carouselNav: {
         flexBasis: '4rem',
@@ -81,15 +82,20 @@ export const carousel = {
 }
 
 export const slideStyle = {
-    height: '13rem',
-    width: '10rem',
-    display: 'inline-block',
-    verticalAlign: 'top',
-    whiteSpace: 'normal',
-    marginLeft: '3.9rem',
-    marginRight: '3.9rem',
-    border: 'none',
-    color: color.darken(.2),
+    card: {
+        width: '30vw',
+        display: 'inline-block',
+        verticalAlign: 'top',
+        whiteSpace: 'normal',
+        marginLeft: '3.9rem',
+        marginRight: '3.9rem',
+        border: 'none',
+        color: color.darken(.2),
+    },
+    image: {
+        height: '20vh'
+    }
+    
 }
 
 

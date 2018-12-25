@@ -9,7 +9,7 @@ const ActionBar = ({ events }) => {
             <div style={frame.actionbar}>
                 <Button 
                     variant="outlined"
-                    style={{ float: 'right', marginTop: 30 }}
+                    style={{ float: 'right' }}
                 >
                     Add Event
                 </Button>    

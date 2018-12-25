@@ -3,10 +3,11 @@ import { carousel, slideStyle } from '../../themes/styles'
 
 
 const Slide = ({ number, name, author }) => 
-        <div style={slideStyle}>
+        <div style={slideStyle.card}>
             <img
                 src={require(`../../img/${number}.png`)}
                 alt='book cover'
+                style={slideStyle.image}
             />
             <div>
                 <p style={carousel.carouselLabel}>

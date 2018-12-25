@@ -16,6 +16,7 @@ h2 {
     font-size: 2.7rem;
     margin: 0;
     font-style: bold;
+    display: inline;
 }
 h3 {
     font-size: 2.2rem;

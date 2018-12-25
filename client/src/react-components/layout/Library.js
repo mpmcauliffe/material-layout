@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { 
+    Button,
     Paper, 
     Tabs, 
-    withWidth,
 } from '@material-ui/core'
 //import SimpleBar from 'simplebar-react'
 import { Slide } from '../components'
@@ -26,9 +26,16 @@ class Library extends Component {
         return (
             <Paper square={true} elevation={0}>
                 <div style={frame.library}>
+                    <Button 
+                        variant="outlined"
+                        style={{ float: 'right' }}
+                    >
+                        Add Book
+                    </Button>
                     <h2 style={frame.header}>Reading List</h2>
                     <div style={carousel.container}>
                         <Tabs
+                            //style={carousel.carouselViewport}
                             value={this.state.value} 
                             onChange={this.handleChange}
                             indicatorColor='secondary'
