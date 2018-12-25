@@ -7,7 +7,13 @@ const ActionBar = ({ events }) => {
     return (
         <Paper square={true} elevation={0}>
             <div style={frame.actionbar}>
-                <h2 style={{ margin: 0, fontStyle: 'bold', marginBottom: 2 }}>Events</h2>
+                <Button 
+                    variant="outlined"
+                    style={{ float: 'right', marginTop: 30 }}
+                >
+                    Add Event
+                </Button>    
+                <h2 style={frame.header}>Events</h2>
                 <div style={{ padding: 13 }}>
                     <Grid container>
                         {events.map(event => 
@@ -17,9 +23,11 @@ const ActionBar = ({ events }) => {
                                 md={3} 
                                 key={event.id}
                             >
-                                <h3 style={{ marginTop: 0, marginBottom: 15 }}>{event.book}</h3>
-                                <h4 style={{ marginTop: 0, marginBottom: 0 }}>{event.location}</h4>
-                                <h4 style={{ marginTop: 0, marginBottom: 0 }}>{event.time}</h4>
+                                <h3 style={frame.infoText}><em>{event.book}</em></h3>
+                                <div style={{ marginTop: '2rem' }}>
+                                    <h4 style={frame.smallText}>{event.location}</h4>
+                                    <h4 style={frame.smallText}>{event.time}</h4>
+                                </div>
                                 <Button
                                     variant='outlined'
                                     //mini={true}
@@ -30,12 +38,6 @@ const ActionBar = ({ events }) => {
                             </Grid>
                         )}
                     </Grid>
-                    <Button 
-                        variant="outlined"
-                        style={{ float: 'right', marginTop: 30 }}
-                    >
-                        Add Event
-                    </Button>    
                 </div>
             </div>
         </Paper>

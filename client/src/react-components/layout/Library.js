@@ -26,9 +26,8 @@ class Library extends Component {
         return (
             <Paper square={true} elevation={0}>
                 <div style={frame.library}>
-                    <h2 style={{ margin: 0, fontStyle: 'bold' }}>Reading List</h2>
+                    <h2 style={frame.header}>Reading List</h2>
                     <div style={carousel.container}>
-                        
                         <Tabs
                             value={this.state.value} 
                             onChange={this.handleChange}
