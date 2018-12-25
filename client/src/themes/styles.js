@@ -22,17 +22,17 @@ export const frame = {
         backgroundColor: '#e4e4e5',
     },
     header: {
-        color: color.darken(.4),
+        color: color.darken(.2),
     },
     infoText: {
-        color: color.darken(.3),
+        color: color.darken(.14578),
     },
     smallText: {
-        color: color.darken(.2),
+        color: color.darken(.12347),
         margin: 0,
     },
     actionText: {
-
+        
     },
 }
 

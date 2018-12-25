@@ -38,7 +38,7 @@ const ActionBar = ({ events }) => {
                                         md={3} 
                                         key={event.id}
                                     >*/
-                                        <div style={{ width: '190px', marginLeft: '50px', marginRight: '50px' }}>
+                                        <div style={{ width: 'px', marginLeft: '50px', marginRight: '50px', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
                                             <h3 style={frame.infoText}><em>{event.book}</em></h3>
                                             <div style={{ marginTop: '2rem' }}>
                                                 <h4 style={frame.smallText}>{event.location}</h4>

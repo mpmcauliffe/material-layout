@@ -4,12 +4,10 @@ import {
     Paper, 
     Tabs, 
 } from '@material-ui/core'
-//import SimpleBar from 'simplebar-react'
 import { Slide } from '../components'
 import { books } from '../../store/store'
 import { carousel } from '../../themes/styles'
 import { frame } from '../../themes/styles'
-//import 'simplebar/dist/simplebar.min.css'
 
 
 class Library extends Component { 
