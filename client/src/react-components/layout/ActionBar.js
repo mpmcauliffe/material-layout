@@ -19,7 +19,7 @@ const ActionBar = ({ events }) => {
                     color='primary.dark'
                     style={{ float: 'right', opacity: .5 }}
                 >
-                    <Add fontSize='large' />
+                    <Add fontSize='18px' />
                 </IconButton>    
                 <h2 style={frame.header}>Events</h2>
                 <div style={{ padding: 13 }}>

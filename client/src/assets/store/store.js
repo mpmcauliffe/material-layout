@@ -7,7 +7,7 @@ export const members = [
     'Abraham Lincoln', 
     'Democratus', 
     'E.T.', 
-    'Marry Poppins', 
+    'Mary Poppins', 
     'Luke Skywalker'
 ]
 

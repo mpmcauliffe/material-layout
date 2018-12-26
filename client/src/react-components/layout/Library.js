@@ -29,14 +29,14 @@ class Library extends Component {
                         color='primary.dark'
                         style={{ float: 'right', opacity: .5, }}
                     >
-                        <Add fontSize='large' />
+                        <Add fontSize='18' />
                     </IconButton>
                     <IconButton 
                         variant="outlined"
                         color='primary.dark'
                         style={{ float: 'right', opacity: .5, }}
                     >
-                        <Apps fontSize='large' />
+                        <Apps fontSize='18' />
                     </IconButton>
                     <h2 style={frame.header}>Reading List</h2>
                     <div style={carousel.container}>

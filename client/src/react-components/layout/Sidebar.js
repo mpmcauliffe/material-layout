@@ -21,27 +21,30 @@ const Sidebar = ({ members }) =>
                 </div>
             </SimpleBar>
             <hr style={{ opacity: .3, marginTop: 13 }} />
-            <IconButton
-                color='primary.dark'
-                style={{
-                    marginTop: '5vh',
-                    padding: '.9rem',
-                    marginRight: '1vw',
-                    opacity: .5,
-                }}
-            >
-                <PersonAdd fontSize='large' />
-            </IconButton>
-            <IconButton
-                color='primary.dark'
-                style={{
-                    marginTop: '5vh',
-                    padding: '.9rem',
-                    opacity: .5,
-                }}
-            >
-                <Message fontSize='large' />
-            </IconButton>
+            <div style={{ position: 'absolute', bottom: 0, }}>
+                <IconButton
+                    color='primary.dark'
+                    style={{
+                        marginTop: '5vh',
+                        padding: '.9rem',
+                        marginRight: '1vw',
+                        opacity: .5,
+                    }}
+                >
+                    <PersonAdd fontSize='18px' />
+                </IconButton>
+                <IconButton
+                    color='primary.dark'
+                    style={{
+                        marginTop: '5vh',
+                        padding: '.9rem',
+                        opacity: .5,
+                    }}
+                >
+                    <Message fontSize='18px' />
+                </IconButton>
+            </div>
+            
         </div>
     </Paper>
     

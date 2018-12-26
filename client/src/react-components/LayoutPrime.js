@@ -6,8 +6,7 @@ import {
     Navbar,
     Sidebar,
 } from './layout'
-import { events, members } from '../store/store'
-
+import { events, members } from '../assets/store/store'
 
 
 const LayoutPrime = () => 
