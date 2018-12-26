@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { 
-    Button,
+    IconButton,
     Paper, 
     Tabs, 
 } from '@material-ui/core'
+import { Add, Apps } from '@material-ui/icons'
 import { Slide } from '../components'
 import { books } from '../../assets/store/store'
 import { carousel, frame } from '../../assets/themes/styles'
@@ -23,12 +24,20 @@ class Library extends Component {
         return (
             <Paper square={true} elevation={0}>
                 <div style={frame.library}>
-                    <Button 
+                    <IconButton 
                         variant="outlined"
-                        style={{ float: 'right' }}
+                        color='primary.dark'
+                        style={{ float: 'right', opacity: .5, }}
                     >
-                        Add Book
-                    </Button>
+                        <Add fontSize='large' />
+                    </IconButton>
+                    <IconButton 
+                        variant="outlined"
+                        color='primary.dark'
+                        style={{ float: 'right', opacity: .5, }}
+                    >
+                        <Apps fontSize='large' />
+                    </IconButton>
                     <h2 style={frame.header}>Reading List</h2>
                     <div style={carousel.container}>
                         <Tabs

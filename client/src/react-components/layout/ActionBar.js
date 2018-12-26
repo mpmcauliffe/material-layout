@@ -1,31 +1,31 @@
 import React from 'react'
 import { 
-    Button, 
+    Button,
     Grid, 
+    IconButton,
     Paper, 
     Tabs, 
 } from '@material-ui/core'
+import { Edit, Add } from '@material-ui/icons'
 import { carousel, frame } from '../../assets/themes/styles'
+import { truncate } from '../../assets/javascript'
 
 
 const ActionBar = ({ events }) => {
     return (
         <Paper square={true} elevation={0}>
             <div style={frame.actionbar}>
-                <Button 
-                    variant="outlined"
-                    style={{ float: 'right' }}
+                <IconButton 
+                    color='primary.dark'
+                    style={{ float: 'right', opacity: .5 }}
                 >
-                    Add Event
-                </Button>    
+                    <Add fontSize='large' />
+                </IconButton>    
                 <h2 style={frame.header}>Events</h2>
                 <div style={{ padding: 13 }}>
                     <Grid container>
                         <div style={carousel.container}>
                             <Tabs
-                            //style={carousel.carouselViewport}
-                                //value={this.state.value} 
-                                //onChange={this.handleChange}
                                 indicatorColor='secondary'
                                 textColor='secondary'
                                 scrollButtons='auto'
@@ -39,18 +39,18 @@ const ActionBar = ({ events }) => {
                                         key={event.id}
                                     >*/
                                         <div style={{ width: 'px', marginLeft: '50px', marginRight: '50px', }}>
-                                            <h3 style={frame.infoText}><em>{event.book}</em></h3>
+                                            <h3 style={frame.infoText}><em>{truncate(event.book, 25)}</em></h3>
                                             <div style={{ marginTop: '2rem' }}>
-                                                <h4 style={frame.smallText}>{event.location}</h4>
+                                                <h4 style={frame.smallText}>{truncate(event.location, 30)}</h4>
                                                 <h4 style={frame.smallText}>{event.time}</h4>
                                             </div>
-                                            <Button
+                                            <IconButton
+                                                color='primary.dark'
                                                 variant='outlined'
-                                                //mini={true}
-                                                style={{ opacity: .5, marginTop: 15 }}
+                                                style={{ opacity: .5, marginTop: 10 }}
                                             >
-                                                edit
-                                            </Button>
+                                                <Edit />
+                                            </IconButton>
                                         </div>
                                 )}
                             </Tabs>

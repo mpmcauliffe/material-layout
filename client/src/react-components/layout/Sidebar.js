@@ -1,8 +1,9 @@
 import React from 'react'
 import { 
-    Button, 
+    IconButton, 
     Paper, 
 } from '@material-ui/core'
+import { Message, PersonAdd } from '@material-ui/icons'
 import { frame, membersBar } from '../../assets/themes/styles.js'
 import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
@@ -20,14 +21,27 @@ const Sidebar = ({ members }) =>
                 </div>
             </SimpleBar>
             <hr style={{ opacity: .3, marginTop: 13 }} />
-            <Button variant="outlined"
+            <IconButton
+                color='primary.dark'
                 style={{
                     marginTop: '5vh',
-                    padding: '.9rem'
+                    padding: '.9rem',
+                    marginRight: '1vw',
+                    opacity: .5,
                 }}
             >
-                Add Member
-            </Button>
+                <PersonAdd fontSize='large' />
+            </IconButton>
+            <IconButton
+                color='primary.dark'
+                style={{
+                    marginTop: '5vh',
+                    padding: '.9rem',
+                    opacity: .5,
+                }}
+            >
+                <Message fontSize='large' />
+            </IconButton>
         </div>
     </Paper>
     
