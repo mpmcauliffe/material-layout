@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Grid } from '@material-ui/core'
 import {
     ActionBar,
@@ -6,31 +6,43 @@ import {
     Navbar,
     Sidebar,
 } from './layout'
-import { events, members } from '../assets/store/store'
+import { carousel, frame } from '../assets/themes/styles'
+import { books, events, members } from '../assets/store/store'
+import { truncate } from '../assets/javascript'
 
 
-const LayoutPrime = () => 
-    <div>
-        <Navbar />
+class LayoutPrime extends Component {
+    state = {
+        value: 0,
+    }
+    handleChange = (e, value) => 
+        this.setState({ value });
 
-        <Grid container>
-            <Grid item md={3} sm={12}>
-                <Sidebar 
-                    members={members}
-                />
-            </Grid>
-            <Grid item md={9} sm={12}>
-                <Grid item md={12}>
-                    <ActionBar 
-                        events={events}
-                    />
+    render() { 
+        return (
+            <div>
+                <Navbar />
+                <Grid container>
+                    <Grid item md={3} sm={12}>
+                        <Sidebar 
+                            members={members}
+                        />
+                    </Grid>
+                    <Grid item md={9} sm={12}>
+                        <Grid item md={12}>
+                            <ActionBar 
+                                events={events}
+                            />
+                        </Grid>
+                        <Grid item md={12}>
+                            <Library />
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <Grid item md={12}>
-                    <Library />
-                </Grid>
-            </Grid>
-        </Grid>        
-    </div>
-
+                <Navbar />        
+            </div>
+        )
+    }
+}
 
 export default LayoutPrime    

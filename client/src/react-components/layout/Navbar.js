@@ -5,9 +5,7 @@ import { MenuIcon } from '@material-ui/icons/Menu'
 
 const Navbar = () =>
     <AppBar position="static" style={{ height: '7vh' }} color='secondary'>
-        <Toolbar>
-            
-        </Toolbar>
+        
     </AppBar>
 
 

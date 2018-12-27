@@ -2,13 +2,14 @@ export const members = [
     'Daffy Duck', 
     'Sepheroth', 
     'Hannibal', 
+    'Sarlacc',
     'Jack Sparrow', 
     'Voldemort', 
     'Abraham Lincoln', 
     'Democratus', 
     'E.T.', 
     'Mary Poppins', 
-    'Luke Skywalker'
+    'Luke Skywalker',
 ]
 
 export const events = [
