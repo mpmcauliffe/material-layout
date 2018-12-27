@@ -3,8 +3,8 @@ import { AppBar, IconButton, Toolbar } from '@material-ui/core'
 import { MenuIcon } from '@material-ui/icons/Menu'
 
 
-const Navbar = () =>
-    <AppBar position="static" style={{ height: '7vh' }} color='secondary'>
+const Navbar = ({ top }) =>
+    <AppBar position="static" style={{ height: '7vh' }} color={top ? 'secondary' : '#8c7b75'}>
         
     </AppBar>
 

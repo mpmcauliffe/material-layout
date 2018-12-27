@@ -16,7 +16,7 @@ class Library extends Component {
     }
 
     handleChange = (e, value) => 
-        this.setState({ value });
+        this.setState({ value })
       
 
     render() {
@@ -26,17 +26,17 @@ class Library extends Component {
                 <div style={frame.library}>
                     <IconButton 
                         variant="outlined"
-                        color='primary.dark'
+                        //color='primary.dark'
                         style={{ float: 'right', opacity: .5, }}
                     >
-                        <Add fontSize='18' />
+                        <Add fontSize='default' />
                     </IconButton>
                     <IconButton 
                         variant="outlined"
-                        color='primary.dark'
+                        //color='primary.dark'
                         style={{ float: 'right', opacity: .5, }}
                     >
-                        <Apps fontSize='18' />
+                        <Apps fontSize='default' />
                     </IconButton>
                     <h2 style={frame.header}>Reading List</h2>
                     <div style={carousel.container}>
@@ -44,8 +44,8 @@ class Library extends Component {
                             //style={carousel.carouselViewport}
                             value={this.state.value} 
                             onChange={this.handleChange}
-                            indicatorColor='secondary'
-                            textColor='secondary'
+                            //indicatorColor='secondary'
+                            //color='secondary'
                             scrollButtons='auto'
                             scrollable
                         >

@@ -23,7 +23,7 @@ const Sidebar = ({ members }) =>
             <hr style={{ opacity: .3, marginTop: 13 }} />
             <div style={{ position: 'absolute', bottom: 0, }}>
                 <IconButton
-                    color='primary.dark'
+                    //color='primary.dark'
                     style={{
                         marginTop: '5vh',
                         padding: '.9rem',
@@ -31,17 +31,17 @@ const Sidebar = ({ members }) =>
                         opacity: .5,
                     }}
                 >
-                    <PersonAdd fontSize='18px' />
+                    <PersonAdd fontSize='default' />
                 </IconButton>
                 <IconButton
-                    color='primary.dark'
+                    //color='primary.dark'
                     style={{
                         marginTop: '5vh',
                         padding: '.9rem',
                         opacity: .5,
                     }}
                 >
-                    <Message fontSize='18px' />
+                    <Message fontSize='default' />
                 </IconButton>
             </div>
             

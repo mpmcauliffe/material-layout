@@ -14,14 +14,16 @@ import { truncate } from '../assets/javascript'
 class LayoutPrime extends Component {
     state = {
         value: 0,
+        top: true,
     }
-    handleChange = (e, value) => 
-        this.setState({ value });
+    handleValueChange = (e, value) => 
+        this.setState({ value })
 
     render() { 
+        const { top, value } = this.state 
         return (
             <div>
-                <Navbar />
+                <Navbar top={top} />
                 <Grid container>
                     <Grid item md={3} sm={12}>
                         <Sidebar 
@@ -30,7 +32,9 @@ class LayoutPrime extends Component {
                     </Grid>
                     <Grid item md={9} sm={12}>
                         <Grid item md={12}>
-                            <ActionBar 
+                            <ActionBar
+                                handleValueChange={this.handleValueChange} 
+                                value={value}
                                 events={events}
                             />
                         </Grid>
