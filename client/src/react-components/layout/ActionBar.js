@@ -33,12 +33,6 @@ const ActionBar = ({ events, handleValueChange, value }) => {
                                 scrollable
                             >
                                 {events.map(event => 
-                                    /*<Grid 
-                                        item 
-                                        xs={12} 
-                                        md={3} 
-                                        key={event.id}
-                                    >*/
                                         <div key={event.id} style={{ marginLeft: '50px', marginRight: '50px', }}>
                                             <h3 style={frame.infoText}><em>{truncate(event.book, 25)}</em></h3>
                                             <div style={{ marginTop: '2rem' }}>

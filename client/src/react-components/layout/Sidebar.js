@@ -4,7 +4,7 @@ import {
     Paper, 
 } from '@material-ui/core'
 import { Message, PersonAdd } from '@material-ui/icons'
-import { frame, membersBar } from '../../assets/themes/styles.js'
+import { frame, iconButtonStyles, membersBar } from '../../assets/themes/styles.js'
 import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
 
@@ -12,45 +12,37 @@ import 'simplebar/dist/simplebar.min.css'
 const Sidebar = ({ members, threads }) => 
     <Paper square={true} elevation={0}>
         <div style={frame.sidebar}>
-            <h3 style={frame.header}>Messages</h3>
-            <SimpleBar style={membersBar}>
-                <div style={{ padding: 13 }}>
-                    {threads.map(message =>
-                        <h4 key={message.id} style={frame.infoText}>{message.subject}</h4>
-                    )}
-                </div>
-            </SimpleBar>
-            <IconButton
-                //color='primary.dark'
-                style={{
-                    marginTop: '5vh',
-                    padding: '.9rem',
-                    opacity: .5,
-                }}
-            >
-                <Message fontSize='default' />
-            </IconButton>
-            <hr style={{ opacity: .3, marginTop: 13 }} />
-            <h3 style={frame.header}>Members</h3>
-            <SimpleBar style={membersBar}>
-                <div style={{ padding: 13 }}>
-                    {members.map(member =>
-                        <h4 key={member} style={frame.infoText}>{member}</h4>
-                    )}
-                </div>
-            </SimpleBar>
-            <div style={{ position: 'absolute', bottom: 0, }}>
-                <IconButton
-                    //color='primary.dark'
-                    style={{
-                        marginTop: '5vh',
-                        padding: '.9rem',
-                        marginRight: '1vw',
-                        opacity: .5,
-                    }}
-                >
+
+            <div style={{ height: 'calc(50vh - (7vh / 2))' }}>
+                <h3 style={frame.sidebarHeader}>Messages</h3>
+                <IconButton style={iconButtonStyles}>
+                    <Message fontSize='default' />
+                </IconButton>
+
+                <SimpleBar style={membersBar}>
+                    <div style={{ padding: 13 }}>
+                        {threads.map(message =>
+                            <p key={message.id} style={frame.infoText}>{message.subject}</p>
+                        )}
+                    </div>
+                </SimpleBar>
+            </div>
+            
+        
+            <div style={{ height: 'calc(50vh - (7vh / 2))' }}>
+                <h3 style={frame.sidebarHeader}>Members</h3>
+                            
+                <IconButton style={iconButtonStyles}>
                     <PersonAdd fontSize='default' />
                 </IconButton>
+
+                <SimpleBar style={membersBar}>
+                    <div style={{ padding: 13 }}>
+                        {members.map(member =>
+                            <p key={member} style={frame.infoText}>{member}</p>
+                        )}
+                    </div>
+                </SimpleBar>
             </div>
             
         </div>

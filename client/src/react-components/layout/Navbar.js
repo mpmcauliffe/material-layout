@@ -4,7 +4,7 @@ import { MenuIcon } from '@material-ui/icons/Menu'
 
 
 const Navbar = ({ top }) =>
-    <AppBar position="static" style={{ height: '7vh', justifyContent: 'center', }} color={top ? 'secondary' : '#8c7b75'}>
+    <AppBar position="static" style={{ height: '7vh', justifyContent: 'center', padding: '0 1vw' }} color={top ? 'secondary' : '#8c7b75'}>
     <img
         src={require(`../../assets/img/logo.png`)}
         alt='bookwormz'
