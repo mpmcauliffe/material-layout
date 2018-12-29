@@ -23,6 +23,7 @@ export const frame = {
     },
     header: {
         color: color.darken(.2),
+        opacity: .7,
     },
     sidebarHeader: {
         display: 'inline',
@@ -30,14 +31,15 @@ export const frame = {
         opacity: .6,
     },
     infoText: {
+        marginTop: 8,
+        marginBottom: 12,
         color: color.darken(.14578),
     },
     smallText: {
+        fontSize: 12,
+        marginBottom: 3,
         color: color.darken(.12347),
         margin: 0,
-    },
-    actionText: {
-
     },
 }
 
@@ -76,7 +78,8 @@ export const slideStyle = {
 }
 
 export const membersBar = {
-    height: 'calc(50vh - (31.3vh / 2))', 
+    height: '30vh', 
+    width: '22vw',
     overflowX: 'hidden', 
     marginTop: '1rem',
 }

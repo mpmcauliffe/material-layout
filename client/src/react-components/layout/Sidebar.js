@@ -1,11 +1,21 @@
 import React from 'react'
 import { 
-    IconButton, 
+    IconButton,
+    Grid, 
     Paper, 
 } from '@material-ui/core'
-import { Message, PersonAdd } from '@material-ui/icons'
-import { frame, iconButtonStyles, membersBar } from '../../assets/themes/styles.js'
+import { 
+    AddComment, 
+    PersonAdd,
+    Reorder, 
+} from '@material-ui/icons'
 import SimpleBar from 'simplebar-react'
+import { 
+    frame, 
+    iconButtonStyles, 
+    membersBar, 
+} from '../../assets/themes/styles.js'
+import { truncate } from '../../assets/javascript'
 import 'simplebar/dist/simplebar.min.css'
 
 
@@ -16,13 +26,39 @@ const Sidebar = ({ members, threads }) =>
             <div style={{ height: 'calc(50vh - (7vh / 2))' }}>
                 <h3 style={frame.sidebarHeader}>Messages</h3>
                 <IconButton style={iconButtonStyles}>
-                    <Message fontSize='default' />
+                    <AddComment fontSize='default' />
+                </IconButton>
+                <IconButton style={iconButtonStyles}>
+                    <Reorder fontSize='default' />
                 </IconButton>
 
                 <SimpleBar style={membersBar}>
                     <div style={{ padding: 13 }}>
                         {threads.map(message =>
-                            <p key={message.id} style={frame.infoText}>{message.subject}</p>
+                            <div 
+                                key={message.id}
+                                style={{ 
+                                    border: '.3px solid #ddd4d1', 
+                                    padding: 2,
+                                    background: '#e4ddda',
+                                }}
+                            >
+                                <p style={frame.infoText}>
+                                    <em>{truncate(message.subject, 30)}</em>
+                                </p>
+                                <Grid container>
+                                    <Grid item md={5}>
+                                        <p style={frame.smallText}>{message.creator}</p>
+                                    </Grid>
+                                    <Grid item md={5}>
+                                        <p style={frame.smallText}>{message.date}</p>
+                                    </Grid>
+                                    <Grid item md={2}>
+                                        <p style={frame.smallText}>{message.replies.length}</p>
+                                    </Grid>
+                                </Grid>
+                            </div>
+                            
                         )}
                     </div>
                 </SimpleBar>
@@ -34,6 +70,9 @@ const Sidebar = ({ members, threads }) =>
                             
                 <IconButton style={iconButtonStyles}>
                     <PersonAdd fontSize='default' />
+                </IconButton>
+                <IconButton style={iconButtonStyles}>
+                    <Reorder fontSize='default' />
                 </IconButton>
 
                 <SimpleBar style={membersBar}>
