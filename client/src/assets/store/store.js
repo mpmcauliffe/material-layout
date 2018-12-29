@@ -4,6 +4,7 @@ export const members = [
     'Hannibal', 
     'Sarlacc',
     'Jack Sparrow', 
+    'Bearistotle',
     'Voldemort', 
     'Abraham Lincoln', 
     'Democratus', 
@@ -107,6 +108,7 @@ export const books = [
 
 export const thread = [
     {
+        id: 'ag8mes73e',
         creator: 'Daffy Duck',
         date: '12/28/2018',
         subject: 'Change meeting location 03/15/2019',
@@ -127,6 +129,7 @@ export const thread = [
         ]
     },
     {
+        id: '8xuksu82w',
         creator: 'Marry Poppins',
         date: '12/27/2018',
         subject: 'supercalifragilisticexpialidocious',
@@ -152,6 +155,7 @@ export const thread = [
         ]
     },
     {
+        id: 'a23xi8s77',
         creator: 'Democratus',
         date: '12/26/2018',
         subject: 'All things are made up of indivisible units called \'atoms\'',
@@ -167,6 +171,26 @@ export const thread = [
                 creator: 'Abraham Lincoln',
                 date: '12/28/2018',
                 message: 'These United States are much like this \'atom\' in that they are indivisible'
+            },
+        ]
+    },
+    {
+        id: 'df788hscv',
+        creator: 'Bearistotle',
+        date: '12/25/2018',
+        subject: 'I am a man',
+        message: 'Man is by nature a political animal. I, a political animal, am therefore a man.',
+        open: true,
+        replies: [
+            {
+                creator: 'Democratus',
+                date: '12/25/2018',
+                message: 'I feel like that\'s not a valid syllogism'
+            },
+            {
+                creator: 'Bearistotle',
+                date: '12/25/2018',
+                message: 'ROAAAAAAAAAAAAWWRRRR!'
             },
         ]
     }

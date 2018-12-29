@@ -9,18 +9,36 @@ import SimpleBar from 'simplebar-react'
 import 'simplebar/dist/simplebar.min.css'
 
 
-const Sidebar = ({ members }) => 
+const Sidebar = ({ members, threads }) => 
     <Paper square={true} elevation={0}>
         <div style={frame.sidebar}>
-            <h2 style={frame.header}>Members</h2>
+            <h3 style={frame.header}>Messages</h3>
             <SimpleBar style={membersBar}>
                 <div style={{ padding: 13 }}>
-                    {members.map(member =>
-                        <h3 key={member} style={frame.infoText}>{member}</h3>
+                    {threads.map(message =>
+                        <h4 key={message.id} style={frame.infoText}>{message.subject}</h4>
                     )}
                 </div>
             </SimpleBar>
+            <IconButton
+                //color='primary.dark'
+                style={{
+                    marginTop: '5vh',
+                    padding: '.9rem',
+                    opacity: .5,
+                }}
+            >
+                <Message fontSize='default' />
+            </IconButton>
             <hr style={{ opacity: .3, marginTop: 13 }} />
+            <h3 style={frame.header}>Members</h3>
+            <SimpleBar style={membersBar}>
+                <div style={{ padding: 13 }}>
+                    {members.map(member =>
+                        <h4 key={member} style={frame.infoText}>{member}</h4>
+                    )}
+                </div>
+            </SimpleBar>
             <div style={{ position: 'absolute', bottom: 0, }}>
                 <IconButton
                     //color='primary.dark'
@@ -32,16 +50,6 @@ const Sidebar = ({ members }) =>
                     }}
                 >
                     <PersonAdd fontSize='default' />
-                </IconButton>
-                <IconButton
-                    //color='primary.dark'
-                    style={{
-                        marginTop: '5vh',
-                        padding: '.9rem',
-                        opacity: .5,
-                    }}
-                >
-                    <Message fontSize='default' />
                 </IconButton>
             </div>
             

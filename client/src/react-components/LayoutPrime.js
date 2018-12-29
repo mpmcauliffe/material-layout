@@ -7,7 +7,7 @@ import {
     Sidebar,
 } from './layout'
 import { carousel, frame } from '../assets/themes/styles'
-import { books, events, members } from '../assets/store/store'
+import { books, events, members, thread } from '../assets/store/store'
 import { truncate } from '../assets/javascript'
 
 
@@ -28,6 +28,7 @@ class LayoutPrime extends Component {
                     <Grid item md={3} sm={12}>
                         <Sidebar 
                             members={members}
+                            threads={thread}
                         />
                     </Grid>
                     <Grid item md={9} sm={12}>

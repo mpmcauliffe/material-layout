@@ -66,7 +66,7 @@ export const slideStyle = {
 }
 
 export const membersBar = {
-    height: '70vh', 
+    height: '25vh', 
     overflowX: 'hidden', 
     marginTop: '1rem',
 }
