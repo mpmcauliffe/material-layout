@@ -104,3 +104,70 @@ export const books = [
         author: 'The Beatles'
     },
 ]
+
+export const thread = [
+    {
+        creator: 'Daffy Duck',
+        date: '12/28/2018',
+        subject: 'Change meeting location 03/15/2019',
+        message: 'Location of meetup on 03/15/2019 will change from Alcatraz to Ziggurat of Ur',
+        open: true,
+        replies: [
+            {
+                creator: 'Sarlacc',
+                date: '12/30/2018',
+                message: 'Can I still swallow Han Solo and Boba Fett'
+            },
+            {
+                creator: 'Hannibla',
+                date: '12/30/2018',
+                message: 'I\'ll be sure to bring fava beans and chianti'
+            },
+
+        ]
+    },
+    {
+        creator: 'Marry Poppins',
+        date: '12/27/2018',
+        subject: 'supercalifragilisticexpialidocious',
+        message: 'supercalifragilisticexpialidocious',
+        open: true,
+        replies: [
+            {
+                creator: 'Voldemort',
+                date: '12/27/2018',
+                message: 'Avada Kedavra!'
+            },
+            {
+                creator: 'E.T.',
+                date: '12/28/2018',
+                message: 'E.T. KABOOM!'
+            },
+            {
+                creator: 'Daffy Duck',
+                date: '12/29/2018',
+                message: 'Of course you realize this means WAR!'
+            }
+            
+        ]
+    },
+    {
+        creator: 'Democratus',
+        date: '12/26/2018',
+        subject: 'All things are made up of indivisible units called \'atoms\'',
+        message: 'Atoms make up all things...they even make up the space between atoms',
+        open: true,
+        replies: [
+            {
+                creator: 'Luke Skywalker',
+                date: '12/27/2018',
+                message: 'I can cut an atom with my lightsaber'
+            },
+            {
+                creator: 'Abraham Lincoln',
+                date: '12/28/2018',
+                message: 'These United States are much like this \'atom\' in that they are indivisible'
+            },
+        ]
+    }
+]

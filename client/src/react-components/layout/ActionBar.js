@@ -42,7 +42,7 @@ const ActionBar = ({ events, handleValueChange, value }) => {
                                         <div key={event.id} style={{ marginLeft: '50px', marginRight: '50px', }}>
                                             <h3 style={frame.infoText}><em>{truncate(event.book, 25)}</em></h3>
                                             <div style={{ marginTop: '2rem' }}>
-                                                <h4 style={frame.smallText}>{truncate(event.location, 30)}</h4>
+                                                <h4 style={frame.smallText}>{truncate(event.location, 23)}</h4>
                                                 <h4 style={frame.smallText}>{event.time}</h4>
                                             </div>
                                             <IconButton
