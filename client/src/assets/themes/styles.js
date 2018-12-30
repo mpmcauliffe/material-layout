@@ -58,7 +58,7 @@ export const carousel = {
         //padding: '1rem 3.5rem',
         overflowY: 'hidden',
         overflowX: 'hidden',
-        marginTop: '4vh',
+        marginTop: '3vh',
     },
     carouselLabel: {
         margin: '.3rem 0'
