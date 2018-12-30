@@ -53,8 +53,9 @@ class Library extends Component {
                                 <Slide
                                     key={book.number}
                                     number={book.number}
-                                    name={book.name}
-                                    author={book.author}    
+                                    title={book.title}
+                                    information={book.author}    
+                                    event={false}
                                 />
                             )}
                         </Tabs>
