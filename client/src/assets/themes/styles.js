@@ -1,5 +1,5 @@
 import Color from 'color'
-const color = Color('#a59a96')
+const color = Color('#a59a96') //#5a6569
 
 
 export const frame = {
@@ -7,19 +7,23 @@ export const frame = {
         height: 'calc(100vh - 7vh)',
         width: '100%',
         padding: '1rem',
-        backgroundColor: '#d6cbc7',
+        //backgroundColor: '#d6cbc7',
+        backgroundColor: '#d6ccc8'
     },
     actionbar: { 
         height: 'calc(50vh - (7vh / 2))',
         width: '100%',
         padding: '1rem',
-        backgroundColor: '#efdcd5',
+        //backgroundColor: '#efdcd5' #10232a
+        backgroundColor: '#ddd4d1' //#222b2f
     },
     library: {
         height: 'calc(50vh - (7vh / 2))',        
         width: '100%',
         padding: '1rem',
-        backgroundColor: '#e4e4e5',
+        //backgroundColor: '#e4e4e5',
+        //backgroundColor: '#eae5e3'
+        backgroundColor: '#e4ddda'
     },
     header: {
         color: color.darken(.2),
@@ -82,4 +86,10 @@ export const membersBar = {
     width: '22vw',
     overflowX: 'hidden', 
     marginTop: '1rem',
+}
+
+export const bar = {
+    height: '7vh', 
+    justifyContent: 'center', 
+    padding: '0 1vw',
 }

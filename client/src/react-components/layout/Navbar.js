@@ -1,15 +1,16 @@
 import React from 'react'
-import { AppBar, IconButton, Toolbar } from '@material-ui/core'
+import { AppBar, IconButton, Toolbar, } from '@material-ui/core'
 import { MenuIcon } from '@material-ui/icons/Menu'
+import { bar } from '../../assets/themes/styles'
 
 
-const Navbar = ({ top }) =>
-    <AppBar position="static" style={{ height: '7vh', justifyContent: 'center', padding: '0 1vw' }} color={top ? 'secondary' : '#8c7b75'}>
-    <img
-        src={require(`../../assets/img/logo.png`)}
-        alt='bookwormz'
-        style={{ height: '4vh', width: '8vw', }}
-    />
+const Navbar = ({ classes, top }) =>
+    <AppBar position="static" style={bar} color='secondary'>
+        <img
+            src={require(`../../assets/img/other/logo1.png`)}
+            alt='bookwormz'
+            style={{ height: '4vh', width: '8vw', }}
+        />
         
     </AppBar>
 

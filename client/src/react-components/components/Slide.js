@@ -5,7 +5,7 @@ import { carousel, slideStyle } from '../../assets/themes/styles'
 const Slide = ({ number, name, author }) => 
         <div style={slideStyle.card}>
             <img
-                src={require(`../../assets/img/${number}.png`)}
+                src={require(`../../assets/img/dummy/${number}.png`)}
                 alt='book cover'
                 style={slideStyle.image}
             />

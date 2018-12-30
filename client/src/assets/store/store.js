@@ -193,5 +193,30 @@ export const thread = [
                 message: 'ROAAAAAAAAAAAAWWRRRR!'
             },
         ]
-    }
+    },
+    {
+        id: 'zud789oki',
+        creator: 'Sepheroth',
+        date: '12/24/2018',
+        subject: 'My sword',
+        message: 'I\'m a wanna be goth dork with a giant sword. I like to brood and kill people. Oh I also like power',
+        open: true,
+        replies: [
+            {
+                creator: 'Voldemort',
+                date: '12/25/2018',
+                message: 'Your an idiot'
+            },
+            {
+                creator: 'Sepheroth',
+                date: '12/15/2018',
+                message: '*you\'re'
+            },
+            {
+                creator: 'Abraham Lincoln',
+                date: '12/25/2018',
+                message: 'I once temped George Washington to cut down his father\'s cherry tree with a giant sword.'
+            },
+        ]
+    },
 ]

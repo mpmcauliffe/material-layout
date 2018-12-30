@@ -38,7 +38,7 @@ const Sidebar = ({ members, threads }) =>
                             <div 
                                 key={message.id}
                                 style={{ 
-                                    border: '.3px solid #ddd4d1', 
+                                    border: '.3px solid #d6cbc7', 
                                     padding: 2,
                                     background: '#e4ddda',
                                 }}
