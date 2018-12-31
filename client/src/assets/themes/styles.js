@@ -8,7 +8,7 @@ const color = Color('#a59a96')
     RELATED COLORS #bcaaa4
     #b89dac     #5e5552
     #5a6569     #222b2f
-    #a4b6bc
+    #a4b6bc     #8da4b4
     #7d846c
 */
 
@@ -19,7 +19,7 @@ export const Carousel = styled.div`
     display: flex;
     overflow-y: hidden;
     overflow-x: hidden;
-    margin-top: 3vh;
+    margin-top: 1vh;
 `
 export const Content = styled.div` 
     padding: 1.3rem;
@@ -86,6 +86,24 @@ export const SmallMessageCard = styled.div`
     border: .3px solid #d6cbc7; 
     padding: .2rem;
     background: #e4ddda;
+`
+
+
+/*
+    Slide component styles
+*/
+export const Card = styled.div`
+    width: 30vw;
+    display: inline-block;
+    vertical-align: top;
+    whiteSpace: normal;
+    margin-left: 3.9rem;
+    margin-right: 3.9rem;
+`
+export const LocationTimeText = styled.p`
+    font-size: 1.3rem;
+    margin: 0;
+    color: #8da4b4;
 `
 
 export const frame = {
