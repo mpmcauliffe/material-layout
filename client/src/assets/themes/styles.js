@@ -1,9 +1,51 @@
 import styled from 'styled-components'
 import Color from 'color'
 import SimpleBar from 'simplebar-react'
-const color = Color('#a59a96') //#5a6569
+const color = Color('#a59a96')
 
 
+/*
+    RELATED COLORS #bcaaa4
+    #b89dac
+    #5a6569
+    #a4b6bc
+    #7d846c
+*/
+
+/* 
+    general styled components
+*/
+export const IconButtonContainer = styled.div`
+    float: right;
+    opacity: .3;
+`
+export const SectionHeader = styled.h2`
+    font-size: 2.5rem;
+    display: inline;
+    opacity: .6;
+`
+export const Sidescroll = styled(SimpleBar)` 
+    height: 33vh !important; 
+    width: 22vw !important;
+    overflow-x: hidden !important; 
+    margin-top: 1rem !important;
+`
+export const SmallText = styled.p`
+    font-size: 1.2rem;
+    margin-bottom: .3rem;
+    color: #7d846c;
+    margin: 0;
+`
+export const TopicText = styled.p`
+    margin-top: .8rem;
+    margin-bottom: 1.2rem;
+    color: #7b6261;
+`
+
+
+/*  
+    Sidebar styled components
+*/ 
 export const SidebarCanvas = styled.div`
     background-color: #d6ccc8;    
     height: 93vh;
@@ -23,6 +65,11 @@ export const SidebarHeader = styled.h3`
 `
 export const SidebarMenu = styled.div` 
     padding: 1.3rem;
+`
+export const SmallMessageCard = styled.div`
+    border: .3px solid #d6cbc7; 
+    padding: .2rem;
+    background: #e4ddda;
 `
 
 export const frame = {
@@ -45,11 +92,6 @@ export const frame = {
         color: color.darken(.2),
         opacity: .7,
     },
-    // sidebarHeader: {
-    //     display: 'inline',
-    //     color: color.darken(.2),
-    //     opacity: .6,
-    // },
     infoText: {
         marginTop: 8,
         marginBottom: 12,
@@ -58,7 +100,7 @@ export const frame = {
     smallText: {
         fontSize: 12,
         marginBottom: 3,
-        color: color.darken(.12347),
+        color: '#7d846c',
         margin: 0,
     },
 }
@@ -97,19 +139,6 @@ export const slideStyle = {
     },
 }
 
-export const membersBar = {
-    height: '30vh', 
-    width: '22vw',
-    overflowX: 'hidden', 
-    marginTop: '1rem',
-}
-
-// export const Sidescroll = styled.SimpleBar`
-//     height: 30vh; 
-//     width: 22vw;
-//     overflow-x: hidden; 
-//     margin-top: 1rem;
-// `
 
 export const bar = {
     height: '7vh', 

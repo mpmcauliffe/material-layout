@@ -9,15 +9,16 @@ import {
     PersonAdd,
     Reorder, 
 } from '@material-ui/icons'
-import SimpleBar from 'simplebar-react'
 import { 
-    frame, 
-    iconButtonStyles, 
-    membersBar,
+    IconButtonContainer,
     SidebarCanvas,
     SidebarContainer,
     SidebarHeader,
     SidebarMenu, 
+    Sidescroll,
+    SmallText,
+    SmallMessageCard,
+    TopicText,
 } from '../../assets/themes/styles.js'
 import { truncate } from '../../assets/javascript'
 import 'simplebar/dist/simplebar.min.css'
@@ -29,63 +30,63 @@ const Sidebar = ({ members, threads }) =>
             <SidebarContainer>
                 <SidebarHeader>Messages</SidebarHeader>
 
-                <IconButton style={iconButtonStyles}>
-                    <AddComment fontSize='default' />
-                </IconButton>
-                <IconButton style={iconButtonStyles}>
-                    <Reorder fontSize='default' />
-                </IconButton>
+                <IconButtonContainer>
+                    <IconButton>
+                        <Reorder fontSize='default' />
+                    </IconButton>
+                    <IconButton>
+                        <AddComment fontSize='default' />
+                    </IconButton>
+                </IconButtonContainer>
+                
 
-                <SimpleBar style={membersBar}>
+                <Sidescroll>
                     <SidebarMenu>
                         {threads.map(message =>
-                            <div 
+                            <SmallMessageCard 
                                 key={message.id}
-                                style={{ 
-                                    border: '.3px solid #d6cbc7', 
-                                    padding: 2,
-                                    background: '#e4ddda',
-                                }}
                             >
-                                <p style={frame.infoText}>
+                                <TopicText>
                                     <em>{truncate(message.subject, 30)}</em>
-                                </p>
+                                </TopicText>
                                 <Grid container>
                                     <Grid item md={5}>
-                                        <p style={frame.smallText}>{message.creator}</p>
+                                        <SmallText>{message.creator}</SmallText>
                                     </Grid>
                                     <Grid item md={5}>
-                                        <p style={frame.smallText}>{message.date}</p>
+                                        <SmallText>{message.date}</SmallText>
                                     </Grid>
                                     <Grid item md={2}>
-                                        <p style={frame.smallText}>{message.replies.length}</p>
+                                        <SmallText>{message.replies.length}</SmallText>
                                     </Grid>
                                 </Grid>
-                            </div>
+                            </SmallMessageCard>
                             
                         )}
                     </SidebarMenu>
-                </SimpleBar>
+                </Sidescroll>
             </SidebarContainer>
             
         
             <SidebarContainer>
                 <SidebarHeader>Members</SidebarHeader>
-                            
-                <IconButton style={iconButtonStyles}>
-                    <PersonAdd fontSize='default' />
-                </IconButton>
-                <IconButton style={iconButtonStyles}>
-                    <Reorder fontSize='default' />
-                </IconButton>
 
-                <SimpleBar style={membersBar}>
+                <IconButtonContainer>
+                    <IconButton>
+                        <PersonAdd fontSize='default' />
+                    </IconButton>
+                    <IconButton>
+                        <Reorder fontSize='default' />
+                    </IconButton>
+                </IconButtonContainer>
+                
+                <Sidescroll>
                     <SidebarMenu>
                         {members.map(member =>
-                            <p key={member} style={frame.infoText}>{member}</p>
+                            <TopicText key={member}>{member}</TopicText>
                         )}
                     </SidebarMenu>
-                </SimpleBar>
+                </Sidescroll>
             </SidebarContainer>
         </SidebarCanvas>
     </Paper>
