@@ -13,7 +13,11 @@ import SimpleBar from 'simplebar-react'
 import { 
     frame, 
     iconButtonStyles, 
-    membersBar, 
+    membersBar,
+    SidebarCanvas,
+    SidebarContainer,
+    SidebarHeader,
+    SidebarMenu, 
 } from '../../assets/themes/styles.js'
 import { truncate } from '../../assets/javascript'
 import 'simplebar/dist/simplebar.min.css'
@@ -21,10 +25,10 @@ import 'simplebar/dist/simplebar.min.css'
 
 const Sidebar = ({ members, threads }) => 
     <Paper square={true} elevation={0}>
-        <div style={frame.sidebar}>
+        <SidebarCanvas>
+            <SidebarContainer>
+                <SidebarHeader>Messages</SidebarHeader>
 
-            <div style={{ height: 'calc(50vh - (7vh / 2))' }}>
-                <h3 style={frame.sidebarHeader}>Messages</h3>
                 <IconButton style={iconButtonStyles}>
                     <AddComment fontSize='default' />
                 </IconButton>
@@ -33,7 +37,7 @@ const Sidebar = ({ members, threads }) =>
                 </IconButton>
 
                 <SimpleBar style={membersBar}>
-                    <div style={{ padding: 13 }}>
+                    <SidebarMenu>
                         {threads.map(message =>
                             <div 
                                 key={message.id}
@@ -60,13 +64,13 @@ const Sidebar = ({ members, threads }) =>
                             </div>
                             
                         )}
-                    </div>
+                    </SidebarMenu>
                 </SimpleBar>
-            </div>
+            </SidebarContainer>
             
         
-            <div style={{ height: 'calc(50vh - (7vh / 2))' }}>
-                <h3 style={frame.sidebarHeader}>Members</h3>
+            <SidebarContainer>
+                <SidebarHeader>Members</SidebarHeader>
                             
                 <IconButton style={iconButtonStyles}>
                     <PersonAdd fontSize='default' />
@@ -76,15 +80,14 @@ const Sidebar = ({ members, threads }) =>
                 </IconButton>
 
                 <SimpleBar style={membersBar}>
-                    <div style={{ padding: 13 }}>
+                    <SidebarMenu>
                         {members.map(member =>
                             <p key={member} style={frame.infoText}>{member}</p>
                         )}
-                    </div>
+                    </SidebarMenu>
                 </SimpleBar>
-            </div>
-            
-        </div>
+            </SidebarContainer>
+        </SidebarCanvas>
     </Paper>
     
         

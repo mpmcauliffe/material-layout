@@ -1,15 +1,31 @@
+import styled from 'styled-components'
 import Color from 'color'
+import SimpleBar from 'simplebar-react'
 const color = Color('#a59a96') //#5a6569
 
 
+export const SidebarCanvas = styled.div`
+    background-color: #d6ccc8;    
+    height: 93vh;
+    width: 100%;
+    padding: 1rem;
+`
+export const SidebarContainer = styled.div`
+    height: 46.5vh;
+`
+export const SidebarHeader = styled.h3`
+    color: #a59a96;
+    display: inline;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    opacity: .8;
+`
+export const SidebarMenu = styled.div` 
+    padding: 1.3rem;
+`
+
 export const frame = {
-    sidebar: {
-        height: 'calc(100vh - 7vh)',
-        width: '100%',
-        padding: '1rem',
-        //backgroundColor: '#d6cbc7',
-        backgroundColor: '#d6ccc8'
-    },
     actionbar: { 
         height: 'calc(50vh - (7vh / 2))',
         width: '100%',
@@ -29,11 +45,11 @@ export const frame = {
         color: color.darken(.2),
         opacity: .7,
     },
-    sidebarHeader: {
-        display: 'inline',
-        color: color.darken(.2),
-        opacity: .6,
-    },
+    // sidebarHeader: {
+    //     display: 'inline',
+    //     color: color.darken(.2),
+    //     opacity: .6,
+    // },
     infoText: {
         marginTop: 8,
         marginBottom: 12,
@@ -87,6 +103,13 @@ export const membersBar = {
     overflowX: 'hidden', 
     marginTop: '1rem',
 }
+
+// export const Sidescroll = styled.SimpleBar`
+//     height: 30vh; 
+//     width: 22vw;
+//     overflow-x: hidden; 
+//     margin-top: 1rem;
+// `
 
 export const bar = {
     height: '7vh', 
