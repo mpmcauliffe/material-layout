@@ -1,10 +1,8 @@
 import React from 'react'
 import { 
-    carousel, 
-    slideStyle, 
+    BookCover,
     Card,
-    LocationTimeText,
-    SmallText,
+    InfoText,
     TopicText,  
 } from '../../assets/themes/styles'
 import { truncate } from '../../assets/javascript'
@@ -13,29 +11,27 @@ import { truncate } from '../../assets/javascript'
 const Slide = ({ author, event, information, number, title, }) => 
 
         <Card>
-            <img
+            <BookCover
                 src={event ? require(`../../assets/img/book_img/${number+1}.jpg`) : 
                         require(`../../assets/img/dummy/${number}.png`)}
                 alt='book cover'
-                style={slideStyle.image}
             />
             <div>
-                <div style={carousel.carouselLabel}>
+                <div>
                     <TopicText>
                         <em>
                             {truncate(title, 21)}
                         </em>
                     </TopicText>
-                    <br />
                     {event ?
                         <div>
-                            <LocationTimeText>{information[0]}</LocationTimeText> 
-                            <LocationTimeText>{information[1]}</LocationTimeText> 
+                            <InfoText>{information[0]}</InfoText> 
+                            <InfoText>{information[1]}</InfoText> 
                         </div> 
                     :
-                        <SmallText>
+                        <InfoText>
                             {information}
-                        </SmallText>
+                        </InfoText>
                     }
                 </div>
             </div>

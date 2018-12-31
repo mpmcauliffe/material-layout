@@ -6,20 +6,26 @@ const color = Color('#a59a96')
 
 /*
     RELATED COLORS #bcaaa4
-    #b89dac     #5e5552
-    #5a6569     #222b2f
+    #b89dac     #5e5552     #e4e4e5
+    #5a6569     #222b2f     #ddd4d1
     #a4b6bc     #8da4b4
-    #7d846c
+    #7d846c     #eae5e3
 */
 
 /* 
     general styled components
 */
+export const ActionBarCanvas = styled.div` 
+    height: 46.5vh;
+    width: 100%;
+    padding: 1rem;
+    background-color: #e4ddda;
+`
 export const Carousel = styled.div`
     display: flex;
     overflow-y: hidden;
     overflow-x: hidden;
-    margin-top: 1vh;
+    margin-top: 4vh;
 `
 export const Content = styled.div` 
     padding: 1.3rem;
@@ -28,11 +34,23 @@ export const IconButtonContainer = styled.div`
     float: right;
     opacity: .5;
 `
+export const InfoText = styled.p`
+    font-size: 1.3rem;
+    margin: 0;
+    color: #7d92a0;
+`
+export const LibraryCanvas = styled.div`
+    height: 46.5vh;        
+    width: 100%;
+    padding: 1rem;
+    background-color: #e4ddda;
+`
 export const SectionHeader = styled.h2`
-    font-size: 2.5rem;
+    font-size: 2.3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: inline;
     color: #5e5552;
-    opacity: .5;
+    opacity: .4;
 `
 export const Sidescroll = styled(SimpleBar)` 
     height: 33vh !important; 
@@ -47,21 +65,14 @@ export const SmallText = styled.p`
     margin: 0;
 `
 export const TopicText = styled.p`
-    margin-top: .8rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+    margin-top: .3rem;
     margin-bottom: 1.2rem;
     color: #7b6261;
 `
 
 
-/*
-    ActionBar styled components
-*/
-export const ActionBarCanvas = styled.div` 
-    height: 46.5vh;
-    width: 100%;
-    padding: 1rem;
-    background-color: #ddd4d1;
-`
 /*  
     Sidebar styled components
 */ 
@@ -92,6 +103,9 @@ export const SmallMessageCard = styled.div`
 /*
     Slide component styles
 */
+export const BookCover = styled.img`
+    height: 20vh;
+`
 export const Card = styled.div`
     width: 30vw;
     display: inline-block;
@@ -100,72 +114,6 @@ export const Card = styled.div`
     margin-left: 3.9rem;
     margin-right: 3.9rem;
 `
-export const LocationTimeText = styled.p`
-    font-size: 1.3rem;
-    margin: 0;
-    color: #8da4b4;
-`
-
-export const frame = {
-    library: {
-        height: 'calc(50vh - (7vh / 2))',        
-        width: '100%',
-        padding: '1rem',
-        //backgroundColor: '#e4e4e5',
-        //backgroundColor: '#eae5e3'
-        backgroundColor: '#e4ddda'
-    },
-    header: {
-        color: color.darken(.2),
-        opacity: .7,
-    },
-    infoText: {
-        marginTop: 8,
-        marginBottom: 12,
-        color: color.darken(.14578),
-    },
-    smallText: {
-        fontSize: 12,
-        marginBottom: 3,
-        color: '#7d846c',
-        margin: 0,
-    },
-}
-
-export const iconButtonStyles = {
-    float: 'right',
-    opacity: .3,
-}
-
-export const carousel = {
-    container: {
-        display: 'flex',
-        //padding: '1rem 3.5rem',
-        overflowY: 'hidden',
-        overflowX: 'hidden',
-        marginTop: '3vh',
-    },
-    carouselLabel: {
-        margin: '.3rem 0'
-    },
-}
-
-export const slideStyle = {
-    card: {
-        width: '30vw',
-        display: 'inline-block',
-        verticalAlign: 'top',
-        whiteSpace: 'normal',
-        marginLeft: '3.9rem',
-        marginRight: '3.9rem',
-        border: 'none',
-        color: color.darken(.2),
-    },
-    image: {
-        height: '20vh'
-    },
-}
-
 
 export const bar = {
     height: '7vh', 

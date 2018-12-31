@@ -6,9 +6,7 @@ import {
     Navbar,
     Sidebar,
 } from './layout'
-import { carousel, frame } from '../assets/themes/styles'
-import { books, events, members, thread } from '../assets/store/store'
-import { truncate } from '../assets/javascript'
+import { events, members, thread } from '../assets/store/store'
 
 
 class LayoutPrime extends Component {
@@ -40,7 +38,11 @@ class LayoutPrime extends Component {
                             />
                         </Grid>
                         <Grid item md={12}>
-                            <Library />
+                            <Library
+                                handleValueChange={this.handleValueChange} 
+                                value={value}
+                                events={events}
+                            />
                         </Grid>
                     </Grid>
                 </Grid>

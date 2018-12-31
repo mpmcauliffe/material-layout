@@ -37,6 +37,7 @@ const ActionBar = ({ events, handleValueChange, value }) => {
                                 value={value}
                                 onChange={handleValueChange}
                                 scrollButtons='auto'
+                                indicatorColor='primary'
                                 scrollable
                             >
                                 {events.map((event, index) => 

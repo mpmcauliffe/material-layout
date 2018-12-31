@@ -7,7 +7,12 @@ import {
 import { Add, Apps } from '@material-ui/icons'
 import { Slide } from '../components'
 import { books } from '../../assets/store/store'
-import { carousel, frame } from '../../assets/themes/styles'
+import { 
+    Carousel,
+    IconButtonContainer,
+    LibraryCanvas,
+    SectionHeader,
+} from '../../assets/themes/styles'
 
 
 class Library extends Component { 
@@ -23,29 +28,23 @@ class Library extends Component {
 
         return (
             <Paper square={true} elevation={0}>
-                <div style={frame.library}>
-                    <IconButton 
-                        variant="outlined"
-                        //color='primary.dark'
-                        style={{ float: 'right', opacity: .5, }}
-                    >
-                        <Add fontSize='default' />
-                    </IconButton>
-                    <IconButton 
-                        variant="outlined"
-                        //color='primary.dark'
-                        style={{ float: 'right', opacity: .5, }}
-                    >
-                        <Apps fontSize='default' />
-                    </IconButton>
-                    <h2 style={frame.header}>Reading List</h2>
-                    <div style={carousel.container}>
+                <LibraryCanvas>
+                    <IconButtonContainer>
+                        <IconButton>
+                            <Add fontSize='default' />
+                        </IconButton>
+                        <IconButton>
+                            <Apps fontSize='default' />
+                        </IconButton>
+                    </IconButtonContainer>
+
+                    <SectionHeader>Reading List</SectionHeader>
+
+                    <Carousel>
                         <Tabs
-                            //style={carousel.carouselViewport}
                             value={this.state.value} 
                             onChange={this.handleChange}
-                            //indicatorColor='secondary'
-                            //color='secondary'
+                            indicatorColor='primary'
                             scrollButtons='auto'
                             scrollable
                         >
@@ -59,9 +58,9 @@ class Library extends Component {
                                 />
                             )}
                         </Tabs>
-                    </div>
+                    </Carousel>
                     
-                </div>
+                </LibraryCanvas>
             </Paper>
         )
     }

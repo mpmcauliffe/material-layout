@@ -73,10 +73,10 @@ const Sidebar = ({ members, threads }) =>
 
                 <IconButtonContainer>
                     <IconButton>
-                        <PersonAdd fontSize='default' />
+                        <Reorder fontSize='default' />
                     </IconButton>
                     <IconButton>
-                        <Reorder fontSize='default' />
+                        <PersonAdd fontSize='default' />
                     </IconButton>
                 </IconButtonContainer>
                 
