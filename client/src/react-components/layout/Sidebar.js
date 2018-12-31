@@ -14,7 +14,7 @@ import {
     SidebarCanvas,
     SidebarContainer,
     SidebarHeader,
-    SidebarMenu, 
+    Content, 
     Sidescroll,
     SmallText,
     SmallMessageCard,
@@ -41,7 +41,7 @@ const Sidebar = ({ members, threads }) =>
                 
 
                 <Sidescroll>
-                    <SidebarMenu>
+                    <Content>
                         {threads.map(message =>
                             <SmallMessageCard 
                                 key={message.id}
@@ -63,7 +63,7 @@ const Sidebar = ({ members, threads }) =>
                             </SmallMessageCard>
                             
                         )}
-                    </SidebarMenu>
+                    </Content>
                 </Sidescroll>
             </SidebarContainer>
             
@@ -81,11 +81,11 @@ const Sidebar = ({ members, threads }) =>
                 </IconButtonContainer>
                 
                 <Sidescroll>
-                    <SidebarMenu>
+                    <Content>
                         {members.map(member =>
                             <TopicText key={member}>{member}</TopicText>
                         )}
-                    </SidebarMenu>
+                    </Content>
                 </Sidescroll>
             </SidebarContainer>
         </SidebarCanvas>

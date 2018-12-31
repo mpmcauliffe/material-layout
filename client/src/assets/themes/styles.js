@@ -6,8 +6,8 @@ const color = Color('#a59a96')
 
 /*
     RELATED COLORS #bcaaa4
-    #b89dac
-    #5a6569
+    #b89dac     #5e5552
+    #5a6569     #222b2f
     #a4b6bc
     #7d846c
 */
@@ -15,14 +15,24 @@ const color = Color('#a59a96')
 /* 
     general styled components
 */
+export const Carousel = styled.div`
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-top: 3vh;
+`
+export const Content = styled.div` 
+    padding: 1.3rem;
+`
 export const IconButtonContainer = styled.div`
     float: right;
-    opacity: .3;
+    opacity: .5;
 `
 export const SectionHeader = styled.h2`
     font-size: 2.5rem;
     display: inline;
-    opacity: .6;
+    color: #5e5552;
+    opacity: .5;
 `
 export const Sidescroll = styled(SimpleBar)` 
     height: 33vh !important; 
@@ -43,6 +53,15 @@ export const TopicText = styled.p`
 `
 
 
+/*
+    ActionBar styled components
+*/
+export const ActionBarCanvas = styled.div` 
+    height: 46.5vh;
+    width: 100%;
+    padding: 1rem;
+    background-color: #ddd4d1;
+`
 /*  
     Sidebar styled components
 */ 
@@ -63,9 +82,6 @@ export const SidebarHeader = styled.h3`
     margin-bottom: .5rem;
     opacity: .8;
 `
-export const SidebarMenu = styled.div` 
-    padding: 1.3rem;
-`
 export const SmallMessageCard = styled.div`
     border: .3px solid #d6cbc7; 
     padding: .2rem;
@@ -73,13 +89,6 @@ export const SmallMessageCard = styled.div`
 `
 
 export const frame = {
-    actionbar: { 
-        height: 'calc(50vh - (7vh / 2))',
-        width: '100%',
-        padding: '1rem',
-        //backgroundColor: '#efdcd5' #10232a
-        backgroundColor: '#ddd4d1' //#222b2f
-    },
     library: {
         height: 'calc(50vh - (7vh / 2))',        
         width: '100%',
