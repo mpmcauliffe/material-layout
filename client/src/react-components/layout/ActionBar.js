@@ -44,9 +44,8 @@ const ActionBar = ({ events, handleValueChange, value }) => {
                                     <Slide
                                         key={event.id}
                                         number={index}
-                                        title={event.title}
-                                        information={[event.location, event.time]}  
-                                        event={true}  
+                                        information={event}
+                                        isEvent={true}  
                                     />
                                 )}
                             </Tabs>

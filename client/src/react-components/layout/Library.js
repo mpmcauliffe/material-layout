@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { 
     IconButton,
     Paper, 
@@ -13,58 +13,52 @@ import {
     LibraryCanvas,
     SectionHeader,
 } from '../../assets/themes/styles'
+import { alphabetize } from '../../assets/javascript'
 
 
-class Library extends Component { 
-    state = {
-        value: 0,
-    }
+const Library = ({ bookList, handleValueChange, value }) => { 
+    return (
+        <Paper square={true} elevation={0}>
+            <LibraryCanvas>
+                <IconButtonContainer>
+                    <IconButton>
+                        <Add fontSize='default' />
+                    </IconButton>
+                    <IconButton>
+                        <Apps fontSize='default' />
+                    </IconButton>
+                </IconButtonContainer>
 
-    handleChange = (e, value) => 
-        this.setState({ value })
-      
+                <SectionHeader>Reading List</SectionHeader>
 
-    render() {
-
-        return (
-            <Paper square={true} elevation={0}>
-                <LibraryCanvas>
-                    <IconButtonContainer>
-                        <IconButton>
-                            <Add fontSize='default' />
-                        </IconButton>
-                        <IconButton>
-                            <Apps fontSize='default' />
-                        </IconButton>
-                    </IconButtonContainer>
-
-                    <SectionHeader>Reading List</SectionHeader>
-
-                    <Carousel>
-                        <Tabs
-                            value={this.state.value} 
-                            onChange={this.handleChange}
-                            indicatorColor='primary'
-                            scrollButtons='auto'
-                            scrollable
-                        >
-                            {books.map(book =>
-                                <Slide
-                                    key={book.number}
-                                    number={book.number}
-                                    title={book.title}
-                                    information={book.author}    
-                                    event={false}
-                                />
-                            )}
-                        </Tabs>
-                    </Carousel>
-                    
-                </LibraryCanvas>
-            </Paper>
-        )
-    }
-}
+                <Carousel>
+                    <Tabs
+                        value={value} 
+                        onChange={handleValueChange}
+                        indicatorColor='primary'
+                        scrollButtons='auto'
+                        scrollable
+                    >
+                        {alphabetize(bookList).map(book =>
+                            <Slide
+                                key={book.number}
+                                number={book.number}
+                                information={book}
+                                isEvent={false}
+                            />
+                        )}
+                    </Tabs>
+                </Carousel>
+                
+            </LibraryCanvas>
+        </Paper>
+    )
+}   
 
 
 export { Library }
+
+
+// number={book.number}
+//                                 title={book.title}
+//                                 information={book.author}    

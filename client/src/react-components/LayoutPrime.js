@@ -6,7 +6,12 @@ import {
     Navbar,
     Sidebar,
 } from './layout'
-import { events, members, thread } from '../assets/store/store'
+import {
+    bookList, 
+    events, 
+    members, 
+    thread 
+} from '../assets/store/store'
 
 
 class LayoutPrime extends Component {
@@ -41,7 +46,7 @@ class LayoutPrime extends Component {
                             <Library
                                 handleValueChange={this.handleValueChange} 
                                 value={value}
-                                events={events}
+                                bookList={bookList}
                             />
                         </Grid>
                     </Grid>

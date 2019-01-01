@@ -1,3 +1,8 @@
+/*
+    This file is a mock API and Database for the purpose of frontend functionality
+*/
+
+
 export const members = [
     'Daffy Duck', 
     'Sepheroth', 
@@ -56,6 +61,114 @@ export const events = [
         location: 'Mt Damavand',
         time: '05/21/2019 5:30pm'
     },
+]
+
+export const bookList = [
+    {
+        id: 47878,
+        title: 'Oliver Twist',
+        author: 'Charles Dickens',
+        rating: 3.86,
+        number: 1,
+    },
+    {
+        id: 37891,
+        title: 'The Necronomicon',
+        author: 'H.P. Lovecraft',
+        rating: 4.30,
+        number: 2,
+    },
+    {
+        id: 14738,
+        title: 'The Fountainhead',
+        author: 'Ayn Rand',
+        rating: 3.86,
+        number: 3,
+    },
+    {
+        id: 56778,
+        title: 'Catch 22',
+        author: 'Joseph Heller',
+        rating: 3.98,
+        number: 4,
+    },
+    {
+        id: 67890,
+        title: 'Tacuinum Sanitatis',
+        author: 'Ibn Butlan',
+        rating: 4.50,
+        number: 5,
+    },
+    {
+        id: 36782,
+        title: 'The Doors of Perception',
+        author: 'Aldous Huxley',
+        rating: 3.98,
+        number: 6,
+    },
+    {
+        id: 26839,
+        title: 'Big Brown Bear, Blue Bull, Beautiful Baboon Blowing Bubbles',
+        author: 'Stan & Jan Berenstain',
+        rating: 'not rated',
+        number: 7,
+    },
+    {
+        id: 48732,
+        title:'Siege of Darkness',
+        author: 'R.A. Salvator',
+        rating: 4.16,
+        number: 8,
+    },
+    {
+        id: 73627,
+        title: 'The Devil in Massachusetts',
+        author: 'Marion L. Starkey',
+        rating: 3.58,
+        number: 9,
+    },
+    {
+        id: 14263,
+        title: 'The Power of Woman : The Life and Writings of Sarah Moore Grimke',
+        author: 'Pamela R. Durso',
+        rating: 4.75,
+        number: 10,
+    },
+    {
+        id: 98473,
+        title: 'One Fish - Two Fish - Red Fish - Blue Fish',
+        author: 'Dr. Seuss',
+        rating: 4.12,
+        number: 11,
+    },
+    {
+        id: 46372,
+        title: 'Caravans',
+        author: 'James A Michener',
+        rating: 4.04,
+        number: 12,
+    },
+    {
+        id: 84732,
+        title: 'Lessons of History',
+        author: 'Will and Ariel Durant',
+        rating: 4.16,
+        number: 13,
+    },
+    {
+        id: 78623,
+        title: 'Lincoln and his Generals',
+        author: 'T. Harry Williams',
+        rating: 4.18,
+        number: 14,
+    },
+    {
+        id: 36477,
+        title: 'Psychological Operations : Principles and Case Studies',
+        author: 'Frank L. Goldstein',
+        rating: 3.02,
+        number: 15,
+    }
 ]
 
 export const books = [
@@ -118,7 +231,7 @@ export const thread = [
             {
                 creator: 'Sarlacc',
                 date: '12/30/2018',
-                message: 'Can I still swallow Han Solo and Boba Fett'
+                message: 'Can I still swallow Han Solo and Boba Fett?'
             },
             {
                 creator: 'Hannibla',
