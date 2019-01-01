@@ -3,9 +3,11 @@ import {
     BookCover,
     Card,
     InfoText,
+    Rate,
+    SmallText,
     TopicText,  
 } from '../../assets/themes/styles'
-import { truncate } from '../../assets/javascript'
+import { starGenerator, truncate } from '../../assets/javascript'
 
 
 const Slide = ({ isEvent, information, number, }) => 
@@ -29,9 +31,18 @@ const Slide = ({ isEvent, information, number, }) =>
                             <InfoText>{information.time}</InfoText> 
                         </div> 
                     :
-                        <InfoText>
-                            {information.author}
-                        </InfoText>
+                        <div>
+                            <InfoText>
+                                {information.author}
+                            </InfoText>
+                            {starGenerator(information.rating).map((score, index) => 
+                                <Rate 
+                                    key={index} 
+                                    src={require(`../../assets/img/rating/${score}.png`)}
+                                    alt={'rating'} 
+                                />    
+                            )}
+                        </div>
                     }
                 </div>
             </div>
@@ -39,3 +50,5 @@ const Slide = ({ isEvent, information, number, }) =>
     
 
 export { Slide }
+
+//<SmallText>Rating: {score}</SmallText>

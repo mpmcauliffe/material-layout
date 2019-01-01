@@ -22,10 +22,10 @@ const Library = ({ bookList, handleValueChange, value }) => {
             <LibraryCanvas>
                 <IconButtonContainer>
                     <IconButton>
-                        <Add fontSize='default' />
+                        <Apps fontSize='default' />
                     </IconButton>
                     <IconButton>
-                        <Apps fontSize='default' />
+                        <Add fontSize='default' />
                     </IconButton>
                 </IconButtonContainer>
 

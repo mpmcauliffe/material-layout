@@ -168,7 +168,14 @@ export const bookList = [
         author: 'Frank L. Goldstein',
         rating: 3.02,
         number: 15,
-    }
+    },
+    {
+        id: 67432,
+        title: 'House of Leaves',
+        author: 'Mark Z. Danielewski',
+        rating: 4.12,
+        number: 16,
+    },
 ]
 
 export const books = [

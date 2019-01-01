@@ -45,6 +45,11 @@ export const LibraryCanvas = styled.div`
     padding: 1rem;
     background-color: #e4ddda;
 `
+export const Rate = styled.img`
+    height: 1.5rem;
+    margin-top: .5rem;
+    opacity: .6
+`
 export const SectionHeader = styled.h2`
     font-size: 2.3rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -107,12 +112,19 @@ export const BookCover = styled.img`
     height: 20vh;
 `
 export const Card = styled.div`
-    width: 30vw;
+    width: 15rem;
+    min-width: 15rem;
     display: inline-block;
     vertical-align: top;
     whiteSpace: normal;
     margin-left: 3.9rem;
     margin-right: 3.9rem;
+    border: .1rem solid #e4ddda;
+    transition: color 1000;
+    &:hover {
+        cursor: pointer;
+
+    }
 `
 
 export const bar = {
