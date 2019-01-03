@@ -6,7 +6,6 @@ import {
 } from '@material-ui/core'
 import { Add, Apps } from '@material-ui/icons'
 import { Slide } from '../components'
-import { books } from '../../assets/store/store'
 import { 
     Carousel,
     IconButtonContainer,

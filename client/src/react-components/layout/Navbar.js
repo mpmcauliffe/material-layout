@@ -1,6 +1,5 @@
 import React from 'react'
-import { AppBar, IconButton, Toolbar, } from '@material-ui/core'
-import { MenuIcon } from '@material-ui/icons/Menu'
+import { AppBar, } from '@material-ui/core'
 import { bar } from '../../assets/themes/styles'
 
 

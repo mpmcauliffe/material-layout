@@ -1,16 +1,9 @@
 import styled from 'styled-components'
-import Color from 'color'
 import SimpleBar from 'simplebar-react'
-const color = Color('#a59a96')
 
 
-/*
-    RELATED COLORS #bcaaa4
-    #b89dac     #5e5552     #e4e4e5
-    #5a6569     #222b2f     #ddd4d1
-    #a4b6bc     #8da4b4
-    #7d846c     #eae5e3
-*/
+
+
 
 /* 
     general styled components
@@ -48,7 +41,7 @@ export const LibraryCanvas = styled.div`
 export const Rate = styled.img`
     height: 1.5rem;
     margin-top: .5rem;
-    opacity: .6
+    opacity: .4;
 `
 export const SectionHeader = styled.h2`
     font-size: 2.3rem;
@@ -132,3 +125,12 @@ export const bar = {
     justifyContent: 'center', 
     padding: '0 1vw',
 }
+
+
+/*
+    RELATED COLORS #bcaaa4
+    #b89dac     #5e5552     #e4e4e5
+    #5a6569     #222b2f     #ddd4d1
+    #a4b6bc     #8da4b4     #e4ddda
+    #7d846c     #eae5e3     #a59a96
+*/

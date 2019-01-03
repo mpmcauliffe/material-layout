@@ -4,7 +4,6 @@ import {
     Card,
     InfoText,
     Rate,
-    SmallText,
     TopicText,  
 } from '../../assets/themes/styles'
 import { starGenerator, truncate } from '../../assets/javascript'
