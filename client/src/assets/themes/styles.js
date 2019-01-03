@@ -1,8 +1,6 @@
 import styled from 'styled-components'
+import { AppBar, } from '@material-ui/core'
 import SimpleBar from 'simplebar-react'
-
-
-
 
 
 /* 
@@ -22,6 +20,20 @@ export const Carousel = styled.div`
 `
 export const Content = styled.div` 
     padding: 1.3rem;
+`
+export const Header = styled(AppBar)`
+    height: 7vh;
+    justify-content: center; 
+    padding: 0 1vw;
+    background: #c2b2ad !important
+`
+export const HeaderLogo = styled.img.attrs({
+    alt: 'Bookwormz',
+})`
+    max-height: 4vh; 
+    max-width: 8vw;
+    min-height: 2vh;
+    min-width: 4vw;
 `
 export const IconButtonContainer = styled.div`
     float: right;

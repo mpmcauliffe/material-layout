@@ -1,17 +1,14 @@
 import React from 'react'
-import { AppBar, } from '@material-ui/core'
-import { bar } from '../../assets/themes/styles'
+import { Header, HeaderLogo } from '../../assets/themes/styles'
 
 
 const Navbar = ({ classes, top }) =>
-    <AppBar position="static" style={bar} color='secondary'>
-        <img
+    <Header position="static">
+        <HeaderLogo
             src={require(`../../assets/img/other/logo1.png`)}
-            alt='bookwormz'
-            style={{ height: '4vh', width: '8vw', }}
         />
         
-    </AppBar>
+    </Header>
 
 
 export { Navbar } 
