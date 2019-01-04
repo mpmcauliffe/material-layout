@@ -183,6 +183,13 @@ export const bookList = [
         rating: 4.07,
         number: 17,
     },
+    {
+        id: 98763,
+        title: 'Mao: The Unknown Story',
+        author: 'Jung Chang and Jon Halliday',
+        rating: 3.81,
+        number: 18
+    },
 ]
 
 export const books = [
