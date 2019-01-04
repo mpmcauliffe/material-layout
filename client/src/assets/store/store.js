@@ -176,6 +176,20 @@ export const bookList = [
         rating: 4.12,
         number: 16,
     },
+    {
+        id: 23677,
+        title: 'Slaughterhouse-Five',
+        author: 'Kurt Vonnegut',
+        rating: 4.07,
+        number: 17,
+    },
+    {
+        id: 98763,
+        title: 'Mao: The Unknown Story',
+        author: 'Jung Chang and Jon Halliday',
+        rating: 3.81,
+        number: 18
+    },
 ]
 
 export const books = [
