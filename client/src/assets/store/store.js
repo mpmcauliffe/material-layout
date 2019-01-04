@@ -176,6 +176,13 @@ export const bookList = [
         rating: 4.12,
         number: 16,
     },
+    {
+        id: 23677,
+        title: 'Slaughterhouse-Five',
+        author: 'Kurt Vonnegut',
+        rating: 4.07,
+        number: 17,
+    },
 ]
 
 export const books = [
