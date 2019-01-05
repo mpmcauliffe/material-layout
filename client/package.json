@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "@material-ui/core": "3.7.0",
     "@material-ui/icons": "^3.0.1",
@@ -11,7 +12,6 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
-    "react-svg": "^7.2.2",
     "simplebar-react": "^0.1.1",
     "styled-components": "^4.1.3"
   },
