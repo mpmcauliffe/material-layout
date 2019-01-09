@@ -9,4 +9,4 @@ InlineError.propTypes = {
     text: PropTypes.string.isRequired
 }
 
-export { InlineError} ;
+export { InlineError } ;

@@ -1,8 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Modal, Message, Form, Segment, Button } from 'semantic-ui-react';
-import InlineError from '../InlineError';
-import API from '../../utils/API';
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
+import { Modal, Message, Form, Segment, Button } from 'semantic-ui-react'
+import { 
+    Button,
+    Dialog, 
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+} from '@material-ui/core'
+import { InlineError } from '../components'
+import API from '../../utils/API'
 
 class CreateClub extends React.Component {
     state = {
@@ -12,71 +19,71 @@ class CreateClub extends React.Component {
         open: false
     }
 
-    open = () => this.setState({ open: true });
-    close = () => this.setState({ open: false });
+    open = () => this.setState({ open: true })
+    close = () => this.setState({ open: false })
 
     componentWillMount = () => {
-        this.setState({ user: this.props.user });
+        this.setState({ user: this.props.user })
     }
 
     componentDidMount = () => {
-        this.setState({ data: {} });
+        this.setState({ data: {} })
     }
 
     onChange = event => {
-        const { name, value } = event.target;
+        const { name, value } = event.target
 
         this.setState( {
             data: {...this.state.data, [name]: value }
-        });
+        })
     }
 
     onSave = event => {
-        event.preventDefault();
+        event.preventDefault()
 
-        const errors = this.validate( this.state.data );
-        this.setState({ errors });
+        const errors = this.validate( this.state.data )
+        this.setState({ errors })
 
         if ( Object.keys(errors).length === 0 ) {
 
-            let newClub = this.state.data;
+            let newClub = this.state.data
 
             newClub = { ...newClub,
                         admin: this.props.user.email,
                         members: [{ email: this.props.user.email,
                                     name: `${this.props.user.firstname} ${this.props.user.lastname}`
                                  }]
-                      };
+                      }
 
             API.createClub( newClub )
                 .then( res => {
                     if ( res.data.error ) {
-                        this.setState({ errors: {global: res.data.error} });
+                        this.setState({ errors: {global: res.data.error} })
                     } else {
 
                         // if it saved, send the club to the calling container
                         // through the onClose function and close this Modal
-                        this.props.onClose( res.data );
-                        this.close();
+                        this.props.onClose( res.data )
+                        this.close()
                     }
                 })
                 .catch( err => {
-                    this.setState( { errors: {global: err.data.error}} );
-                });
+                    this.setState( { errors: {global: err.data.error}} )
+                })
             }
     }
 
     validate = data => {
-        const errors = {};
+        const errors = {}
 
         if ( !data.clubname )
-            errors.clubname = "Club name can't be blank";
+            errors.clubname = "Club name can't be blank"
 
-        return errors;
+        return errors
     }
 
     render() {
-        const { data, errors, open } = this.state;
+        const { data, errors, open } = this.state
 
         return (
             <Modal  className="app__modal"
@@ -117,7 +124,7 @@ class CreateClub extends React.Component {
                 <Button size='large' onClick={this.onSave}>Save</Button>
             </Modal.Actions>
             </Modal>
-        );
+        )
     }
 }
 
@@ -131,4 +138,4 @@ CreateClub.propTypes = {
     onClose: PropTypes.func.isRequired
 }
 
-export { CreateClub };
+export { CreateClub }

@@ -1,13 +1,13 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import ProfileEdit from '../../components/ProfileEdit';
-import ClubLink from '../../components/ClubLink';
-import CreateClub from '../../components/CreateClub';
-import Navigation from '../../components/Navigation';
-import { Grid } from 'semantic-ui-react';
-import API from '../../utils/API';
-import '../../assets/scss/index.scss';
+import React from 'react'
+import { Redirect } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import ProfileEdit from '../../components/ProfileEdit'
+import ClubLink from '../../components/ClubLink'
+import CreateClub from '../../components/CreateClub'
+import Navigation from '../../components/Navigation'
+import { Grid } from 'semantic-ui-react'
+import API from '../../utils/API'
+import '../../assets/scss/index.scss'
 
 class Profile extends React.Component {
 
@@ -18,7 +18,7 @@ state = {
 }
 
 componentWillMount = () => {
-    this.setState({ user: this.props.user, toClub: false }, this.loadClubs);
+    this.setState({ user: this.props.user, toClub: false }, this.loadClubs)
 }
 
 loadClubs = () => {
@@ -26,33 +26,33 @@ loadClubs = () => {
         .then( res => {
             if ( res.data ) {
                 // if we found a list of clubs, then put then in the clubs array
-                this.setState({ clubs: res.data });
+                this.setState({ clubs: res.data })
             }
         })
         .catch( err => {
-            console.log(err);
-        });
+            console.log(err)
+        })
 }
 
 onProfileEditClose = ( updatedUser ) => {
-    this.setState({ user: updatedUser });
-    this.props.userUpdated( this.state.user );
+    this.setState({ user: updatedUser })
+    this.props.userUpdated( this.state.user )
 }
 
 onCreateClubClose = ( newClub ) => {
     if ( newClub ) {
-        this.setState({ clubs: [...this.state.clubs, newClub] });
+        this.setState({ clubs: [...this.state.clubs, newClub] })
     }
 }
 
 viewClub = ( clubname ) => {
-    const clubNbr = this.state.clubs.findIndex(x => x.clubname === clubname);
-    this.props.setClub( this.state.clubs[clubNbr]);
-    this.setState({toClub: true});
+    const clubNbr = this.state.clubs.findIndex(x => x.clubname === clubname)
+    this.props.setClub( this.state.clubs[clubNbr])
+    this.setState({toClub: true})
 }
 
 render() {
-    const title = `Profile of ${this.state.user.firstname} ${this.state.user.lastname}`;
+    const title = `Profile of ${this.state.user.firstname} ${this.state.user.lastname}`
 
     if (this.state.toClub)
         return <Redirect to="/club" />
@@ -98,7 +98,7 @@ render() {
 
                 </Grid>
             </div>
-        );
+        )
 
     }
 }
@@ -115,4 +115,4 @@ Profile.propTypes = {
     setClub: PropTypes.func.isRequired
 }
 
-export { Profile };
+export { Profile }
