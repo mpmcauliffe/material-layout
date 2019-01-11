@@ -1,11 +1,13 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import ProfileEdit from '../../components/ProfileEdit'
-import ClubLink from '../../components/ClubLink'
-import CreateClub from '../../components/CreateClub'
-import Navigation from '../../components/Navigation'
 import { Grid } from 'semantic-ui-react'
+import { 
+    ClubLink, 
+    CreateClub, 
+    Navigation, 
+    ProfileEdit, 
+} from '../components'
 import API from '../../utils/API'
 import '../../assets/scss/index.scss'
 

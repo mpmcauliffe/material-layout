@@ -1,75 +1,82 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Modal, Message, Form, Dropdown, Segment, Button } from 'semantic-ui-react';
-import InlineError from '../InlineError';
-import API from '../../utils/API';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { 
+    Button,
+    Dropdown,
+    Form,
+    Message,
+    Modal,  
+    Segment,  
+} from 'semantic-ui-react'
+import { InlineError } from '../components' 
+import API from '../../utils/API'
 
 class MeetingDetails extends React.Component {
     state = {
         user: {},
         club: {},
         data: {},
-        query: "",
+        query: '',
         options: [],
         books: [],
         errors: {},
         open: false
     }
 
-    open = () => this.setState({ open: true });
-    close = () => this.setState({ open: false });
+    open = () => this.setState({ open: true })
+    close = () => this.setState({ open: false })
 
     componentWillMount = () => {
         this.setState({ user: this.props.user,
                         club: this.props.club
-                    });
+                    })
     }
 
     componentDidMount = () => {
-        const now = new Date();
+        const now = new Date()
 
-        now.setTime( now.getTime() - now.getTimezoneOffset()*60*1000 );
+        now.setTime( now.getTime() - now.getTimezoneOffset()*60*1000 )
 
-        const defaultDate = now.toISOString().slice(0,16);
+        const defaultDate = now.toISOString().slice(0,16)
 
-        this.setState({ data: { name: "",
+        this.setState({ data: { name: '',
                                 date: defaultDate,
                                 host: this.props.user.email,
                                 location: this.props.user.address,
-                                book: "",
-                                cover: "",
-                                gr_id: "" }
-        });
+                                book: '',
+                                cover: '',
+                                gr_id: '' }
+        })
     }
 
     // in the book search input, if the user stops typing for .35 seconds
     // perform a search for the book title and populate the dropdown options
     // through the fetchOptions() method
     onSearchChange = (event, data) => {
-        clearTimeout(this.timer);
-        this.setState({ query: data.searchQuery });
-        this.timer = setTimeout(this.fetchOptions, 350);
+        clearTimeout(this.timer)
+        this.setState({ query: data.searchQuery })
+        this.timer = setTimeout(this.fetchOptions, 350)
     }
 
     fetchOptions = () => {
 
         if ( !this.state.query )
-            return;
+            return
 
         API.getBookList( this.state.query )
             .then( books => {
-                const options = [];
+                const options = []
 
                 books.data.forEach( book => {
                     options.push( { key: book.gr_id,
                                     value: book.gr_id,
                                     text: book.title
-                    });
-                });
+                    })
+                })
             
-            this.setState({ options, books: books.data });
-          });
-      };
+            this.setState({ options, books: books.data })
+          })
+      }
     
       onBookSelect = (event, data) => {
         this.state.books.forEach( book => {
@@ -80,34 +87,34 @@ class MeetingDetails extends React.Component {
                             cover: book.cover,
                             gr_id: book.gr_id
                     }
-                });
+                })
             }
-        });
-    };
+        })
+    }
     
     onChange = event => {
-        const { name, value } = event.target;
+        const { name, value } = event.target
 
         this.setState( {
             data: {...this.state.data, [name]: value }
-        });
+        })
     }
 
     onSave = event => {
-        event.preventDefault();
+        event.preventDefault()
 
-        const errors = this.validate( this.state.data );
-        this.setState({ errors });
+        const errors = this.validate( this.state.data )
+        this.setState({ errors })
 
         if ( Object.keys(errors).length === 0 ) {
-            const updatedEventList = this.state.club.events;
+            const updatedEventList = this.state.club.events
             
-            updatedEventList.push( this.state.data );
+            updatedEventList.push( this.state.data )
 
             // setState with the updated Club information then call saveClub to make API
             // call, as a callback, so it will execute after state is fully updated!
             this.setState( {club: {...this.state.club, events: updatedEventList }},
-                this.saveClub);
+                this.saveClub)
         }
     }
 
@@ -115,44 +122,44 @@ class MeetingDetails extends React.Component {
         API.updateClub( this.state.club )
             .then( res => {
                 if ( res.data.error ) {
-                    this.setState({ errors: {global: res.data.error} });
+                    this.setState({ errors: {global: res.data.error} })
                 } else {
                     // if it saved, send the updated Club info to the 
                     // calling container through the onClose function and
                     // close this Modal
-                    this.props.onClose( res.data );
-                    this.close();
+                    this.props.onClose( res.data )
+                    this.close()
                 }
             })
             .catch( err => {
-console.log(err);
-                this.setState( { errors: {global: err.data.error}} );
-            });
+console.log(err)
+                this.setState( { errors: {global: err.data.error}} )
+            })
     }
 
     validate = data => {
-        const errors = {};
+        const errors = {}
 
         if ( !data.name )
-            errors.name = "Please provide a name for this meeting";
+            errors.name = 'Please provide a name for this meeting'
 
         if ( !data.date )
-            errors.date = "Please provide a meeting date";
+            errors.date = 'Please provide a meeting date'
 
         if ( !data.location )
-            errors.location = "Please provide a meeting location";
+            errors.location = 'Please provide a meeting location'
 
         if ( !data.book )
-            errors.book = "Please select a book for this meeting";
+            errors.book = 'Please select a book for this meeting'
 
-        return errors;
+        return errors
     }
 
     render = () => {
-        const { data, errors, open } = this.state;
+        const { data, errors, open } = this.state
 
         return (
-            <Modal  className="app__modal"
+            <Modal  className='app__modal'
                     trigger={<Button>Create Meeting</Button>}
                     open={open}
                     onOpen={this.open}
@@ -170,11 +177,11 @@ console.log(err);
                         </Message>}
 
                         <Form.Field error={!!errors.name} required>
-                            <label htmlFor="name" >Meeting Name</label>
+                            <label htmlFor='name' >Meeting Name</label>
                             <input
                                 fluid='true'
-                                type="text"
-                                name="name"
+                                type='text'
+                                name='name'
                                 placeholder='Meeting Name'
                                 autoFocus
                                 value={data.name}
@@ -183,22 +190,22 @@ console.log(err);
                         </Form.Field>
 
                         <Form.Field error={!!errors.date} required>
-                            <label htmlFor="date" >Date & Time</label>
+                            <label htmlFor='date' >Date & Time</label>
                             <input
                                 fluid='true'
-                                type="datetime-local"
-                                name="date"
+                                type='datetime-local'
+                                name='date'
                                 value={data.date}
                                 onChange={this.onChange} />
                             { errors.date && <InlineError text={errors.date} /> }
                             </Form.Field>
 
                             <Form.Field error={!!errors.location} required>
-                            <label htmlFor="location" >Location</label>
+                            <label htmlFor='location' >Location</label>
                             <input
                                 fluid='true'
-                                type="text"
-                                name="location"
+                                type='text'
+                                name='location'
                                 placeholder='Location'
                                 value={data.location}
                                 onChange={this.onChange} />
@@ -206,13 +213,13 @@ console.log(err);
                             </Form.Field>
 
                             <Form.Field error={!!errors.book} required>
-                            <label htmlFor="book" >Book: {data.book}</label>
+                            <label htmlFor='book' >Book: {data.book}</label>
                             <Dropdown
                                 fluid
                                 search
                                 selection
                                 options={this.state.options}
-                                name="book"
+                                name='book'
                                 value={data.book}
                                 onSearchChange={this.onSearchChange}
                                 onChange={this.onBookSelect} />
@@ -227,7 +234,7 @@ console.log(err);
                 </Modal.Actions>
                 </Modal>
 
-        );
+        )
     }
 }
 
@@ -243,4 +250,4 @@ MeetingDetails.propTypes = {
     onClose: PropTypes.func.isRequired
 }
 
-export { MeetingDetails };
+export { MeetingDetails }

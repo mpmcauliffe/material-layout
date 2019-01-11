@@ -1,8 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Modal, Grid, Message, Form, Segment, Button, Icon } from 'semantic-ui-react';
-import InlineError from '../InlineError';
-import API from '../../utils/API';
+import React from 'react'
+import PropTypes from 'prop-types'
+import {
+    Button,
+    Form,
+    Grid,
+    Icon,
+    Message, 
+    Modal, 
+    Segment, 
+} from 'semantic-ui-react'
+import { InlineError } from '../components' 
+import API from '../../utils/API'
 
 class ProfileEdit extends React.Component {
     state = {
@@ -11,83 +19,83 @@ class ProfileEdit extends React.Component {
         open: false
     }
 
-    open = () => this.setState({ open: true });
-    close = () => this.setState({ open: false });
+    open = () => this.setState({ open: true })
+    close = () => this.setState({ open: false })
 
     componentWillMount = () => {
-        this.setState({ user: this.props.user });
+        this.setState({ user: this.props.user })
     }
 
     onChange = event => {
-        const { name, value } = event.target;
+        const { name, value } = event.target
 
         this.setState( {
             user: {...this.state.user, [name]: value }
-        });
+        })
     }
 
     onSave = event => {
-        event.preventDefault();
+        event.preventDefault()
 
-        const errors = this.validate( this.state.user );
-        this.setState({ errors });
+        const errors = this.validate( this.state.user )
+        this.setState({ errors })
 
         if ( Object.keys(errors).length === 0 ) {
             // we already know the number is exactly 10 characters since we passed validate()
             // so format it to look like a phone number
-            const { phone } = this.state.user;
-            let formattedNbr = phone.replace(/[^0-9]/g, "");
-            formattedNbr = `(${formattedNbr.slice(0,3)}) ${formattedNbr.slice(3,6)}-${formattedNbr.slice(-4)}`;
+            const { phone } = this.state.user
+            let formattedNbr = phone.replace(/[^0-9]/g, '')
+            formattedNbr = `(${formattedNbr.slice(0,3)}) ${formattedNbr.slice(3,6)}-${formattedNbr.slice(-4)}`
 
             // setState with the formatted phone number and then call saveUser to make API
             // call, as a callback, so it will execute after state is fully updated!
             this.setState( {user: {...this.state.user, phone: formattedNbr }},
-                            this.saveUser);
+                            this.saveUser)
             }
     }
 
     validate = data => {
-        const errors = {};
+        const errors = {}
 
         if ( !data.firstname )
-            errors.firstname = "Please enter your first name";
+            errors.firstname = 'Please enter your first name'
 
         if ( !data.lastname )
-            errors.lastname = "Please enter your last name";
+            errors.lastname = 'Please enter your last name'
 
         if ( data.phone ) {
-            let justNumbers = data.phone.replace(/[^0-9]/g, "");
+            let justNumbers = data.phone.replace(/[^0-9]/g, '')
 
             if ( justNumbers.length !== 10 )
-                errors.phone = "Please enter a valid phone number: ### ### ####";
+                errors.phone = 'Please enter a valid phone number: ### ### ####'
         }
 
-        return errors;
+        return errors
     }
 
     saveUser = () => {
         API.updateUser( this.state.user )
             .then( res => {
                 if ( res.data.error ) {
-                    this.setState({ errors: {global: res.data.error} });
+                    this.setState({ errors: {global: res.data.error} })
                 } else {
                     // if it saved, send the updated User info to the 
                     // calling container through the onClose function and
                     // close this Modal
-                    this.props.onClose( res.data );
-                    this.close();
+                    this.props.onClose( res.data )
+                    this.close()
                 }
             })
             .catch( err => {
-                this.setState( { errors: {global: err.data.error}} );
-            });
+                this.setState( { errors: {global: err.data.error}} )
+            })
     }
 
     render() {
-        const { user, errors, open } = this.state;
+        const { user, errors, open } = this.state
 
         return (
-            <Modal  className="app__modal"
+            <Modal  className='app__modal'
                     trigger={<Button>Edit Profile</Button>}
                     open={open}
                     onOpen={this.open}
@@ -121,11 +129,11 @@ class ProfileEdit extends React.Component {
 
                     <Form.Group widths='equal'>
                         <Form.Field error={!!errors.firstname} required>
-                            <label htmlFor="firstname" >First Name</label>
+                            <label htmlFor='firstname' >First Name</label>
                             <input
                                 fluid='true'
-                                type="text"
-                                name="firstname"
+                                type='text'
+                                name='firstname'
                                 placeholder='First Name'
                                 autoFocus
                                 value={user.firstname}
@@ -133,11 +141,11 @@ class ProfileEdit extends React.Component {
                             { errors.firstname && <InlineError text={errors.firstname} /> }
                         </Form.Field>
                         <Form.Field error={!!errors.lastname} required>
-                            <label htmlFor="lastname">Last Name</label>
+                            <label htmlFor='lastname'>Last Name</label>
                             <input
                                 fluid='true'
                                 type='text'
-                                name="lastname"
+                                name='lastname'
                                 placeholder='Last Name'
                                 value={user.lastname}
                                 onChange={this.onChange} />
@@ -146,22 +154,22 @@ class ProfileEdit extends React.Component {
                     </Form.Group>
 
                     <Form.Field error={!!errors.address}>
-                        <label htmlFor="address">Address</label>
+                        <label htmlFor='address'>Address</label>
                         <input
-                            type="text"
-                            name="address"
-                            placeholder="Address (street address & town)"
+                            type='text'
+                            name='address'
+                            placeholder='Address (street address & town)'
                             value={user.address}
                             onChange={this.onChange} />
                         { errors.address && <InlineError text={errors.address} /> }
                     </Form.Field>
 
                     <Form.Field error={!!errors.phone}>
-                        <label htmlFor="phone">Phone #</label>
+                        <label htmlFor='phone'>Phone #</label>
                         <input
-                            type="text"
-                            name="phone"
-                            placeholder="Phone # (xxx-xxx-xxxx)"
+                            type='text'
+                            name='phone'
+                            placeholder='Phone # (xxx-xxx-xxxx)'
                             value={user.phone}
                             onChange={this.onChange} />
                         { errors.phone && <InlineError text={errors.phone} /> }
@@ -176,7 +184,7 @@ class ProfileEdit extends React.Component {
                 <PreferencesModal />
             </Modal.Actions>
             </Modal>
-        );
+        )
     }
 }
 
@@ -204,7 +212,7 @@ class PreferencesModal extends React.Component {
           open={open}
           onOpen={this.open}
           onClose={this.close}
-          className="app__layeredmodal" 
+          className='app__layeredmodal' 
           trigger={
             <Button size='large' icon>
               Preferences <Icon name='right chevron' />
@@ -223,4 +231,4 @@ class PreferencesModal extends React.Component {
     }
 }
 
-export { ProfileEdit };
+export { ProfileEdit }

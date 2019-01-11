@@ -1,5 +1,5 @@
-import React from 'react';
-import { Image } from 'semantic-ui-react';
+import React from 'react'
+import { Image } from 'semantic-ui-react'
 
 
 class Slideshow extends React.Component {
@@ -23,7 +23,7 @@ class Slideshow extends React.Component {
             </ul>
         )
     }
-};
+}
 
 
 export { Slideshow }

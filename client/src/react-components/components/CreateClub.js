@@ -1,13 +1,12 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Modal, Message, Form, Segment, Button } from 'semantic-ui-react'
-import { 
+import {
     Button,
-    Dialog, 
-    DialogContent,
-    DialogContentText,
-    DialogTitle,
-} from '@material-ui/core'
+    Form,
+    Message, 
+    Modal, 
+    Segment, 
+} from 'semantic-ui-react'
 import { InlineError } from '../components'
 import API from '../../utils/API'
 
@@ -77,7 +76,7 @@ class CreateClub extends React.Component {
         const errors = {}
 
         if ( !data.clubname )
-            errors.clubname = "Club name can't be blank"
+            errors.clubname = 'Club name can\'t be blank'
 
         return errors
     }
@@ -86,7 +85,7 @@ class CreateClub extends React.Component {
         const { data, errors, open } = this.state
 
         return (
-            <Modal  className="app__modal"
+            <Modal  className='app__modal'
                     trigger={<Button>Create Club</Button>}
                     open={open}
                     onOpen={this.open}
@@ -104,11 +103,11 @@ class CreateClub extends React.Component {
                     </Message>}
 
                     <Form.Field error={!!errors.clubname} required>
-                        <label htmlFor="clubname" >Club Name</label>
+                        <label htmlFor='clubname' >Club Name</label>
                         <input
                             fluid='true'
-                            type="text"
-                            name="clubname"
+                            type='text'
+                            name='clubname'
                             placeholder='Club Name'
                             autoFocus
                             value={data.clubname}
@@ -129,7 +128,7 @@ class CreateClub extends React.Component {
 }
 
 CreateClub.propTypes = {
-    user: PropTypes.shape({
+        user: PropTypes.shape({
         firstname:  PropTypes.string.isRequired,
         lastname: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired
