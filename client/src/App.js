@@ -7,10 +7,10 @@ import {
 } from 'react-router-dom'
 import { 
     Club, 
-    Landing, 
-    Logout, 
-    Profile 
+    Landing,  
+    Profile, 
 } from './react-components/pages'
+import { Logout } from './react-components/components'
 
 
 class App extends Component {

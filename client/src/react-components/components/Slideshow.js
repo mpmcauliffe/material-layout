@@ -15,7 +15,7 @@ class Slideshow extends React.Component {
                         <Image
                             key={index + 4}
                             id={index}
-                            src={require(`../../assets/images/slideshow/${index}.png`)}
+                            src={require(`../../assets/img/slideshow/${index}.png`)}
                             className="cvr-img"
                         />
                     </li>

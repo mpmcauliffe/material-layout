@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid } from 'semantic-ui-react'
-import { MeetingDetails, Navigation, } from '../components'
-import '../../assets/scss/index.scss'
+import { Grid, } from 'semantic-ui-react'
+import { Navbar, } from '../layout'
+import { MeetingDetails, } from '../components'
+//import '../../assets/scss/index.scss'
 
 
 class Club extends React.Component {
@@ -54,7 +55,7 @@ class Club extends React.Component {
         const title = `Club Details for ${this.state.club.clubname}`
         return (
             <div>
-                <Navigation page={title} />
+                <Navbar page={title} />
 
                 <Grid>
                     <Grid.Column width={4} padded='true' className='sidebar'>

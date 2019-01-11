@@ -8,7 +8,7 @@ class Landing extends React.Component {
     render() {
         return (
             <div className='content_center'>
-                <Image src={require(`../../assets/images/logo.png`)} className='temp-title' />
+                <Image src={require(`../../assets/img/other/logo.png`)} className='temp-title' />
                 
                 <Slideshow />
 

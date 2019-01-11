@@ -2,21 +2,21 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Grid } from 'semantic-ui-react'
+import { Navbar } from '../layout'
 import { 
     ClubLink, 
     CreateClub, 
-    Navigation, 
     ProfileEdit, 
 } from '../components'
 import API from '../../utils/API'
-import '../../assets/scss/index.scss'
+//import '../../assets/scss/index.scss'
 
 class Profile extends React.Component {
 
 state = {
     toClub: false,
     user: {},
-    clubs: []
+    clubs: [],
 }
 
 componentWillMount = () => {
@@ -62,7 +62,7 @@ render() {
     return (
 
         <div>
-            <Navigation page={title} />
+            <Navbar page={title} />
 
             <Grid>
                 <Grid.Column width={4} padded='true' className='sidebar'>
