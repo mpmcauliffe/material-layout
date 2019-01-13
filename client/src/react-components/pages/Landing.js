@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Image, Modal, } from 'semantic-ui-react'
+import { Button, Modal, } from 'semantic-ui-react'
 import { Login, SignUp, Slideshow, } from '../components'
+import { BookwormzLogo, } from '../../assets/styles/components/general'
 
 
 class Landing extends React.Component {
     render() {
         return (
             <div className='content_center'>
-                <Image src={require(`../../assets/img/other/logo.png`)} className='temp-title' />
+                <BookwormzLogo src={require(`../../assets/img/other/logo.png`)} />
                 
                 <Slideshow />
 
@@ -21,8 +22,6 @@ class Landing extends React.Component {
                     <Modal.Header>Sign Up</Modal.Header>
                     <SignUp appAuth={this.props.appAuth} />
                 </Modal>
-                
-
             </div>
         )
     }
@@ -31,5 +30,6 @@ class Landing extends React.Component {
 Landing.propTypes = {
     appAuth: PropTypes.func.isRequired
 }
+
 
 export { Landing }

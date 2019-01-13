@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Header, HeaderLogo } from '../../assets/themes/styles'
+import { Header, HeaderLogo } from '../../assets/styles/components'
 import { Link } from 'react-router-dom'
 
 

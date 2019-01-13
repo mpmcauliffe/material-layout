@@ -1,28 +1,25 @@
 import React from 'react'
-import { Image } from 'semantic-ui-react'
+import { Graphic, Montage, } from '../../assets/styles/components'
 
 
-class Slideshow extends React.Component {
-    state = {
-        imageCards: Array.apply(null, {length: 4}).map(Number.call, Number),
-    }
+
+const Slideshow = () => {
     
-    render() {
-        return (
-            <ul className="slideshow">
-                {this.state.imageCards.map((index) => (
-                    <li key={index}>
-                        <Image
-                            key={index + 4}
-                            id={index}
-                            src={require(`../../assets/img/slideshow/${index}.png`)}
-                            className="cvr-img"
-                        />
-                    </li>
-                ))}
-            </ul>
-        )
-    }
+    const imageCards = Array.apply(null, {length: 4}).map(Number.call, Number)
+    
+    return (
+        <Montage>
+            {imageCards.map((index) => (
+                <li key={index}>
+                    <Graphic
+                        key={index + 4}
+                        id={index}
+                        src={require(`../../assets/img/slideshow/${index}.png`)}
+                    />
+                </li>
+            ))}
+        </Montage>
+    )
 }
 
 

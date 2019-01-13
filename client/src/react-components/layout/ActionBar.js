@@ -13,7 +13,7 @@ import {
     IconButtonContainer,
     ActionBarCanvas,
     SectionHeader,
-} from '../../assets/themes/styles'
+} from '../../assets/styles/components'
 
 
 const ActionBar = ({ events, handleValueChange, value }) => {

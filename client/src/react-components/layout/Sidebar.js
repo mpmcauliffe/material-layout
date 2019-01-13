@@ -19,7 +19,7 @@ import {
     SmallText,
     SmallMessageCard,
     TopicText,
-} from '../../assets/themes/styles.js'
+} from '../../assets/styles/components'
 import { truncate } from '../../assets/javascript'
 import 'simplebar/dist/simplebar.min.css'
 

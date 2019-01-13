@@ -5,7 +5,7 @@ import {
     InfoText,
     Rate,
     TopicText,  
-} from '../../assets/themes/styles'
+} from '../../assets/styles/components'
 import { starGenerator, truncate } from '../../assets/javascript'
 
 

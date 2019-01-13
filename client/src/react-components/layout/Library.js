@@ -11,7 +11,7 @@ import {
     IconButtonContainer,
     LibraryCanvas,
     SectionHeader,
-} from '../../assets/themes/styles'
+} from '../../assets/styles/components'
 import { alphabetize } from '../../assets/javascript'
 
 
