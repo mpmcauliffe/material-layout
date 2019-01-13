@@ -1,20 +1,29 @@
 import styled from 'styled-components'
 import { Button } from 'semantic-ui-react'
+import { FontSize, MainButtonTheme } from '../themes'
 
 
-const LandingButton = styled(Button)`
-    height: 3.5rem;
-    width: 8.4rem;
-    background: $sand;
-    color: $mud;
-    border: .15rem solid $mud;
-    z-index: 3;
-    font-size: $s-size;
-    margin-right: .3rem;
-    margin-left: 8.4rem;
-    transform: translateX(-50%);
-    padding: 0;
-    border-radius: 0;
+const MainButton = styled(Button)`
+    &&& {
+        height: 3rem;
+        min-width: ${MainButtonTheme.width};
+        background: ${MainButtonTheme.fill};
+        color: ${MainButtonTheme.line};
+        border: .15rem solid ${MainButtonTheme.line};
+        font-size: ${FontSize.sSize};
+        transform: translateX(42vw);
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+        transition: 500ms;
+    }
+    &&&:hover {
+        cursor: pointer;
+        background: ${MainButtonTheme.hoverFill};
+        color: ${MainButtonTheme.hoverLine}
+        border: .15rem solid ${MainButtonTheme.hoverLine};
+    }
 `
 
 
+export { MainButton } 

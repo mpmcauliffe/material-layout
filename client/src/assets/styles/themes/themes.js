@@ -1,29 +1,19 @@
-import { createMuiTheme } from '@material-ui/core'
-//import { Brown } from '@material-ui/core/colors'
 
+const FontSize = {
+    xsSize: '1.1rem',
+    sSize: '1.4rem',
+    mSize: '2.3rem',
+    lSize: '3.2rem',
+    xlSize: '4.8rem',
+    xxlSize: '6.3rem',
+}
 
-const theme = createMuiTheme({
-    palette: {
-        primary: {
-            light: '#fffefa',
-            main: '#e4ddda',
-            dark: '#a59a96',
-        },
-        secondary: {
-            main: '#c2b2ad',
-            //dark: '#78909C',
-        }
-    }
-})
+const MainButtonTheme = {
+    width: '7vw',
+    fill: '#D3BAAE',
+    line: '#7F7069',
+    hoverFill: '#F6ECE7',
+    hoverLine: '#7F7069',
+}
 
-
-export default theme
-
-/*
-light: '#efdcd5',
-main: '#bcaaa4',
-dark: '#8c7b75',
-other: '#706662'
-main: '#efeced',
-dark: '#78909C',
-*/
+export { FontSize, MainButtonTheme }

@@ -1,28 +1,27 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Button, Modal, } from 'semantic-ui-react'
 import { Login, SignUp, Slideshow, } from '../components'
-import { BookwormzLogo, } from '../../assets/styles/components/general'
+import { AppModal, CenterContainer, BookwormzLogo, MainButton, } from '../../assets/styles/components'
 
 
 class Landing extends React.Component {
     render() {
         return (
-            <div className='content_center'>
-                <BookwormzLogo src={require(`../../assets/img/other/logo.png`)} />
+            <Fragment>
+                <BookwormzLogo src={require(`../../assets/img/other/logoNew2.png`)} />
                 
                 <Slideshow />
 
-                <Modal  className='app__modal' trigger={<Button className='btn__landing'>Sign In</Button>} >
-                    <Modal.Header>Sign In</Modal.Header>
+                <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign In</MainButton>}>
+                    <AppModal.Header>Sign In</AppModal.Header>
                     <Login appAuth={this.props.appAuth} />
-                </Modal>
+                </AppModal>
 
-                <Modal className='app__modal' trigger={<Button className='btn__landing'>Sign Up</Button>} >
-                    <Modal.Header>Sign Up</Modal.Header>
+                <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign Up</MainButton>}>
+                    <AppModal.Header>Sign Up</AppModal.Header>
                     <SignUp appAuth={this.props.appAuth} />
-                </Modal>
-            </div>
+                </AppModal>
+            </Fragment>
         )
     }
 }

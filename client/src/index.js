@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
-//import App from './react-components/App'
 import App from './App'
 import 'normalize.css/normalize.css'
-import './assets/styles/base.css'
+import GlobalStyle from './assets/styles/globalStyle'
+import 'semantic-ui-css/semantic.min.css'
 
 
-ReactDOM.render (<App />, document.getElementById('root'))
+ReactDOM.render (
+    <Fragment>
+        <App />
+        <GlobalStyle />
+    </Fragment>, 
+    document.getElementById('root')
+)

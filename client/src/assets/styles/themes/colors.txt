@@ -1,6 +1,6 @@
    
 
-            ACCENTS               EARTH        GRAYS               LEFTOVERS
+
 
 #FCFBF3 #F1EAEC #FAFDF7       #FCFAF9      #FEFDFD #F7F8F7 #F2F2F3 #ECECEE     #EDEEC0
 #F9F8E8 #E4D5DA #F6FCF0       #FAF5F3      #FDFBFC #F0F1EF #E5E5E8 #D9D9DE     #A18276     
@@ -27,7 +27,9 @@
 
 logo #5A162D compliment #a5e9d2
 LandingButton {
-    background: #BEA79D
+    background: #F0DED6 / #0F2129
+    text: #403835 / #BFC7CA
+    border: #403835 / #BFC7CA
 }
 
 
@@ -37,4 +39,13 @@ LandingButton {
     #5a6569     #222b2f     #ddd4d1
     #a4b6bc     #8da4b4     #e4ddda
     #7d846c     #eae5e3     #a59a96
+*/
+
+/*
+light: '#efdcd5',
+main: '#bcaaa4',
+dark: '#8c7b75',
+other: '#706662'
+main: '#efeced',
+dark: '#78909C',
 */

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Image, Menu, } from 'semantic-ui-react'
+import { Image, Menu, Modal, } from 'semantic-ui-react'
 import SimpleBar from 'simplebar-react'
 
 
@@ -9,9 +9,13 @@ const ActionBarCanvas = styled.div`
     padding: 1rem;
     background-color: #e4ddda;
 `
+const AppModal = styled(Modal)`
+    max-width: 45rem;
+`
 const BookwormzLogo = styled(Image)`
     position: relative;
     z-index: 2;
+    margin-bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
 `
@@ -21,24 +25,31 @@ const Carousel = styled.div`
     overflow-x: hidden;
     margin-top: 4vh;
 `
+const CenterContainer = styled.div`
+    display: flex;
+`
 const Content = styled.div` 
     padding: 1.3rem;
 `
 const Header = styled(Menu)`
-    height: 7vh !important;
-    justify-content: center; 
-    padding: 0 1vw;
-    border: none !important;
-    border-radius: 0 !important;
-    background: #ECD5CA !important;
+    &&& {
+        height: 7vh;
+        justify-content: center; 
+        padding: 0 1vw;
+        border: none;
+        border-radius: 0;
+        background: #ECD5CA;
+    }
 `
 const HeaderLogo = styled.img.attrs({
     alt: 'Bookwormz',
 })`
-    max-height: 4vh; 
-    max-width: 8vw;
-    min-height: 2vh;
-    min-width: 4vw;
+    min-height: 3rem; 
+    min-width: 12rem;
+    /* height: 2vh;
+    width: 8vw;
+    min-height: 1vh;
+    min-width: 4vw; */
 `
 const IconButtonContainer = styled.div`
     float: right;
@@ -90,8 +101,10 @@ const TopicText = styled.p`
 
 export { 
     ActionBarCanvas, 
+    AppModal,
     BookwormzLogo,
     Carousel,
+    CenterContainer,
     Content,
     Header,
     HeaderLogo,

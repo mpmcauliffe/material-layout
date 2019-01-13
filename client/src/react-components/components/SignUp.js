@@ -5,11 +5,11 @@ import {
     Button,
     Form,
     Message,
-    Modal, 
     Segment, 
 } from 'semantic-ui-react'
 import Validator from 'validator'
-import { InlineError } from '../components' 
+import { InlineError } from '../components'
+import { AppModal, } from '../../assets/styles/components' 
 import API from '../../utils/API'
 
 class SignUp extends React.Component {
@@ -96,10 +96,11 @@ class SignUp extends React.Component {
             return <Redirect to='/profile' />
 
         return (
-            <Modal.Content>
-                <Message attached
-                        header='Welcome to Bookwormz!'
-                        content='Please fill in the form below to create an account.'
+            <AppModal.Content>
+                <Message 
+                    attached
+                    header='Welcome to Bookwormz!'
+                    content='Please fill in the form below to create an account.'
                 />
 
                 <Form className='attached fluid' onSubmit={this.onCreate}>
@@ -172,7 +173,7 @@ class SignUp extends React.Component {
 
                 </Segment>
                 </Form>
-            </Modal.Content>
+            </AppModal.Content>
         )
     }
 }

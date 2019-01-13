@@ -43,15 +43,28 @@ const Montage = styled.ul`
         animation: ${imageAnimation} 24s linear infinite; 
     }
 
-    &li:nth-child(2) { 
+    li:nth-child(2) { 
         animation-delay: 6s; 
     }
-    &li:nth-child(3) { 
+    li:nth-child(3) { 
         animation-delay: 12s; 
     }
-    &li:nth-child(4) {
+    li:nth-child(4) {
         animation-delay: 18s; 
     }
+`
+const MontageItem = styled.li`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: ${imageAnimation} 24s linear infinite; 
 `
 const Graphic = styled(Image)`
     position: absolute;
@@ -63,4 +76,4 @@ const Graphic = styled(Image)`
 `
 
 
-export { Graphic, Montage, }
+export { Graphic, Montage, MontageItem, }

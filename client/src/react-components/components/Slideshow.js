@@ -1,5 +1,5 @@
 import React from 'react'
-import { Graphic, Montage, } from '../../assets/styles/components'
+import { Graphic, Montage, MontageItem, } from '../../assets/styles/components'
 
 
 
@@ -10,13 +10,13 @@ const Slideshow = () => {
     return (
         <Montage>
             {imageCards.map((index) => (
-                <li key={index}>
+                <MontageItem key={index}>
                     <Graphic
                         key={index + 4}
                         id={index}
                         src={require(`../../assets/img/slideshow/${index}.png`)}
                     />
-                </li>
+                </MontageItem>
             ))}
         </Montage>
     )
