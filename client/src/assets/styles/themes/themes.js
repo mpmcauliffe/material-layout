@@ -16,4 +16,9 @@ const MainButtonTheme = {
     hoverLine: '#7F7069',
 }
 
-export { FontSize, MainButtonTheme }
+const FormHeader = {
+    fill: '#ECD5CA',
+}
+
+
+export { FontSize, FormHeader, MainButtonTheme, }

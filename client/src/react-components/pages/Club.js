@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Grid, } from 'semantic-ui-react'
 import { Navbar, } from '../layout'
 import { MeetingDetails, } from '../components'
-//import '../../assets/scss/index.scss'
 
 
 class Club extends React.Component {

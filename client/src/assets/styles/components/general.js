@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Image, Menu, Modal, } from 'semantic-ui-react'
 import SimpleBar from 'simplebar-react'
+import { FormHeader } from '../themes/themes'
 
 
 const ActionBarCanvas = styled.div` 
@@ -11,6 +12,11 @@ const ActionBarCanvas = styled.div`
 `
 const AppModal = styled(Modal)`
     max-width: 45rem;
+`
+const AppModalHeader = styled(Modal.Header)`    
+    &&&&&& {
+        background: ${FormHeader.fill};
+    }
 `
 const BookwormzLogo = styled(Image)`
     position: relative;
@@ -46,10 +52,6 @@ const HeaderLogo = styled.img.attrs({
 })`
     min-height: 3rem; 
     min-width: 12rem;
-    /* height: 2vh;
-    width: 8vw;
-    min-height: 1vh;
-    min-width: 4vw; */
 `
 const IconButtonContainer = styled.div`
     float: right;
@@ -102,6 +104,7 @@ const TopicText = styled.p`
 export { 
     ActionBarCanvas, 
     AppModal,
+    AppModalHeader,
     BookwormzLogo,
     Carousel,
     CenterContainer,

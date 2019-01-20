@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Login, SignUp, Slideshow, } from '../components'
-import { AppModal, CenterContainer, BookwormzLogo, MainButton, } from '../../assets/styles/components'
+import { AppModal, BookwormzLogo, MainButton, } from '../../assets/styles/components'
+import { AppModalHeader, } from '../../assets/styles/components/general'
 
 
 class Landing extends React.Component {
@@ -13,12 +14,12 @@ class Landing extends React.Component {
                 <Slideshow />
 
                 <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign In</MainButton>}>
-                    <AppModal.Header>Sign In</AppModal.Header>
+                    <AppModalHeader>Sign In</AppModalHeader>
                     <Login appAuth={this.props.appAuth} />
                 </AppModal>
 
                 <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign Up</MainButton>}>
-                    <AppModal.Header>Sign Up</AppModal.Header>
+                    <AppModalHeader>Sign Up</AppModalHeader>
                     <SignUp appAuth={this.props.appAuth} />
                 </AppModal>
             </Fragment>
