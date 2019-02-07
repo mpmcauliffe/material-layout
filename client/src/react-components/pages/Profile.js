@@ -13,84 +13,84 @@ import API from '../../utils/API'
 
 class Profile extends React.Component {
 
-state = {
-    toClub: false,
-    user: {},
-    clubs: [],
-}
-
-componentWillMount = () => {
-    this.setState({ user: this.props.user, toClub: false }, this.loadClubs)
-}
-
-loadClubs = () => {
-    API.getUserClubs( this.state.user.email )
-        .then( res => {
-            if ( res.data ) {
-                // if we found a list of clubs, then put then in the clubs array
-                this.setState({ clubs: res.data })
-            }
-        })
-        .catch( err => {
-            console.log(err)
-        })
-}
-
-onProfileEditClose = ( updatedUser ) => {
-    this.setState({ user: updatedUser })
-    this.props.userUpdated( this.state.user )
-}
-
-onCreateClubClose = ( newClub ) => {
-    if ( newClub ) {
-        this.setState({ clubs: [...this.state.clubs, newClub] })
+    state = {
+        toClub: false,
+        user: {},
+        clubs: [],
     }
-}
 
-viewClub = ( clubname ) => {
-    const clubNbr = this.state.clubs.findIndex(x => x.clubname === clubname)
-    this.props.setClub( this.state.clubs[clubNbr])
-    this.setState({toClub: true})
-}
+    componentWillMount = () => {
+        this.setState({ user: this.props.user, toClub: false }, this.loadClubs)
+    }
 
-render() {
-    const title = `Profile of ${this.state.user.firstname} ${this.state.user.lastname}`
+    loadClubs = () => {
+        API.getUserClubs( this.state.user.email )
+            .then( res => {
+                if ( res.data ) {
+                    // if we found a list of clubs, then put then in the clubs array
+                    this.setState({ clubs: res.data })
+                }
+            })
+            .catch( err => {
+                console.log(err)
+            })
+    }
 
-    if (this.state.toClub)
-        return <Redirect to="/club" />
+    onProfileEditClose = ( updatedUser ) => {
+        this.setState({ user: updatedUser })
+        this.props.userUpdated( this.state.user )
+    }
 
-    return (
+    onCreateClubClose = ( newClub ) => {
+        if ( newClub ) {
+            this.setState({ clubs: [...this.state.clubs, newClub] })
+        }
+    }
 
-        <div>
-            <Navbar page={title} />
+    viewClub = ( clubname ) => {
+        const clubNbr = this.state.clubs.findIndex(x => x.clubname === clubname)
+        this.props.setClub( this.state.clubs[clubNbr])
+        this.setState({toClub: true})
+    }
 
-            <Grid>
-                <Grid.Column width={4} padded='true' className='sidebar'>
+    render() {
+        const title = `Profile of ${this.state.user.firstname} ${this.state.user.lastname}`
 
-                    <h4>Profile Details:</h4>
+        if (this.state.toClub)
+            return <Redirect to="/club" />
 
-                    <h5>{this.state.user.address ? this.state.user.address : ""}</h5>
-                    <h5>{this.state.user.phone ? this.state.user.phone : ""}</h5>
-                    <h5>{this.state.user.email}</h5>
+        return (
 
-                    <br /><br />
+            <div>
+                <Navbar page={title} />
 
-                    <ProfileEdit user={this.state.user} onClose={this.onProfileEditClose} className="sidebar__button" />
+                <Grid>
+                    <Grid.Column width={4} padded='true' className='sidebar'>
 
-                </Grid.Column>
+                        <h4>Profile Details:</h4>
 
-                <Grid.Column width={12} padded='true' className='info-bar'>
+                        <h5>{this.state.user.address ? this.state.user.address : ""}</h5>
+                        <h5>{this.state.user.phone ? this.state.user.phone : ""}</h5>
+                        <h5>{this.state.user.email}</h5>
 
-                    <h4>Your Book Clubs:</h4>
-                        { this.state.clubs.map( club => (
-                            <ul>
-                                <li>
-                                    <ClubLink onClick={this.viewClub} clubname={club.clubname} className='sidebar__link' >
-                                        {club.clubname}
-                                    </ClubLink>
-                                </li>
-                            </ul>
-                        )) }
+                        <br /><br />
+
+                        <ProfileEdit user={this.state.user} onClose={this.onProfileEditClose} className="sidebar__button" />
+
+                    </Grid.Column>
+
+                    <Grid.Column width={12} padded='true' className='info-bar'>
+
+                        <h4>Your Book Clubs:</h4>
+                            { this.state.clubs.map( club => (
+                                <ul>
+                                    <li>
+                                        <ClubLink onClick={this.viewClub} clubname={club.clubname} className='sidebar__link' >
+                                            {club.clubname}
+                                        </ClubLink>
+                                    </li>
+                                </ul>
+                            )) }
 
                     <br /><br />
                     
@@ -101,7 +101,6 @@ render() {
                 </Grid>
             </div>
         )
-
     }
 }
 
