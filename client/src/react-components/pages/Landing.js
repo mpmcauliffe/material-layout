@@ -5,27 +5,23 @@ import { AppModal, BookwormzLogo, MainButton, } from '../../assets/styles/compon
 import { AppModalHeader, } from '../../assets/styles/components/general'
 
 
-class Landing extends React.Component {
-    render() {
-        return (
-            <Fragment>
-                <BookwormzLogo src={require(`../../assets/img/other/logoNew2.png`)} />
-                
-                <Slideshow />
+const Landing = ({ appAuth }) => 
+    <Fragment>
+        <BookwormzLogo src={require(`../../assets/img/other/bkwz.png`)} />
+        
+        <Slideshow />
 
-                <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign In</MainButton>}>
-                    <AppModalHeader>Sign In</AppModalHeader>
-                    <Login appAuth={this.props.appAuth} />
-                </AppModal>
+        <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign In</MainButton>}>
+            <AppModalHeader>Sign In</AppModalHeader>
+            <Login appAuth={appAuth} />
+        </AppModal>
 
-                <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign Up</MainButton>}>
-                    <AppModalHeader>Sign Up</AppModalHeader>
-                    <SignUp appAuth={this.props.appAuth} />
-                </AppModal>
-            </Fragment>
-        )
-    }
-}
+        <AppModal className='app__modal' style={{ zIndex: 5 }} trigger={<MainButton>Sign Up</MainButton>}>
+            <AppModalHeader>Sign Up</AppModalHeader>
+            <SignUp appAuth={appAuth} />
+        </AppModal>
+    </Fragment>
+    
 
 Landing.propTypes = {
     appAuth: PropTypes.func.isRequired

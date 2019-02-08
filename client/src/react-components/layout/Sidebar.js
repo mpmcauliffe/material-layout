@@ -1,14 +1,9 @@
 import React from 'react'
 import { 
-    IconButton,
+    Button,
     Grid, 
-    Paper, 
-} from '@material-ui/core'
-import { 
-    AddComment, 
-    PersonAdd,
-    Reorder, 
-} from '@material-ui/icons'
+    Icon, 
+} from 'semantic-ui-react'
 import { 
     IconButtonContainer,
     SidebarCanvas,
@@ -24,73 +19,79 @@ import { truncate } from '../../assets/javascript'
 import 'simplebar/dist/simplebar.min.css'
 
 
-const Sidebar = ({ members, threads }) => 
-    <Paper square={true} elevation={0}>
-        <SidebarCanvas>
-            <SidebarContainer>
-                <SidebarHeader>Messages</SidebarHeader>
+const Sidebar = ({ 
+    address, 
+    email, 
+    members, 
+    threads, 
+    phone, 
+    user, 
+}) =>  
 
-                <IconButtonContainer>
-                    <IconButton>
-                        <Reorder fontSize='default' />
-                    </IconButton>
-                    <IconButton>
-                        <AddComment fontSize='default' />
-                    </IconButton>
-                </IconButtonContainer>
-                
+    <SidebarCanvas>
+        <SidebarContainer>
+            <SidebarHeader>Messages</SidebarHeader>
 
-                <Sidescroll>
-                    <Content>
-                        {threads.map(message =>
-                            <SmallMessageCard 
-                                key={message.id}
-                            >
-                                <TopicText>
-                                    <em>{truncate(message.subject, 30)}</em>
-                                </TopicText>
-                                <Grid container>
-                                    <Grid item md={5}>
-                                        <SmallText>{message.creator}</SmallText>
-                                    </Grid>
-                                    <Grid item md={5}>
-                                        <SmallText>{message.date}</SmallText>
-                                    </Grid>
-                                    <Grid item md={2}>
-                                        <SmallText>{message.replies.length}</SmallText>
-                                    </Grid>
-                                </Grid>
-                            </SmallMessageCard>
-                            
-                        )}
-                    </Content>
-                </Sidescroll>
-            </SidebarContainer>
+            <IconButtonContainer>
+                <Button>
+                    <Icon name='align justify' />
+                </Button>
+                <Button>
+                    <Icon name='comment' />
+                </Button>
+            </IconButtonContainer>
             
-        
-            <SidebarContainer>
-                <SidebarHeader>Members</SidebarHeader>
 
-                <IconButtonContainer>
-                    <IconButton>
-                        <Reorder fontSize='default' />
-                    </IconButton>
-                    <IconButton>
-                        <PersonAdd fontSize='default' />
-                    </IconButton>
-                </IconButtonContainer>
-                
-                <Sidescroll>
-                    <Content>
-                        {members.map(member =>
-                            <TopicText key={member}>{member}</TopicText>
-                        )}
-                    </Content>
-                </Sidescroll>
-            </SidebarContainer>
-        </SidebarCanvas>
-    </Paper>
-    
+            <Sidescroll>
+                <Content>
+                    {threads.map(message =>
+                        <SmallMessageCard 
+                            key={message.id}
+                        >
+                            <TopicText>
+                                <em>{truncate(message.subject, 30)}</em>
+                            </TopicText>
+                            <Grid>
+                                <Grid.Column width={5}>
+                                    <SmallText>{message.creator}</SmallText>
+                                </Grid.Column>
+                                <Grid.Column width={5}>
+                                    <SmallText>{message.date}</SmallText>
+                                </Grid.Column>
+                                <Grid.Column width={2}>
+                                    <SmallText>{message.replies.length}</SmallText>
+                                </Grid.Column>
+                            </Grid>
+                        </SmallMessageCard>
+                        
+                    )}
+                </Content>
+            </Sidescroll>
+        </SidebarContainer>
         
     
-export { Sidebar }
+        <SidebarContainer>
+            <SidebarHeader>Members</SidebarHeader>
+
+            <IconButtonContainer>
+                <Button>
+                    <Icon name='align justify' />
+                </Button>
+                <Button>
+                    <Icon name='user plus' />
+                </Button>
+            </IconButtonContainer>
+            
+            <Sidescroll>
+                <Content>
+                    {members.map(member =>
+                        <TopicText key={member}>{member}</TopicText>
+                    )}
+                </Content>
+            </Sidescroll>
+        </SidebarContainer>
+    </SidebarCanvas>
+    
+    
+        
+export { Sidebar } 

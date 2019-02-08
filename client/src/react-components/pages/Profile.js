@@ -2,7 +2,8 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Grid } from 'semantic-ui-react'
-import { Navbar } from '../layout'
+import { Navbar, } from '../layout'
+import { Sidebar } from '../layout/Sidebar'
 import { 
     ClubLink, 
     CreateClub, 
@@ -56,6 +57,8 @@ class Profile extends React.Component {
     render() {
         const title = `Profile of ${this.state.user.firstname} ${this.state.user.lastname}`
 
+        const { address, email, phone, user, } = this.state
+
         if (this.state.toClub)
             return <Redirect to="/club" />
 
@@ -67,6 +70,13 @@ class Profile extends React.Component {
                 <Grid>
                     <Grid.Column width={4} padded='true' className='sidebar'>
 
+                        <Sidebar 
+                            address={address}
+                            email={email}
+                            phone={phone}
+                            user={user}
+                            onClose={this.onProfileEditClose}
+                        />
                         <h4>Profile Details:</h4>
 
                         <h5>{this.state.user.address ? this.state.user.address : ""}</h5>
@@ -75,7 +85,7 @@ class Profile extends React.Component {
 
                         <br /><br />
 
-                        <ProfileEdit user={this.state.user} onClose={this.onProfileEditClose} className="sidebar__button" />
+                        <ProfileEdit user={this.state.user}  className="sidebar__button" />
 
                     </Grid.Column>
 
