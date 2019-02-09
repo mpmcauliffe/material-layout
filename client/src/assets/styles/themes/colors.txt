@@ -25,6 +25,12 @@
 #15140D #0A0305 #131611       #161312      #171616 #101110 #0B0B0C #050507
 
 
+
+#CFCBD1
+#9F97A4
+#7B7182
+
+
 logo #5A162D compliment #a5e9d2
 LandingButton {
     background: #F0DED6 / #0F2129

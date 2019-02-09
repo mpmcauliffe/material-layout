@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Grid } from 'semantic-ui-react'
@@ -7,7 +7,6 @@ import { Sidebar } from '../layout/Sidebar'
 import { 
     ClubLink, 
     CreateClub, 
-    ProfileEdit, 
 } from '../components'
 import API from '../../utils/API'
 //import '../../assets/scss/index.scss'
@@ -59,37 +58,28 @@ class Profile extends React.Component {
 
         const { address, email, phone, user, } = this.state
 
+        console.log(address, email, phone)
         if (this.state.toClub)
             return <Redirect to="/club" />
 
         return (
 
-            <div>
+            <Fragment>
                 <Navbar page={title} />
 
-                <Grid>
-                    <Grid.Column width={4} padded='true' className='sidebar'>
-
+                <Grid divided='vertically'>
+                    <Grid.Column width={4}>
                         <Sidebar 
-                            address={address}
-                            email={email}
-                            phone={phone}
+                            address={this.state.user.address}
+                            email={this.state.user.email}
+                            phone={this.state.user.phone}
+                            profile={true}
                             user={user}
-                            onClose={this.onProfileEditClose}
+                            profileEditClose={this.onProfileEditClose}
                         />
-                        <h4>Profile Details:</h4>
-
-                        <h5>{this.state.user.address ? this.state.user.address : ""}</h5>
-                        <h5>{this.state.user.phone ? this.state.user.phone : ""}</h5>
-                        <h5>{this.state.user.email}</h5>
-
-                        <br /><br />
-
-                        <ProfileEdit user={this.state.user}  className="sidebar__button" />
-
                     </Grid.Column>
 
-                    <Grid.Column width={12} padded='true' className='info-bar'>
+                    <Grid.Column width={12}>
 
                         <h4>Your Book Clubs:</h4>
                             { this.state.clubs.map( club => (
@@ -107,9 +97,10 @@ class Profile extends React.Component {
                     <CreateClub user={this.state.user} onClose={this.onCreateClubClose} className="sidebar__button" />
 
                     </Grid.Column>
-
+                    
                 </Grid>
-            </div>
+                <Navbar page={title} />
+            </Fragment>
         )
     }
 }

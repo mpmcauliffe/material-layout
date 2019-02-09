@@ -42,9 +42,11 @@ const Header = styled(Menu)`
         height: 7vh;
         justify-content: center; 
         padding: 0 1vw;
+        margin-top: 0;
+        margin-bottom: 0;
         border: none;
         border-radius: 0;
-        background: #ECD5CA;
+        background: #DFD8DB;
     }
 `
 const HeaderLogo = styled.img.attrs({
@@ -87,13 +89,14 @@ const Sidescroll = styled(SimpleBar)`
     margin-top: 1rem !important;
 `
 const SmallText = styled.p`
+    font-family: fairplex-narrow, serif;
     font-size: 1.2rem;
     margin-bottom: .3rem;
     color: #7d846c;
     margin: 0;
 `
 const TopicText = styled.p`
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: fairplex-narrow, serif;
     font-size: 1.5rem;
     margin-top: .3rem;
     margin-bottom: 1.2rem;
