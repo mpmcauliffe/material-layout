@@ -10,6 +10,7 @@ import {
     Segment, 
 } from 'semantic-ui-react'
 import { InlineError } from '../components' 
+import { SidebarButton, } from '../../assets/styles/components/sidebar'
 import API from '../../utils/API'
 
 class ProfileEdit extends React.Component {
@@ -99,14 +100,7 @@ class ProfileEdit extends React.Component {
                 open={open}
                 onOpen={this.open}
                 onClose={this.close}  
-                trigger={
-                    <Button animated='fade'>
-                        <Button.Content hidden>Edit</Button.Content>
-                        <Button.Content visible>
-                            <Icon name='edit outline' />
-                        </Button.Content>                    
-                    </Button>
-                }
+                trigger={<SidebarButton icon='edit' />}
             >
 
             <Modal.Header>Edit Profile</Modal.Header>

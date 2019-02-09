@@ -5,7 +5,8 @@ import { FontSize, MainButtonTheme } from '../themes'
 
 const MainButton = styled(Button)`
     &&& {
-        font-family: zen-new, sans-serif;
+        font-family: multi-display, sans-serif;
+        font-weight: 500;
         height: 3rem;
         min-width: ${MainButtonTheme.width};
         background: ${MainButtonTheme.fill};

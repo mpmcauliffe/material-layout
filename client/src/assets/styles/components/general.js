@@ -19,6 +19,7 @@ const AppModalHeader = styled(Modal.Header)`
     }
 `
 const BookwormzLogo = styled(Image)`
+    height: 20rem;
     position: relative;
     z-index: 2;
     margin-bottom: 3rem;

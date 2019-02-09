@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment, } from 'react'
 import { Header, HeaderLogo } from '../../assets/styles/components'
 import { Link } from 'react-router-dom'
 
@@ -13,36 +13,59 @@ class Navbar extends Component {
         const isClub = this.props.page.slice(0,4) === 'Club' ? true : false
           
         return (
-            <Header size='massive' fluid>
-                <Header.Item header>
-                    <HeaderLogo
-                        src={require(`../../assets/img/other/logo1.png`)}
-                    />
-                </Header.Item>    
-                <Header.Item
-                    name={this.props.page}
-                />
-                <Header.Menu position='right'>
-                    { isClub ?
-                        <Header.Item 
-                            name='Profile' 
-                            active={activeItem === 'Profile'}
+            <Fragment>
+                {this.props.header 
+                    ?
+                    <Header size='massive' fluid>
+                        <Header.Item header>
+                            <HeaderLogo
+                                src={require(`../../assets/img/other/bkwzShape.svg`)}
+                            />
+                        </Header.Item>    
+                        <Header.Item
+                            name={this.props.page}
+                        />
+                        <Header.Menu position='right'>
+                            { isClub ?
+                                <Header.Item 
+                                    name='Profile' 
+                                    active={activeItem === 'Profile'}
+                                    onClick={this.handleItemClick}
+                                    as={Link}
+                                    to='/profile'
+                                />
+                            :
+                                ''
+                            }
+                            <Header.Item
+                                name='Logout'
+                                active={activeItem === 'Logout'}
+                                onClick={this.handleItemClick}
+                                as={Link}
+                                to='/logout'
+                            />
+                        </Header.Menu>
+                    </Header>
+                    :
+                    <Header size='massive' fluid>
+                        <Header.Item header>
+                            <HeaderLogo
+                                src={require(`../../assets/img/other/bkwzWhite.svg`)}
+                            />
+                        </Header.Item>
+                        <Header.Menu position='right'>
+                        <Header.Item
+                            name='Contact Us'
+                            active={activeItem === 'Contact'}
                             onClick={this.handleItemClick}
                             as={Link}
-                            to='/profile'
+                            to='/'
                         />
-                    :
-                        ''
-                    }
-                    <Header.Item
-                        name='Logout'
-                        active={activeItem === 'Logout'}
-                        onClick={this.handleItemClick}
-                        as={Link}
-                        to='/logout'
-                    />
-                </Header.Menu>
-            </Header>
+                        </Header.Menu>
+                    </Header>
+                }    
+            </Fragment>
+
         )
     }
 }

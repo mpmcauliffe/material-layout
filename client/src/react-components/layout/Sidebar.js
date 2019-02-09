@@ -16,7 +16,7 @@ import {
     SmallMessageCard,
     TopicText,
 } from '../../assets/styles/components'
-import { SidebarText, } from '../../assets/styles/components/sidebar'
+import { SidebarText, Submenu } from '../../assets/styles/components/sidebar'
 import { truncate } from '../../assets/javascript'
 import { members, thread, } from '../../assets/store/store'
 import 'simplebar/dist/simplebar.min.css'
@@ -35,12 +35,14 @@ const Sidebar = ({
             {profile
                 ?
                 <SidebarCanvas>
-                    <SidebarHeader>Profile</SidebarHeader>
+                    <Submenu>
+                        <SidebarHeader>Profile</SidebarHeader>
+                        <ProfileEdit user={user} onClose={profileEditClose} />
+                    </Submenu>
                     <SidebarText>{truncate(address, 35)}</SidebarText>
                     <SidebarText>{phone}</SidebarText>
                     <SidebarText>{email}</SidebarText>
                     <br /><br />
-                    <ProfileEdit user={user} onClose={profileEditClose} />
                 </SidebarCanvas>
                 :
                 <SidebarCanvas>

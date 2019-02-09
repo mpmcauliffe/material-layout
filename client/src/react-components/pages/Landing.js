@@ -7,7 +7,7 @@ import { AppModalHeader, } from '../../assets/styles/components/general'
 
 const Landing = ({ appAuth }) => 
     <Fragment>
-        <BookwormzLogo src={require(`../../assets/img/other/bkwz.png`)} />
+        <BookwormzLogo src={require(`../../assets/img/other/logoShape.svg`)} />
         
         <Slideshow />
 

@@ -9,7 +9,7 @@ import {
     CreateClub, 
 } from '../components'
 import API from '../../utils/API'
-//import '../../assets/scss/index.scss'
+
 
 class Profile extends React.Component {
 
@@ -65,7 +65,10 @@ class Profile extends React.Component {
         return (
 
             <Fragment>
-                <Navbar page={title} />
+                <Navbar 
+                    header={true}
+                    page={title} 
+                />
 
                 <Grid divided='vertically'>
                     <Grid.Column width={4}>
