@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import {
     Button,
@@ -95,11 +95,19 @@ class ProfileEdit extends React.Component {
         const { user, errors, open } = this.state
 
         return (
-            <Modal  className='app__modal'
-                    trigger={<Button>Edit Profile</Button>}
-                    open={open}
-                    onOpen={this.open}
-                    onClose={this.close}  >
+            <Modal  
+                open={open}
+                onOpen={this.open}
+                onClose={this.close}  
+                trigger={
+                    <Button animated='fade'>
+                        <Button.Content hidden>Edit</Button.Content>
+                        <Button.Content visible>
+                            <Icon name='edit outline' />
+                        </Button.Content>                    
+                    </Button>
+                }
+            >
 
             <Modal.Header>Edit Profile</Modal.Header>
 

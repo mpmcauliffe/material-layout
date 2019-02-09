@@ -40,7 +40,7 @@ const Sidebar = ({
                     <SidebarText>{phone}</SidebarText>
                     <SidebarText>{email}</SidebarText>
                     <br /><br />
-                    <ProfileEdit user={user} onClose={profileEditClose} className="sidebar__button" />
+                    <ProfileEdit user={user} onClose={profileEditClose} />
                 </SidebarCanvas>
                 :
                 <SidebarCanvas>
