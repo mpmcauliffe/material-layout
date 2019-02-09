@@ -13,7 +13,7 @@ const SidebarContainer = styled.div`
 `
 const SidebarHeader = styled.h3`
     font-family: zen-new, sans-serif;
-    color: #9F97A4;
+    color: #B7B1BA;
     display: inline;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 1.5rem;

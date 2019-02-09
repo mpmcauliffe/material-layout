@@ -10,14 +10,14 @@ const FontSize = {
 
 const MainButtonTheme = {
     width: '7vw',
-    fill: '#D3BAAE',
+    fill: '#DFD8DB',
     line: '#7F7069',
     hoverFill: '#F6ECE7',
     hoverLine: '#7F7069',
 }
 
 const FormHeader = {
-    fill: '#ECD5CA',
+    fill: '#DFD8DB',
 }
 
 

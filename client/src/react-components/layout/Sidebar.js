@@ -36,7 +36,7 @@ const Sidebar = ({
                 ?
                 <SidebarCanvas>
                     <SidebarHeader>Profile</SidebarHeader>
-                    <SidebarText>{address}</SidebarText>
+                    <SidebarText>{truncate(address, 35)}</SidebarText>
                     <SidebarText>{phone}</SidebarText>
                     <SidebarText>{email}</SidebarText>
                     <br /><br />
