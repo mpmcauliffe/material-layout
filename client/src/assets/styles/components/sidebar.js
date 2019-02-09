@@ -16,8 +16,11 @@ const SidebarButton = styled(Button)`
         color: #443E47;
     }
 `
-const SidebarCanvas = styled.div`    
-    background-color: #7b7182;    
+const SidebarCanvas = styled.div` 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #2F6F88;    
     height: 92vh;
     width: 100%;
     padding: 1rem;
@@ -51,7 +54,6 @@ const Submenu = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 `
 
 

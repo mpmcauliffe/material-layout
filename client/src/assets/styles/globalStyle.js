@@ -15,6 +15,12 @@ const GlobalStyle = createGlobalStyle`
         font-family: sans-serif;
         overflow-x: hidden;
     }
+    a {
+        color: #8D8F9C;
+    }
+    ul {
+        list-style: none;
+    }
     .simplebar-scrollbar:before {
         background-color: #f1eeec;
     }

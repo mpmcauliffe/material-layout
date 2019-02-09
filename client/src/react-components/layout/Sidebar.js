@@ -4,7 +4,7 @@ import {
     Grid, 
     Icon, 
 } from 'semantic-ui-react'
-import { ProfileEdit } from '../components'
+import { ClubLink, CreateClub, ProfileEdit, } from '../components'
 import { 
     Content,
     IconButtonContainer,
@@ -24,25 +24,50 @@ import 'simplebar/dist/simplebar.min.css'
 
 const Sidebar = ({ 
     address, 
+    clubs,
     email, 
+    onCreateClubClose,
     phone,
     profile,
     profileEditClose, 
     user, 
+    viewClub,
 }) => {
     return (
         <Fragment>
             {profile
                 ?
                 <SidebarCanvas>
-                    <Submenu>
-                        <SidebarHeader>Profile</SidebarHeader>
-                        <ProfileEdit user={user} onClose={profileEditClose} />
-                    </Submenu>
-                    <SidebarText>{truncate(address, 35)}</SidebarText>
-                    <SidebarText>{phone}</SidebarText>
-                    <SidebarText>{email}</SidebarText>
-                    <br /><br />
+                    <div>
+                        <Submenu>
+                            <SidebarHeader>Profile</SidebarHeader>
+                            <ProfileEdit user={user} onClose={profileEditClose} />
+                        </Submenu>
+                        <SidebarText>{truncate(address, 35)}</SidebarText>
+                        <SidebarText>{phone}</SidebarText>
+                        <SidebarText>{email}</SidebarText>
+                        <br /><br />
+                    </div>
+
+                    <div>
+                        <Submenu>
+                            <SidebarHeader>
+                                {clubs.length > 0 ? (clubs.length > 1 ? "Your clubs" : "Your club") : "You don't yet belong to any clubs"}
+                            </SidebarHeader>
+                        </Submenu>
+                        {clubs.map(club => (
+                            <ul key={club.clubname}>
+                                <li>
+                                    <ClubLink onClick={viewClub} clubname={club.clubname}>
+                                        <SidebarText>{club.clubname}</SidebarText>
+                                    </ClubLink>
+                                </li>
+                            </ul>
+                        ))}
+                        <br /><br />
+                    </div>
+                    
+                    <CreateClub user={user} onClose={onCreateClubClose} />
                 </SidebarCanvas>
                 :
                 <SidebarCanvas>

@@ -4,10 +4,6 @@ import PropTypes from 'prop-types'
 import { Grid } from 'semantic-ui-react'
 import { Navbar, } from '../layout'
 import { Sidebar } from '../layout/Sidebar'
-import { 
-    ClubLink, 
-    CreateClub, 
-} from '../components'
 import API from '../../utils/API'
 
 
@@ -55,10 +51,8 @@ class Profile extends React.Component {
 
     render() {
         const title = `Profile of ${this.state.user.firstname} ${this.state.user.lastname}`
+        const { user, } = this.state
 
-        const { address, email, phone, user, } = this.state
-
-        console.log(address, email, phone)
         if (this.state.toClub)
             return <Redirect to="/club" />
 
@@ -74,33 +68,24 @@ class Profile extends React.Component {
                     <Grid.Column width={4}>
                         <Sidebar 
                             address={this.state.user.address}
+                            clubs={this.state.clubs}
                             email={this.state.user.email}
                             phone={this.state.user.phone}
                             profile={true}
                             user={user}
+                            onCreateClubClose={this.onCreateClubClose}
                             profileEditClose={this.onProfileEditClose}
+                            viewClub={this.viewClub}
                         />
                     </Grid.Column>
-
                     <Grid.Column width={12}>
-
-                        <h4>Your Book Clubs:</h4>
-                            { this.state.clubs.map( club => (
-                                <ul>
-                                    <li>
-                                        <ClubLink onClick={this.viewClub} clubname={club.clubname} className='sidebar__link' >
-                                            {club.clubname}
-                                        </ClubLink>
-                                    </li>
-                                </ul>
-                            )) }
-
-                    <br /><br />
+                        <Grid width={12}>
+                        
+                        </Grid>
+                        <Grid width={12}>
                     
-                    <CreateClub user={this.state.user} onClose={this.onCreateClubClose} className="sidebar__button" />
-
+                        </Grid>
                     </Grid.Column>
-                    
                 </Grid>
                 <Navbar page={title} />
             </Fragment>
@@ -121,3 +106,25 @@ Profile.propTypes = {
 }
 
 export { Profile }
+
+
+
+
+/* 
+<h4>Your Book Clubs:</h4>
+                            { this.state.clubs.map( club => (
+                                <ul>
+                                    <li>
+                                        <ClubLink onClick={this.viewClub} clubname={club.clubname} className='sidebar__link' >
+                                            {club.clubname}
+                                        </ClubLink>
+                                    </li>
+                                </ul>
+                            )) }
+
+                    <br /><br />
+                    
+                    
+
+                    </Grid.Column>
+*/
