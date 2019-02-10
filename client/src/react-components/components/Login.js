@@ -84,44 +84,46 @@ class Login extends React.Component {
             return <Redirect to='/profile' />
 
         return (
-            <Modal.Content>
+            
+                <Modal.Content>
 
-                <Form className='attached fluid' onSubmit={this.onLogin}>
-                <Segment textAlign='left' size='large'>
-                    { errors.global && <Message negative>
-                        <Message.Header>Error</Message.Header>
-                            <p>{errors.global}</p>
-                        </Message>
-                        }
+                    <Form className='attached fluid' onSubmit={this.onLogin}>
+                    <Segment textAlign='left' size='large'>
+                        { errors.global && <Message negative>
+                            <Message.Header>Error</Message.Header>
+                                <p>{errors.global}</p>
+                            </Message>
+                            }
 
-                    <Form.Input
-                        error={!!errors.email}
-                        type='email'
-                        icon='user'
-                        iconPosition='left'
-                        name='email'
-                        placeholder='E-mail address'
-                        autoFocus
-                        value={data.email}
-                        onChange={this.onChange} />
-                    {errors.email && <InlineError text={errors.email} /> }
+                        <Form.Input
+                            error={!!errors.email}
+                            type='email'
+                            icon='user'
+                            iconPosition='left'
+                            name='email'
+                            placeholder='E-mail address'
+                            autoFocus
+                            value={data.email}
+                            onChange={this.onChange} />
+                        {errors.email && <InlineError text={errors.email} /> }
 
-                    <Form.Input
-                        error={!!errors.password}
-                        type='password'
-                        icon='lock'
-                        iconPosition='left'
-                        name='password'
-                        placeholder='Password'
-                        value={data.password}
-                        onChange={ this.onChange } />
-                    { errors.password && <InlineError text={errors.password} /> }
+                        <Form.Input
+                            error={!!errors.password}
+                            type='password'
+                            icon='lock'
+                            iconPosition='left'
+                            name='password'
+                            placeholder='Password'
+                            value={data.password}
+                            onChange={ this.onChange } />
+                        { errors.password && <InlineError text={errors.password} /> }
 
-                    <Button fluid size='large'>Sign In</Button>
-                </Segment>
-                </Form>
+                        <Button fluid size='large'>Sign In</Button>
+                    </Segment>
+                    </Form>
 
-            </Modal.Content>
+                </Modal.Content>
+           
         )
     }
 

@@ -11,6 +11,7 @@ import {
 } from 'semantic-ui-react'
 import { InlineError } from '../components' 
 import { SidebarButton, } from '../../assets/styles/components/sidebar'
+import { AppModalHeader } from '../../assets/styles/components/general'
 import API from '../../utils/API'
 
 class ProfileEdit extends React.Component {
@@ -103,7 +104,7 @@ class ProfileEdit extends React.Component {
                 trigger={<SidebarButton icon='edit' />}
             >
 
-            <Modal.Header>Edit Profile</Modal.Header>
+            <AppModalHeader>Edit Profile</AppModalHeader>
 
             <Modal.Content>
 

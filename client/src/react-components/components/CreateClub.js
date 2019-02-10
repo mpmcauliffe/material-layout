@@ -7,7 +7,7 @@ import {
     Modal, 
     Segment, 
 } from 'semantic-ui-react'
-import { CreateClubButton } from '../../assets/styles/components/general'
+import { AppModal, AppModalHeader, CreateClubButton, } from '../../assets/styles/components/general'
 import { InlineError } from '../components'
 import API from '../../utils/API'
 
@@ -86,44 +86,46 @@ class CreateClub extends React.Component {
         const { data, errors, open } = this.state
 
         return (
-            <Modal  className='app__modal'
-                    trigger={<CreateClubButton>Create Club</CreateClubButton>}
-                    open={open}
-                    onOpen={this.open}
-                    onClose={this.close}  >
+            <AppModal  
+                trigger={<CreateClubButton>Create Club</CreateClubButton>}
+                open={open}
+                onOpen={this.open}
+                onClose={this.close}  
+            >
 
-            <Modal.Header>Create a New Club</Modal.Header>
+                <AppModalHeader>Create a New Club</AppModalHeader>
 
-            <Modal.Content>
+                <Modal.Content>
 
-                <Form className='attached fluid' onSubmit={this.onSave}>
-                <Segment textAlign='left' size='large'>
-                    { errors.global && <Message negative>
-                    <Message.Header>Error</Message.Header>
-                        <p>{errors.global}</p>
-                    </Message>}
+                    <Form className='attached fluid' onSubmit={this.onSave}>
+                    <Segment textAlign='left' size='large'>
+                        { errors.global && <Message negative>
+                        <Message.Header>Error</Message.Header>
+                            <p>{errors.global}</p>
+                        </Message>}
 
-                    <Form.Field error={!!errors.clubname} required>
-                        <label htmlFor='clubname' >Club Name</label>
-                        <input
-                            fluid='true'
-                            type='text'
-                            name='clubname'
-                            placeholder='Club Name'
-                            autoFocus
-                            value={data.clubname}
-                            onChange={this.onChange} />
-                        { errors.clubname && <InlineError text={errors.clubname} /> }
-                    </Form.Field>
+                        <Form.Field error={!!errors.clubname} required>
+                            <label htmlFor='clubname' >Club Name</label>
+                            <input
+                                fluid='true'
+                                type='text'
+                                name='clubname'
+                                placeholder='Club Name'
+                                autoFocus
+                                value={data.clubname}
+                                onChange={this.onChange}
+                            />
+                            { errors.clubname && <InlineError text={errors.clubname} /> }
+                        </Form.Field>
 
-                </Segment>
-                </Form>
-            </Modal.Content>
+                    </Segment>
+                    </Form>
+                </Modal.Content>
 
-            <Modal.Actions>
-                <Button size='large' onClick={this.onSave}>Save</Button>
-            </Modal.Actions>
-            </Modal>
+                <Modal.Actions>
+                    <Button size='large' onClick={this.onSave}>Save</Button>
+                </Modal.Actions>
+            </AppModal>
         )
     }
 }

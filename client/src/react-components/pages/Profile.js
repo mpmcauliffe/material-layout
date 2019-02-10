@@ -65,32 +65,30 @@ class Profile extends React.Component {
                     page={title} 
                 />
 
-                <Grid>
-                    <Grid.Column width={4}>
-                        <Sidebar 
-                            address={this.state.user.address}
-                            clubs={this.state.clubs}
-                            email={this.state.user.email}
-                            phone={this.state.user.phone}
-                            profile={true}
-                            user={user}
-                            onCreateClubClose={this.onCreateClubClose}
-                            profileEditClose={this.onProfileEditClose}
-                            viewClub={this.viewClub}
-                        />
-                    </Grid.Column>
-                    <Grid.Column width={12}>
-                            <Grid.Row>
-                                <ActionBarCanvas>
-                                    <SectionHeader>Up Coming Events and Books</SectionHeader>
-                                </ActionBarCanvas>
-                            </Grid.Row>
-                            <Grid.Row>
-                                <LibraryCanvas>
-                                    <SectionHeader>Your Books</SectionHeader>
-                                </LibraryCanvas>
-                            </Grid.Row>
-                    </Grid.Column>
+                <Grid columns={2}>
+                    <Grid.Row>
+                        <Grid.Column width={4} style={{ paddingRight: 0 }}>
+                            <Sidebar 
+                                address={this.state.user.address}
+                                clubs={this.state.clubs}
+                                email={this.state.user.email}
+                                phone={this.state.user.phone}
+                                profile={true}
+                                user={user}
+                                onCreateClubClose={this.onCreateClubClose}
+                                profileEditClose={this.onProfileEditClose}
+                                viewClub={this.viewClub}
+                            />
+                        </Grid.Column>
+                        <Grid.Column width={12} style={{ paddingLeft: 0 }}>
+                            <ActionBarCanvas>
+                                <SectionHeader>Current Activity</SectionHeader>
+                            </ActionBarCanvas>
+                            <LibraryCanvas>
+                                <SectionHeader>Your Books</SectionHeader>
+                            </LibraryCanvas>
+                        </Grid.Column>
+                    </Grid.Row>
                 </Grid>
                 <Navbar page={title} />
             </Fragment>

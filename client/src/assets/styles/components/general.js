@@ -11,7 +11,9 @@ const ActionBarCanvas = styled.div`
     background-color: #FBF8F9;   
 `
 const AppModal = styled(Modal)`
-    max-width: 45rem;
+    &&&&&& {
+        width: 30rem;
+    }
 `
 const AppModalHeader = styled(Modal.Header)`    
     &&&&&& {
@@ -40,6 +42,8 @@ const Content = styled.div`
 `
 const CreateClubButton = styled(Button)`
     &&&&&& {
+        font-family: multi-display, sans-serif;
+        font-weight: 400;
         color: #B7B1BA;
         background: none;
         border: .1rem solid #B7B1BA;
@@ -84,16 +88,18 @@ const LibraryCanvas = styled.div`
     padding: 1rem;
     background-color: #FBF8F9;
 `
+//const Navtext = styled.h2
 const Rate = styled.img`
     height: 1.5rem;
     margin-top: .5rem;
     opacity: .4;
 `
 const SectionHeader = styled.h2`
-    font-size: 2.3rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.7rem;
+    font-family: multi-display, sans-serif;
+    font-weight: 500;
     display: inline;
-    color: #5e5552;
+    color: #434142;
     opacity: .4;
 `
 const Sidescroll = styled(SimpleBar)` 

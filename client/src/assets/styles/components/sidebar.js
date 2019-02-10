@@ -20,7 +20,6 @@ const SidebarCanvas = styled.div`
     justify-content: space-between;
     background-color: #2F6F88;    
     padding: 1rem;
-
 `
 const SidebarContainer = styled.div`
     height: 46.5vh;
@@ -33,6 +32,17 @@ const SidebarHeader = styled.h3`
     font-size: 1.5rem;
     margin-bottom: .5rem;
     opacity: .8;
+`
+const SidebarLink = styled.h4`
+    font-family: fairplex-narrow, serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-decoration: underline
+    color: #CFCBD1;
+    transition: 500ms;
+    &&&&&&:hover {
+        color: #F3F2F3;        
+    }
 `
 const SidebarText = styled.h4`
     font-family: fairplex-narrow, serif;
@@ -58,6 +68,7 @@ export {
     SidebarCanvas, 
     SidebarContainer, 
     SidebarHeader, 
+    SidebarLink,
     SidebarText,
     SmallMessageCard, 
     Submenu,
