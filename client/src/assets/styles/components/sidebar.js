@@ -12,17 +12,13 @@ const SidebarButton = styled(Button)`
     &&&&&&:hover {
         opacity: 1;        
     }
-    &&&&&&:active {
-        color: #443E47;
-    }
 `
 const SidebarCanvas = styled.div` 
+    height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #2F6F88;    
-    height: 92vh;
-    width: 100%;
     padding: 1rem;
 
 `

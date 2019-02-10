@@ -1,14 +1,14 @@
 import styled from 'styled-components'
-import { Image, Menu, Modal, } from 'semantic-ui-react'
+import { Button, Image, Menu, Modal, } from 'semantic-ui-react'
 import SimpleBar from 'simplebar-react'
 import { FormHeader } from '../themes/themes'
 
 
 const ActionBarCanvas = styled.div` 
-    height: 46.5vh;
+    height: 46vh;
     width: 100%;
     padding: 1rem;
-    background-color: #e4ddda;
+    background-color: #FBF8F9;   
 `
 const AppModal = styled(Modal)`
     max-width: 45rem;
@@ -38,6 +38,19 @@ const CenterContainer = styled.div`
 const Content = styled.div` 
     padding: 1.3rem;
 `
+const CreateClubButton = styled(Button)`
+    &&&&&& {
+        color: #B7B1BA;
+        background: none;
+        border: .1rem solid #B7B1BA;
+        transition: 500ms;
+    }
+    &&&&&&:hover {
+        color: #2F6F88;
+        background: #B7B1BA;
+        border: .1rem solid #B7B1BA;
+    }
+`
 const Header = styled(Menu)`
     &&& {
         height: 7vh;
@@ -66,10 +79,10 @@ const InfoText = styled.p`
     color: #7d92a0;
 `
 const LibraryCanvas = styled.div`
-    height: 46.5vh;        
+    height: 46vh;        
     width: 100%;
     padding: 1rem;
-    background-color: #e4ddda;
+    background-color: #FBF8F9;
 `
 const Rate = styled.img`
     height: 1.5rem;
@@ -113,6 +126,7 @@ export {
     Carousel,
     CenterContainer,
     Content,
+    CreateClubButton,
     Header,
     HeaderLogo,
     IconButtonContainer,

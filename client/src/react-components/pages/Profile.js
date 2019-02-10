@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Grid } from 'semantic-ui-react'
 import { Navbar, } from '../layout'
 import { Sidebar } from '../layout/Sidebar'
+import { ActionBarCanvas, LibraryCanvas, SectionHeader } from '../../assets/styles/components/general'
 import API from '../../utils/API'
 
 
@@ -64,7 +65,7 @@ class Profile extends React.Component {
                     page={title} 
                 />
 
-                <Grid divided='vertically'>
+                <Grid>
                     <Grid.Column width={4}>
                         <Sidebar 
                             address={this.state.user.address}
@@ -79,12 +80,16 @@ class Profile extends React.Component {
                         />
                     </Grid.Column>
                     <Grid.Column width={12}>
-                        <Grid width={12}>
-                        
-                        </Grid>
-                        <Grid width={12}>
-                    
-                        </Grid>
+                            <Grid.Row>
+                                <ActionBarCanvas>
+                                    <SectionHeader>Up Coming Events and Books</SectionHeader>
+                                </ActionBarCanvas>
+                            </Grid.Row>
+                            <Grid.Row>
+                                <LibraryCanvas>
+                                    <SectionHeader>Your Books</SectionHeader>
+                                </LibraryCanvas>
+                            </Grid.Row>
                     </Grid.Column>
                 </Grid>
                 <Navbar page={title} />
@@ -109,22 +114,3 @@ export { Profile }
 
 
 
-
-/* 
-<h4>Your Book Clubs:</h4>
-                            { this.state.clubs.map( club => (
-                                <ul>
-                                    <li>
-                                        <ClubLink onClick={this.viewClub} clubname={club.clubname} className='sidebar__link' >
-                                            {club.clubname}
-                                        </ClubLink>
-                                    </li>
-                                </ul>
-                            )) }
-
-                    <br /><br />
-                    
-                    
-
-                    </Grid.Column>
-*/

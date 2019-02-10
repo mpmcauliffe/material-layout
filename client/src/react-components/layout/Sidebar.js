@@ -16,7 +16,7 @@ import {
     SmallMessageCard,
     TopicText,
 } from '../../assets/styles/components'
-import { SidebarText, Submenu } from '../../assets/styles/components/sidebar'
+import { SidebarText, Submenu, } from '../../assets/styles/components/sidebar'
 import { truncate } from '../../assets/javascript'
 import { members, thread, } from '../../assets/store/store'
 import 'simplebar/dist/simplebar.min.css'
@@ -56,13 +56,11 @@ const Sidebar = ({
                             </SidebarHeader>
                         </Submenu>
                         {clubs.map(club => (
-                            <ul key={club.clubname}>
-                                <li>
-                                    <ClubLink onClick={viewClub} clubname={club.clubname}>
-                                        <SidebarText>{club.clubname}</SidebarText>
-                                    </ClubLink>
-                                </li>
-                            </ul>
+                            <SidebarText  key={club.clubname}>
+                                <ClubLink onClick={viewClub} clubname={club.clubname}>
+                                    <SidebarText>{club.clubname}</SidebarText>
+                                </ClubLink>
+                            </SidebarText>
                         ))}
                         <br /><br />
                     </div>
