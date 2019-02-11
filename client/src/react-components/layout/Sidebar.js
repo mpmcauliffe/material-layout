@@ -40,7 +40,7 @@ const Sidebar = ({
                             <SidebarHeader>Profile</SidebarHeader>
                             <ProfileEdit user={user} onClose={profileEditClose} />
                         </Submenu>
-                        <ProfilePicture src={require(`../../assets/img/profile/${1}.svg`)} />
+                        <ProfilePicture src={require(`../../assets/img/profile/${1}.svg`)} centered />
                         <SidebarText>{truncate(address, 35)}</SidebarText>
                         <SidebarText>{phone}</SidebarText>
                         <SidebarText>{email}</SidebarText>
