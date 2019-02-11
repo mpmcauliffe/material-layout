@@ -1,9 +1,5 @@
 import React, { Fragment } from 'react'
-import { 
-    Button,
-    Grid, 
-    Icon, 
-} from 'semantic-ui-react'
+import { Grid, Image, } from 'semantic-ui-react'
 import { ClubLink, CreateClub, ProfileEdit, } from '../components'
 import { 
     Content,
@@ -16,7 +12,8 @@ import {
     SmallMessageCard,
     TopicText,
 } from '../../assets/styles/components'
-import { SidebarButton, SidebarLink, SidebarText, Submenu, } from '../../assets/styles/components/sidebar'
+import { SidebarButton, SidebarLink, SidebarText, SubjectText, Submenu, } from '../../assets/styles/components/sidebar'
+import { ProfilePicture, } from '../../assets/styles/components/general'
 import { truncate } from '../../assets/javascript'
 import { members, thread, } from '../../assets/store/store'
 import 'simplebar/dist/simplebar.min.css'
@@ -43,6 +40,7 @@ const Sidebar = ({
                             <SidebarHeader>Profile</SidebarHeader>
                             <ProfileEdit user={user} onClose={profileEditClose} />
                         </Submenu>
+                        <ProfilePicture src={require(`../../assets/img/profile/${1}.svg`)} />
                         <SidebarText>{truncate(address, 35)}</SidebarText>
                         <SidebarText>{phone}</SidebarText>
                         <SidebarText>{email}</SidebarText>
@@ -84,9 +82,9 @@ const Sidebar = ({
                                     <SmallMessageCard 
                                         key={message.id}
                                     >
-                                        <TopicText>
+                                        <SubjectText>
                                             <em>{truncate(message.subject, 30)}</em>
-                                        </TopicText>
+                                        </SubjectText>
                                         <Grid>
                                             <Grid.Column width={7}>
                                                 <SmallText>{message.creator}</SmallText>

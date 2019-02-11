@@ -88,7 +88,14 @@ const LibraryCanvas = styled.div`
     padding: 1rem;
     background-color: #FBF8F9;
 `
-//const Navtext = styled.h2
+const ProfilePicture = styled(Image)`
+    &&& {
+        height: 7rem;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+`
 const Rate = styled.img`
     height: 1.5rem;
     margin-top: .5rem;
@@ -138,6 +145,7 @@ export {
     IconButtonContainer,
     InfoText,
     LibraryCanvas,
+    ProfilePicture,
     Rate,
     SectionHeader,
     Sidescroll,

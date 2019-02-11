@@ -19,14 +19,17 @@ class Navbar extends Component {
                     <Header size='massive' fluid>
                         <Header.Item header>
                             <HeaderLogo
-                                src={require(`../../assets/img/other/bkwzShape.svg`)}
+                                src={isClub 
+                                        ? require(`../../assets/img/other/bkwzOrange.svg`)
+                                        : require(`../../assets/img/other/bkwzBlue.svg`)
+                                    }
                             />
                         </Header.Item>    
                         <Header.Item
                             name={this.props.page}
                         />
                         <Header.Menu position='right'>
-                            { isClub ?
+                            {isClub ?
                                 <Header.Item 
                                     name='Profile' 
                                     active={activeItem === 'Profile'}
@@ -55,7 +58,7 @@ class Navbar extends Component {
                     >
                         <Header.Item header>
                             <HeaderLogo
-                                src={require(`../../assets/img/other/bkwzWhite.svg`)}
+                                src={require(`../../assets/img/other/bkwzDark.svg`)}
                             />
                         </Header.Item>
                         <Header.Menu position='right'>
@@ -77,3 +80,5 @@ class Navbar extends Component {
 
 export { Navbar } 
     
+
+//src={require(`../../assets/img/other/bkwzShape.svg`)}

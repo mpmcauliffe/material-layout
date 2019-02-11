@@ -62,6 +62,13 @@ const SmallMessageCard = styled.div`
         opacity: 1;
     }
 `
+const SubjectText = styled.p`
+    font-family: fairplex-narrow, serif;
+    font-size: 1.2rem;
+    margin-top: .3rem;
+    margin-bottom: .8rem;
+    color: #3E1916;
+`
 const Submenu = styled.div`
     display: flex;
     flex-direction: row;
@@ -77,5 +84,6 @@ export {
     SidebarLink,
     SidebarText,
     SmallMessageCard, 
+    SubjectText,
     Submenu,
 }
