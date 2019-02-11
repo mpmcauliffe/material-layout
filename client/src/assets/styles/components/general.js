@@ -38,7 +38,7 @@ const CenterContainer = styled.div`
     display: flex;
 `
 const Content = styled.div` 
-    padding: 1.3rem;
+    padding: 1rem;
 `
 const CreateClubButton = styled(Button)`
     &&&&&& {
@@ -64,7 +64,7 @@ const Header = styled(Menu)`
         margin-bottom: 0;
         border: none;
         border-radius: 0;
-        background: #DFD8DB;
+        background: ${props => props.inputcolor || '#DFD8DB'};
     }
 `
 const HeaderLogo = styled.img.attrs({
@@ -110,17 +110,17 @@ const Sidescroll = styled(SimpleBar)`
 `
 const SmallText = styled.p`
     font-family: fairplex-narrow, serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: .3rem;
-    color: #7d846c;
+    color: #443E47;
     margin: 0;
 `
 const TopicText = styled.p`
     font-family: fairplex-narrow, serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: .3rem;
     margin-bottom: 1.2rem;
-    color: #7b6261;
+    color: #9F97A4;
 `
 
 

@@ -16,7 +16,7 @@ import {
     SmallMessageCard,
     TopicText,
 } from '../../assets/styles/components'
-import { SidebarLink, SidebarText, Submenu, } from '../../assets/styles/components/sidebar'
+import { SidebarButton, SidebarLink, SidebarText, Submenu, } from '../../assets/styles/components/sidebar'
 import { truncate } from '../../assets/javascript'
 import { members, thread, } from '../../assets/store/store'
 import 'simplebar/dist/simplebar.min.css'
@@ -68,17 +68,13 @@ const Sidebar = ({
                     <CreateClub user={user} onClose={onCreateClubClose} />
                 </SidebarCanvas>
                 :
-                <SidebarCanvas>
+                <SidebarCanvas inputcolor='#88372F'>
                     <SidebarContainer>
                         <SidebarHeader>Messages</SidebarHeader>
 
                         <IconButtonContainer>
-                            <Button>
-                                <Icon name='align justify' />
-                            </Button>
-                            <Button>
-                                <Icon name='comment' />
-                            </Button>
+                            <SidebarButton icon='align justify' />
+                            <SidebarButton icon='comment' />
                         </IconButtonContainer>
                         
 
@@ -92,13 +88,13 @@ const Sidebar = ({
                                             <em>{truncate(message.subject, 30)}</em>
                                         </TopicText>
                                         <Grid>
-                                            <Grid.Column width={5}>
+                                            <Grid.Column width={7}>
                                                 <SmallText>{message.creator}</SmallText>
                                             </Grid.Column>
-                                            <Grid.Column width={5}>
+                                            <Grid.Column width={6}>
                                                 <SmallText>{message.date}</SmallText>
                                             </Grid.Column>
-                                            <Grid.Column width={2}>
+                                            <Grid.Column width={3}>
                                                 <SmallText>{message.replies.length}</SmallText>
                                             </Grid.Column>
                                         </Grid>
@@ -114,12 +110,8 @@ const Sidebar = ({
                         <SidebarHeader>Members</SidebarHeader>
 
                         <IconButtonContainer>
-                            <Button>
-                                <Icon name='align justify' />
-                            </Button>
-                            <Button>
-                                <Icon name='user plus' />
-                            </Button>
+                            <SidebarButton icon='align justify' />
+                            <SidebarButton icon='user plus' />
                         </IconButtonContainer>
                         
                         <Sidescroll>

@@ -90,7 +90,7 @@ class Profile extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                <Navbar page={title} />
+                <Navbar page={title}/>
             </Fragment>
         )
     }
@@ -109,6 +109,3 @@ Profile.propTypes = {
 }
 
 export { Profile }
-
-
-

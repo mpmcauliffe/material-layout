@@ -6,7 +6,7 @@ const SidebarButton = styled(Button)`
     &&&&&& {
         background: #B7B1BA;
         border-radius: 50%;
-        opacity: .3;
+        opacity: .6;
         transition: 500ms;
     }
     &&&&&&:hover {
@@ -18,7 +18,7 @@ const SidebarCanvas = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #2F6F88;    
+    background: ${props => props.inputcolor || '#275B70'};    
     padding: 1rem;
 `
 const SidebarContainer = styled.div`
@@ -41,7 +41,7 @@ const SidebarLink = styled.h4`
     color: #CFCBD1;
     transition: 500ms;
     &&&&&&:hover {
-        color: #F3F2F3;        
+        color: #D49A83;        
     }
 `
 const SidebarText = styled.h4`
@@ -52,9 +52,15 @@ const SidebarText = styled.h4`
     color: #CFCBD1;
 `
 const SmallMessageCard = styled.div`
-    border: .3px solid #d6cbc7; 
+    border: .3px solid #D3B6B3; 
     padding: .2rem;
-    background: #e4ddda;
+    background: #E9DAD9;
+    opacity: .7;
+    transition: 500ms;
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
 `
 const Submenu = styled.div`
     display: flex;

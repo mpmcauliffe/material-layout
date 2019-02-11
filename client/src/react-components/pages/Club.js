@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, } from 'semantic-ui-react'
-import { Navbar, } from '../layout'
+import { Navbar, Sidebar } from '../layout'
 import { MeetingDetails, } from '../components'
+import { ActionBarCanvas, LibraryCanvas, SectionHeader,} from '../../assets/styles/components/general'
 
 
 class Club extends React.Component {
@@ -53,34 +54,37 @@ class Club extends React.Component {
     render() {
         const title = `Club Details for ${this.state.club.clubname}`
         return (
-            <div>
-                <Navbar page={title} />
+            <Fragment>
+                <Navbar 
+                    page={title} 
+                    header={true}
+                />
 
                 <Grid>
-                    <Grid.Column width={4} padded='true' className='sidebar'>
-                        <h4>Members:</h4>
-
-                        { this.state.club.members.map( member => (
-                            <h5>{member.name}</h5>
-                        )) }
+                    <Grid.Column width={4} style={{ paddingRight: 0 }}>
+                        <Sidebar 
+                            club={this.state.club}
+                            profile={false}
+                        />
+                        
 
                     </Grid.Column>
 
-                    <Grid.Column width={12} padded='true' className='info-bar'>
-                        <h4>Meetings:</h4>
-
-                        { this.state.club.events.map( meeting => (
-                            <h5>{meeting.date.slice(0,10)}: {meeting.book}</h5>
-                        )) }
-
-                        <MeetingDetails className='sidebar__button'
-                                        user={this.props.user}
-                                        club={this.state.club} 
-                                        onClose={this.onCreateMeetingClose} />
+                    <Grid.Column width={12} style={{ paddingLeft: 0 }}>
+                        <ActionBarCanvas>
+                            <SectionHeader>Events</SectionHeader>
+                        </ActionBarCanvas>
+                        <LibraryCanvas>
+                            <SectionHeader>Library</SectionHeader>
+                        </LibraryCanvas>
+                    
+                    
+                    
+                    
                     </Grid.Column>
                 </Grid>
-
-            </div>
+                <Navbar page={title}/>
+            </Fragment>
         )
     }
 }
@@ -99,3 +103,21 @@ Club.propTypes = {
 
 
 export { Club }
+
+
+/*
+{ this.state.club.members.map( member => (
+                            <h5>{member.name}</h5>
+                        )) }
+
+<h4>Meetings:</h4>
+
+                        { this.state.club.events.map( meeting => (
+                            <h5>{meeting.date.slice(0,10)}: {meeting.book}</h5>
+                        )) }
+
+                        <MeetingDetails className='sidebar__button'
+                                        user={this.props.user}
+                                        club={this.state.club} 
+                                        onClose={this.onCreateMeetingClose} />
+*/

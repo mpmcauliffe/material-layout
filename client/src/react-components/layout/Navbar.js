@@ -1,5 +1,5 @@
 import React, { Component, Fragment, } from 'react'
-import { Header, HeaderLogo } from '../../assets/styles/components'
+import { Header, HeaderLogo, } from '../../assets/styles/components/general'
 import { Link } from 'react-router-dom'
 
 
@@ -47,7 +47,12 @@ class Navbar extends Component {
                         </Header.Menu>
                     </Header>
                     :
-                    <Header size='massive' fluid>
+                    <Header 
+                        size='massive' 
+                        inputcolor='#2D2C2C' 
+                        fluid
+                        inverted
+                    >
                         <Header.Item header>
                             <HeaderLogo
                                 src={require(`../../assets/img/other/bkwzWhite.svg`)}
