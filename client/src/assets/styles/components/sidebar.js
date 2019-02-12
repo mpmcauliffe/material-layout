@@ -10,6 +10,7 @@ const SidebarButton = styled(Button)`
         transition: 500ms;
     }
     &&&&&&:hover {
+        transform: scale(1.1);
         opacity: 1;        
     }
 `

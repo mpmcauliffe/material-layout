@@ -62,6 +62,17 @@ class Navbar extends Component {
                             />
                         </Header.Item>
                         <Header.Menu position='right'>
+                        {isClub ?
+                            <Header.Item 
+                                name='Leave this Group' 
+                                active={activeItem === 'Leave'}
+                                onClick={this.handleItemClick}
+                                as={Link}
+                                to='/profile'
+                            />
+                        :
+                            ''
+                        }
                         <Header.Item
                             name='Contact Us'
                             active={activeItem === 'Contact'}

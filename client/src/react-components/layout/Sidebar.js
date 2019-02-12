@@ -83,7 +83,7 @@ const Sidebar = ({
                                         key={message.id}
                                     >
                                         <SubjectText>
-                                            <em>{truncate(message.subject, 30)}</em>
+                                            <em>{truncate(message.subject, 33)}</em>
                                         </SubjectText>
                                         <Grid>
                                             <Grid.Column width={7}>

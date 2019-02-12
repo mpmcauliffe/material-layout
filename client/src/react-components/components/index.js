@@ -1,3 +1,4 @@
+export * from './Carousel'
 export * from './ClubLink'
 export * from './CreateClub'
 export * from './InlineError'

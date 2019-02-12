@@ -91,9 +91,11 @@ const LibraryCanvas = styled.div`
 const ProfilePicture = styled(Image)`
     &&& {
         height: 7rem;
+        transition: 500ms;
     }
     &:hover {
         cursor: pointer;
+        transform: scale(1.1);
     }
 `
 const Rate = styled.img`
