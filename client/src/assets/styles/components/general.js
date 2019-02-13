@@ -112,10 +112,12 @@ const SectionHeader = styled.h2`
     opacity: .4;
 `
 const Sidescroll = styled(SimpleBar)` 
-    height: 33vh !important; 
-    width: 22vw !important;
-    overflow-x: hidden !important; 
-    margin-top: 1rem !important;
+    &&&&&& {
+        height: 33vh; 
+        width: 22vw;
+        overflow-x: hidden; 
+        margin-top: 1rem;
+    }
 `
 const SmallText = styled.p`
     font-family: fairplex-narrow, serif;
