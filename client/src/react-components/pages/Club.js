@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, } from 'semantic-ui-react'
 import { Navbar, Sidebar } from '../layout'
-import { MeetingDetails, } from '../components'
+import { Carousel, MeetingDetails, } from '../components'
 import { ActionBarCanvas, LibraryCanvas, SectionHeader,} from '../../assets/styles/components/general'
 
 
@@ -76,8 +76,9 @@ class Club extends React.Component {
                         </ActionBarCanvas>
                         <LibraryCanvas>
                             <SectionHeader>Library</SectionHeader>
+                            <Carousel />
                         </LibraryCanvas>
-                    
+                        
                     
                     
                     

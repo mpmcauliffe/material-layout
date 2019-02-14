@@ -98,10 +98,13 @@ const ProfilePicture = styled(Image)`
         transform: scale(1.1);
     }
 `
-const Rate = styled.img`
-    height: 1.5rem;
-    margin-top: .5rem;
-    opacity: .4;
+const Rate = styled(Image)`
+    &&& {
+        height: 1.5rem;
+        margin-top: .5rem;
+        
+        opacity: .4;
+    }
 `
 const SectionHeader = styled.h2`
     font-size: 1.7rem;

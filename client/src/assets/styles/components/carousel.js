@@ -9,7 +9,6 @@ const CarouselViewport = styled.div`
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: auto;
-    border: .1rem solid #000;
     -webkit-overflow-scrolling: touch;
 `
 const CarouselNav = styled(Button)`
@@ -17,9 +16,11 @@ const CarouselNav = styled(Button)`
         flex-basis: 4rem;
         flex-grow: 1;
         flex-shrink: 0;
+        height: 27vh;
+        max-width: 3vw;
         background-color: #F6F0F2;
         padding:0;
-        border: .1rem solid #54899D;
+        border: .07rem solid #54899D;
         opacity: .5;
         outline: none;
         transition: opacity 1 ease-in-out;

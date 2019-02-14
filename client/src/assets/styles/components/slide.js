@@ -10,9 +10,8 @@ const Card = styled.div`
     display: inline-block;
     vertical-align: top;
     whiteSpace: normal;
-    margin-left: 3.9rem;
-    margin-right: 3.9rem;
-    border: .1rem solid #e4ddda;
+    margin-left: 2.1rem;
+    margin-right: 2.1rem;
     transition: color 1000;
     &:hover {
         cursor: pointer;

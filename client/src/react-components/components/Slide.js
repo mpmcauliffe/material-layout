@@ -37,7 +37,7 @@ const Slide = ({ isEvent, information, number, }) =>
                             {starGenerator(information.rating).map((score, index) => 
                                 <Rate 
                                     key={index} 
-                                    src={require(`../../assets/img/rating/${score}.png`)}
+                                    src={require(`../../assets/img/rating/${score}.svg`)}
                                     alt={'rating'} 
                                 />    
                             )}
