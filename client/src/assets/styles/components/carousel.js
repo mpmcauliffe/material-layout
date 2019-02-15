@@ -4,9 +4,11 @@ import { Button } from 'semantic-ui-react'
 
 const CarouselContainer = styled.div`
     display: flex;
+
 `
 const CarouselViewport = styled.div`
     white-space: nowrap;
+    padding-bottom: 1rem;
     overflow-y: hidden;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -16,12 +18,12 @@ const CarouselNav = styled(Button)`
         flex-basis: 4rem;
         flex-grow: 1;
         flex-shrink: 0;
-        height: 27vh;
+        height: 35vh;
         max-width: 3vw;
         background-color: #F6F0F2;
         padding:0;
         border: .07rem solid #54899D;
-        opacity: .5;
+        opacity: .2;
         outline: none;
         transition: opacity 1 ease-in-out;
     }

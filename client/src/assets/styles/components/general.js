@@ -85,7 +85,7 @@ const InfoText = styled.p`
 const LibraryCanvas = styled.div`
     height: 46vh;        
     width: 100%;
-    padding: 1rem;
+    padding: .5rem 1rem;
     background-color: #FBF8F9;
 `
 const ProfilePicture = styled(Image)`
@@ -100,9 +100,9 @@ const ProfilePicture = styled(Image)`
 `
 const Rate = styled(Image)`
     &&& {
-        height: 1.5rem;
+        display: inline;
+        height: 1rem;
         margin-top: .5rem;
-        
         opacity: .4;
     }
 `
@@ -131,9 +131,9 @@ const SmallText = styled.p`
 `
 const TopicText = styled.p`
     font-family: fairplex-narrow, serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: .3rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: .1rem;
     color: #9F97A4;
 `
 

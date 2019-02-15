@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Grid, } from 'semantic-ui-react'
+import { Grid, Responsive, } from 'semantic-ui-react'
 import { Navbar, Sidebar } from '../layout'
 import { Carousel, MeetingDetails, } from '../components'
 import { ActionBarCanvas, LibraryCanvas, SectionHeader,} from '../../assets/styles/components/general'
@@ -61,16 +61,25 @@ class Club extends React.Component {
                 />
 
                 <Grid>
-                    <Grid.Column width={4} style={{ paddingRight: 0 }}>
+                    <Grid.Column 
+                        width={4}
+                        as={Responsive}
+                        minWidth={980}
+                        style={{ paddingRight: 0 }}
+                    >
                         <Sidebar 
                             club={this.state.club}
                             profile={false}
                         />
-                        
-
                     </Grid.Column>
+                    
 
-                    <Grid.Column width={12} style={{ paddingLeft: 0 }}>
+                    <Grid.Column 
+                        computer={12}
+                        tablet={16} 
+                        mobile={16}
+                        style={{ paddingLeft: 0, paddingRight: 0, }}
+                    >
                         <ActionBarCanvas>
                             <SectionHeader>Events</SectionHeader>
                         </ActionBarCanvas>
@@ -78,10 +87,6 @@ class Club extends React.Component {
                             <SectionHeader>Library</SectionHeader>
                             <Carousel />
                         </LibraryCanvas>
-                        
-                    
-                    
-                    
                     </Grid.Column>
                 </Grid>
                 <Navbar page={title}/>

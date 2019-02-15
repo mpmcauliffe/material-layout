@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Responsive } from 'semantic-ui-react'
 import { Navbar, } from '../layout'
 import { Sidebar } from '../layout/Sidebar'
 import { ActionBarCanvas, LibraryCanvas, SectionHeader } from '../../assets/styles/components/general'
@@ -67,7 +67,12 @@ class Profile extends React.Component {
 
                 <Grid columns={2}>
                     <Grid.Row>
-                        <Grid.Column width={4} style={{ paddingRight: 0 }}>
+                        <Grid.Column 
+                            width={4}
+                            as={Responsive}
+                            minWidth={980}
+                            style={{ paddingRight: 0 }}
+                        >
                             <Sidebar 
                                 address={this.state.user.address}
                                 clubs={this.state.clubs}
@@ -80,7 +85,12 @@ class Profile extends React.Component {
                                 viewClub={this.viewClub}
                             />
                         </Grid.Column>
-                        <Grid.Column width={12} style={{ paddingLeft: 0 }}>
+                        <Grid.Column 
+                            computer={12}
+                            tablet={16} 
+                            mobile={16}
+                            style={{ paddingLeft: 0, paddingRight: 0, }}
+                        >
                             <ActionBarCanvas>
                                 <SectionHeader>Current Activity</SectionHeader>
                             </ActionBarCanvas>

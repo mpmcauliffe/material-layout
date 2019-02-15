@@ -1,6 +1,9 @@
 import React, { Component, Fragment, } from 'react'
-import { Header, HeaderLogo, } from '../../assets/styles/components/general'
 import { Link } from 'react-router-dom'
+import { Responsive } from 'semantic-ui-react'
+import { Header, HeaderLogo, } from '../../assets/styles/components/general'
+import { SidebarButton } from '../../assets/styles/components/sidebar'
+
 
 
 class Navbar extends Component {
@@ -16,14 +19,25 @@ class Navbar extends Component {
             <Fragment>
                 {this.props.header 
                     ?
-                    <Header size='massive' fluid>
-                        <Header.Item header>
+                    <Header size='massive' fluid stackable>
+                        <Header.Item 
+                            header 
+                            as={Responsive}
+                            minWidth={980}    
+                        >
                             <HeaderLogo
                                 src={isClub 
                                         ? require(`../../assets/img/other/bkwzOrange.svg`)
                                         : require(`../../assets/img/other/bkwzBlue.svg`)
                                     }
                             />
+                        </Header.Item>    
+                        <Header.Item 
+                            header 
+                            as={Responsive}
+                            maxWidth={980}    
+                        >
+                            <SidebarButton icon='sidebar' />
                         </Header.Item>    
                         <Header.Item
                             name={this.props.page}
