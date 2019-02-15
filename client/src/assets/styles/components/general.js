@@ -8,7 +8,10 @@ const ActionBarCanvas = styled.div`
     height: 46vh;
     width: 100%;
     padding: 1rem;
-    background-color: #FBF8F9;   
+    background-color: #FBF8F9;  
+    @media (max-width: 76.8rem) {
+        height: 50vh;
+    } 
 `
 const AppModal = styled(Modal)`
     &&&&&& {
@@ -66,6 +69,11 @@ const Header = styled(Menu)`
         border-radius: 0;
         background: ${props => props.inputcolor || '#DFD8DB'};
     }
+    @media (max-width: 76.8rem) {
+        &&&&&& {
+            height: 21vh;
+        }
+    }
 `
 const HeaderLogo = styled.img.attrs({
     alt: 'Bookwormz',
@@ -87,6 +95,9 @@ const LibraryCanvas = styled.div`
     width: 100%;
     padding: .5rem 1rem;
     background-color: #FBF8F9;
+    @media (max-width: 76.8rem) {
+        height: 50vh;
+    } 
 `
 const ProfilePicture = styled(Image)`
     &&& {

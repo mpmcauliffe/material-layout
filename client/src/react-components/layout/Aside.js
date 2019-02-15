@@ -4,22 +4,28 @@ import { ClubLink, CreateClub, ProfileEdit, } from '../components'
 import { 
     Content,
     IconButtonContainer,
+    ProfilePicture,
+    SidebarButton,
     SidebarCanvas,
     SidebarContainer,
     SidebarHeader,
+    SidebarLink,
+    SidebarText,
     Sidescroll,
     SmallText,
     SmallMessageCard,
+    SubjectText,
+    Submenu,
     TopicText,
 } from '../../assets/styles/components'
-import { SidebarButton, SidebarLink, SidebarText, SubjectText, Submenu, } from '../../assets/styles/components/sidebar'
-import { ProfilePicture, } from '../../assets/styles/components/general'
+//import { SidebarButton, SidebarLink, SidebarText, SubjectText, Submenu, } from '../../assets/styles/components/sidebar'
+//import { ProfilePicture, } from '../../assets/styles/components/general'
 import { truncate } from '../../assets/javascript'
 import { members, thread, } from '../../assets/store/store'
 import 'simplebar/dist/simplebar.min.css'
 
 
-const Sidebar = ({ 
+const Aside = ({ 
     address, 
     clubs,
     email, 
@@ -127,4 +133,4 @@ const Sidebar = ({
 }    
     
         
-export { Sidebar } 
+export { Aside } 

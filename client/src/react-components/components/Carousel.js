@@ -3,9 +3,9 @@ import { Slide } from './Slide'
 import { 
     CarouselContainer,
     CarouselNav,
-    CarouselViewport,} from '../../assets/styles/components/carousel'
-import { scrollTo } from '../../assets/javascript/scrollToAnimate'
-import { alphabetize } from '../../assets/javascript/alphabetize'
+    CarouselViewport,
+} from '../../assets/styles/components'
+import { alphabetize, scrollTo } from '../../assets/javascript'
 import { bookList } from '../../assets/store/store'
 
 

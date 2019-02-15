@@ -2,9 +2,13 @@ import React, { Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Grid, Responsive } from 'semantic-ui-react'
-import { Navbar, } from '../layout'
-import { Sidebar } from '../layout/Sidebar'
-import { ActionBarCanvas, LibraryCanvas, SectionHeader } from '../../assets/styles/components/general'
+import { Aside, Navbar, } from '../layout'
+//import { Aside } from '../layout/Aside'
+import { 
+    ActionBarCanvas, 
+    LibraryCanvas, 
+    SectionHeader, 
+} from '../../assets/styles/components'
 import API from '../../utils/API'
 
 
@@ -73,7 +77,7 @@ class Profile extends React.Component {
                             minWidth={980}
                             style={{ paddingRight: 0 }}
                         >
-                            <Sidebar 
+                            <Aside
                                 address={this.state.user.address}
                                 clubs={this.state.clubs}
                                 email={this.state.user.email}

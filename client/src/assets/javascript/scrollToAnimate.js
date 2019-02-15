@@ -2,7 +2,7 @@
     from https://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation
 */
 
-export function scrollTo(element, to, duration, scrollDirection) {
+const scrollTo = (element, to, duration, scrollDirection) => {
     var start = element[scrollDirection],
         change = to - start,
         increment = (1000 / 60) 
@@ -20,7 +20,7 @@ export function scrollTo(element, to, duration, scrollDirection) {
     window.requestAnimationFrame(animateScroll.bind(null, 0)) 
 }
 
-export function easeInOut(currentTime, start, change, duration) {
+const easeInOut = (currentTime, start, change, duration) => {
     currentTime /= duration / 2 
     if (currentTime < 1) {
         return change / 2 * currentTime * currentTime + start 
@@ -30,4 +30,4 @@ export function easeInOut(currentTime, start, change, duration) {
 }
 
 
-//export scrollTo 
+export { easeInOut, scrollTo, } 

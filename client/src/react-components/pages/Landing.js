@@ -1,8 +1,13 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Login, SignUp, Slideshow, } from '../components'
-import { AppModal, BookwormzLogo, MainButton, } from '../../assets/styles/components'
-import { AppModalHeader, } from '../../assets/styles/components/general'
+import { 
+    AppModal, 
+    AppModalHeader, 
+    BookwormzLogo, 
+    MainButton, 
+} from '../../assets/styles/components'
+//import { AppModalHeader, } from '../../assets/styles/components/general'
 
 
 const Landing = ({ appAuth }) => 

@@ -1,6 +1,6 @@
 import React, { Component, Fragment, } from 'react'
 import { Link } from 'react-router-dom'
-import { Responsive } from 'semantic-ui-react'
+import { Responsive, Sidebar } from 'semantic-ui-react'
 import { Header, HeaderLogo, } from '../../assets/styles/components/general'
 import { SidebarButton } from '../../assets/styles/components/sidebar'
 
@@ -9,6 +9,7 @@ import { SidebarButton } from '../../assets/styles/components/sidebar'
 class Navbar extends Component {
     state = {}
   
+    
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   
     render() {

@@ -1,9 +1,14 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Responsive, } from 'semantic-ui-react'
-import { Navbar, Sidebar } from '../layout'
+import { Aside, Navbar, } from '../layout'
+//import { Aside, } from '../layout/Aside'
 import { Carousel, MeetingDetails, } from '../components'
-import { ActionBarCanvas, LibraryCanvas, SectionHeader,} from '../../assets/styles/components/general'
+import { 
+    ActionBarCanvas, 
+    LibraryCanvas,
+    SectionHeader,
+} from '../../assets/styles/components'
 
 
 class Club extends React.Component {
@@ -67,7 +72,7 @@ class Club extends React.Component {
                         minWidth={980}
                         style={{ paddingRight: 0 }}
                     >
-                        <Sidebar 
+                        <Aside 
                             club={this.state.club}
                             profile={false}
                         />
