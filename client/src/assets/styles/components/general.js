@@ -69,11 +69,6 @@ const Header = styled(Menu)`
         border-radius: 0;
         background: ${props => props.inputcolor || '#DFD8DB'};
     }
-    /* @media (max-width: 64rem) {
-        &&&&&& {
-            height: 21vh;
-        }
-    } */
 `
 const HeaderLogo = styled.img.attrs({
     alt: 'Bookwormz',

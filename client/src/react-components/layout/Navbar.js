@@ -23,7 +23,7 @@ class Navbar extends Component {
                         {window.innerWidth < 640
                             ?
                                 <Fragment>
-                                    <Header size='massive' fluid>
+                                    <Header size='massive' fluid borderless>
                                         <Header.Item position='left' header>
                                             <HeaderLogo
                                                 src={isClub 
@@ -38,7 +38,7 @@ class Navbar extends Component {
                                         </Header.Item>
                                     </Header>
 
-                                    <Header size='massive' fluid>
+                                    <Header size='massive' fluid borderless>
                                         <Header.Menu position='left'>
                                             <Header.Item 
                                                 header 
@@ -119,6 +119,7 @@ class Navbar extends Component {
                                         inputcolor='#2D2C2C' 
                                         fluid
                                         inverted
+                                        borderless
                                     >
                                         <Header.Item header>
                                             <HeaderLogo
@@ -132,6 +133,7 @@ class Navbar extends Component {
                                         inputcolor='#2D2C2C' 
                                         fluid
                                         inverted
+                                        borderless
                                     >
                                         <Header.Menu position='right'>
                                             {isClub ?

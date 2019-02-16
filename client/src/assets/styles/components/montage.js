@@ -22,6 +22,7 @@ const Montage = styled.ul`
     position: fixed;
     width: 100%;
     height: 100%;
+    background-size: contain;
     top: 0;
     left: 0;
     z-index: 0;
@@ -35,7 +36,6 @@ const Montage = styled.ul`
         position: absolute;
         top: 0;
         left: 0;
-        background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
         opacity: 0;
