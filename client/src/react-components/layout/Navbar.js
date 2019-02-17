@@ -6,8 +6,23 @@ import { SidebarButton } from '../../assets/styles/components/sidebar'
 
 
 class Navbar extends Component {
-    state = {}
+    state = {
+        height: window.innerHeight, 
+        width: window.innerWidth,
+    }
   
+    updateDimensions = () => 
+        this.setState({
+            height: window.innerHeight, 
+            width: window.innerWidth,
+        })
+    componentDidMount() { 
+        window.addEventListener('resize', this.updateDimensions)
+    }
+    componentWillMount() { 
+        window.removeEventListener('resize', this.updateDimensions)
+    }
+
     
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
   
@@ -93,7 +108,7 @@ class Navbar extends Component {
                                                 />
                                             </Header.Item>
                                             <Header.Item 
-                                                position='right'
+                                                position='left'
                                                 name={this.props.page}
                                             />
                                             <Header.Menu position='right'>
