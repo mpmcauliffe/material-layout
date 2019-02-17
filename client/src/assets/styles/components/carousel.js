@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react'
 
 const CarouselContainer = styled.div`
     display: flex;
-
+    margin-top: 2rem;
 `
 const CarouselViewport = styled.div`
     white-space: nowrap;

@@ -20,56 +20,107 @@ class Navbar extends Component {
                 {this.props.header 
                     ?
                     <Fragment>
-                        {window.innerWidth < 640
-                            ?
-                                <Fragment>
-                                    <Header size='massive' fluid borderless>
-                                        <Header.Item position='left' header>
-                                            <HeaderLogo
-                                                src={isClub 
-                                                        ? require(`../../assets/img/other/bkwzOrange.svg`)
-                                                        : require(`../../assets/img/other/bkwzBlue.svg`)
-                                                    }
-                                            />
+                        {window.innerWidth < 769
+                            ?   <Fragment>
+                                {window.innerWidth < 640 
+                                    ?
+                                    <Fragment>
+                                        <Header size='massive' fluid borderless>
+                                            <Header.Item position='left' header>
+                                                <HeaderLogo
+                                                    src={isClub 
+                                                            ? require(`../../assets/img/other/bkwzOrange.svg`)
+                                                            : require(`../../assets/img/other/bkwzBlue.svg`)
+                                                        }
+                                                />
+                                                <Header.Item 
+                                                    position='right'
+                                                    name={this.props.page}
+                                                />
+                                            </Header.Item>
+                                        </Header>
+
+                                        <Header size='massive' fluid borderless>
+                                            <Header.Menu position='left'>
+                                                <Header.Item 
+                                                    header 
+                                                    as={Responsive}
+                                                    maxWidth={980}    
+                                                >
+                                                    <SidebarButton icon='sidebar' />
+                                                </Header.Item>
+                                            </Header.Menu>
+                                            <Header.Menu position='right'>
+                                                {isClub ?
+                                                    <Header.Item 
+                                                        name='Profile' 
+                                                        active={activeItem === 'Profile'}
+                                                        onClick={this.handleItemClick}
+                                                        as={Link}
+                                                        to='/profile'
+                                                    />
+                                                :
+                                                    ''
+                                                }
+                                                <Header.Item
+                                                    name='Logout'
+                                                    active={activeItem === 'Logout'}
+                                                    onClick={this.handleItemClick}
+                                                    as={Link}
+                                                    to='/logout'
+                                                />
+                                            </Header.Menu>
+                                        </Header>
+                                    </Fragment>
+                                    :
+                                    <Fragment>
+                                        <Header size='massive' fluid borderless>
+                                            <Header.Menu position='left'>
+                                                <Header.Item 
+                                                    header 
+                                                    as={Responsive}
+                                                    maxWidth={980}    
+                                                >
+                                                    <SidebarButton icon='sidebar' />
+                                                </Header.Item>
+                                            </Header.Menu>
+                                            <Header.Item position='left' header>
+                                                <HeaderLogo
+                                                    src={isClub 
+                                                            ? require(`../../assets/img/other/bkwzOrange.svg`)
+                                                            : require(`../../assets/img/other/bkwzBlue.svg`)
+                                                        }
+                                                />
+                                            </Header.Item>
                                             <Header.Item 
                                                 position='right'
                                                 name={this.props.page}
                                             />
-                                        </Header.Item>
-                                    </Header>
-
-                                    <Header size='massive' fluid borderless>
-                                        <Header.Menu position='left'>
-                                            <Header.Item 
-                                                header 
-                                                as={Responsive}
-                                                maxWidth={980}    
-                                            >
-                                                <SidebarButton icon='sidebar' />
-                                            </Header.Item>
-                                        </Header.Menu>
-                                        <Header.Menu position='right'>
-                                            {isClub ?
-                                                <Header.Item 
-                                                    name='Profile' 
-                                                    active={activeItem === 'Profile'}
+                                            <Header.Menu position='right'>
+                                                {isClub ?
+                                                    <Header.Item 
+                                                        name='Profile' 
+                                                        active={activeItem === 'Profile'}
+                                                        onClick={this.handleItemClick}
+                                                        as={Link}
+                                                        to='/profile'
+                                                    />
+                                                :
+                                                    ''
+                                                }
+                                                <Header.Item
+                                                    name='Logout'
+                                                    active={activeItem === 'Logout'}
                                                     onClick={this.handleItemClick}
                                                     as={Link}
-                                                    to='/profile'
+                                                    to='/logout'
                                                 />
-                                            :
-                                                ''
-                                            }
-                                            <Header.Item
-                                                name='Logout'
-                                                active={activeItem === 'Logout'}
-                                                onClick={this.handleItemClick}
-                                                as={Link}
-                                                to='/logout'
-                                            />
-                                        </Header.Menu>
-                                    </Header>
+                                            </Header.Menu>
+                                        </Header>
+                                    </Fragment>
+                                }
                                 </Fragment>
+                                
                             :
                                 <Fragment>
                                     <Header size='massive' fluid>
@@ -111,7 +162,7 @@ class Navbar extends Component {
                         </Fragment>
                     :
                         <Fragment>
-                        {window.innerWidth < 640
+                        {window.innerWidth < 769
                             ?
                                 <Fragment>
                                     <Header 

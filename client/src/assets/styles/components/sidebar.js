@@ -15,12 +15,12 @@ const SidebarButton = styled(Button)`
     }
 `
 const SidebarCanvas = styled.div` 
-    height: 92vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: ${props => props.inputcolor || '#275B70'};    
-    padding: 1rem;
+    padding: 1rem; 
 `
 const SidebarContainer = styled.div`
     height: 46.5vh;

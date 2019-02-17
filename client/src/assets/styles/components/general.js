@@ -5,13 +5,10 @@ import { FormHeader } from '../themes/themes'
 
 
 const ActionBarCanvas = styled.div` 
-    height: 46vh;
+    height: 50vh;
     width: 100%;
     padding: 1rem;
     background-color: #FBF8F9;  
-    @media (max-width: 76.8rem) {
-        height: 50vh;
-    } 
 `
 const AppModal = styled(Modal)`
     &&&&&& {
@@ -92,13 +89,13 @@ const InfoText = styled.p`
     color: #7d92a0;
 `
 const LibraryCanvas = styled.div`
-    height: 46vh;        
+    height: 50vh;        
     width: 100%;
     padding: .5rem 1rem;
     background-color: #FBF8F9;
-    @media (max-width: 76.8rem) {
-        height: 50vh;
-    } 
+    @media (max-width: 102.4rem) {
+        padding: .5rem 2rem;
+    }
 `
 const ProfilePicture = styled(Image)`
     &&& {
