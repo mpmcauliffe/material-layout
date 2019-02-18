@@ -8,7 +8,7 @@ const Drawer = styled.div`
     transform: ${props => props.show || 'translateX(-100%)' };
     box-shadow: 1px 0px 7px rgba(0,0,0, 0.5);
     transition: transform 500ms ease-out;
-    @media (max-width: 48rem) {
+    @media (max-width: 480px) {
         width: 77vw;
     }
 `
@@ -23,6 +23,11 @@ const SidebarButton = styled(Button)`
         transform: scale(1.1);
         opacity: 1;        
     }
+    @media (max-width: 980px) {
+        &&&&&&&&& {
+
+        }
+    }
 `
 const SidebarCanvas = styled.div` 
     height: 100vh;
@@ -31,8 +36,10 @@ const SidebarCanvas = styled.div`
     justify-content: space-between;
     background: ${props => props.inputcolor || '#275B70'};    
     padding: 1rem; 
-    @media (max-width: 76.9rem) {
-        
+    @media (max-width: 480px) {
+        &&& {
+            width: 81vw;
+        }
     }
 `
 const SidebarContainer = styled.div`
@@ -46,6 +53,9 @@ const SidebarHeader = styled.h3`
     font-size: 1.5rem;
     margin-bottom: .5rem;
     opacity: .8;
+    @media (max-width: 980px) {
+        font-size: 2.1rem;
+    }
 `
 const SidebarLink = styled.h4`
     font-family: fairplex-narrow, serif;
@@ -57,6 +67,9 @@ const SidebarLink = styled.h4`
     &&&&&&:hover {
         color: #D49A83;        
     }
+    @media (max-width: 980px) {
+        font-size: 1.4rem;
+    }
 `
 const SidebarText = styled.h4`
     font-family: fairplex-narrow, serif;
@@ -64,6 +77,10 @@ const SidebarText = styled.h4`
     font-weight: 400;
     margin: 1rem 0 0 1rem;
     color: #CFCBD1;
+    @media (max-width: 980px) {
+        padding-left: 3rem;
+        font-size: 1.4rem;
+    }
 `
 const SmallMessageCard = styled.div`
     border: .3px solid #D3B6B3; 
@@ -87,6 +104,14 @@ const Submenu = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @media (max-width: 980px) {
+        padding: 0 3rem;
+        margin-bottom: 3rem;
+    }
+    @media (max-width: 480px) {
+        padding: 0 1rem;
+        margin-bottom: 2vh;
+    }
 `
 
 

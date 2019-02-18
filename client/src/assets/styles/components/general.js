@@ -66,6 +66,13 @@ const CreateClubButton = styled(Button)`
         background: #B7B1BA;
         border: .1rem solid #B7B1BA;
     }
+    @media (max-width: 48rem) {
+        &&&&&&&&&&{
+            padding-top: 1.6rem;
+            padding-bottom: 1.6rem;
+            margin-left: 1rem;
+        }
+    }
 `
 const Header = styled(Menu)`
     &&& {
@@ -84,7 +91,7 @@ const HeaderLogo = styled.img.attrs({
 })`
     min-height: 3rem; 
     min-width: 12rem;
-    @media (max-width: 64rem) {
+    @media (max-width: 640px) {
         &&&&&& {
             min-height: 2rem;
             min-width: 8rem;
@@ -105,7 +112,7 @@ const LibraryCanvas = styled.div`
     width: 100%;
     padding: .5rem 1rem;
     background-color: #FBF8F9;
-    @media (max-width: 102.4rem) {
+    @media (max-width: 1024px) {
         padding: .5rem 2rem;
     } 
 `
@@ -117,6 +124,12 @@ const ProfilePicture = styled(Image)`
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
+    }
+    @media (max-width: 980px) {
+        &&&&&& {
+            height: 11rem;
+            margin-bottom: 3rem;
+        }
     }
 `
 const Rate = styled(Image)`

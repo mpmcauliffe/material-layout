@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Grid, Image, } from 'semantic-ui-react'
+import { Grid, } from 'semantic-ui-react'
 import { ClubLink, CreateClub, ProfileEdit, } from '../components'
 import { 
     Content,
@@ -18,8 +18,6 @@ import {
     Submenu,
     TopicText,
 } from '../../assets/styles/components'
-//import { SidebarButton, SidebarLink, SidebarText, SubjectText, Submenu, } from '../../assets/styles/components/sidebar'
-//import { ProfilePicture, } from '../../assets/styles/components/general'
 import { truncate } from '../../assets/javascript'
 import { members, thread, } from '../../assets/store/store'
 import 'simplebar/dist/simplebar.min.css'
