@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Grid, Responsive } from 'semantic-ui-react'
+import { Grid, } from 'semantic-ui-react'
 import { Aside, Navbar, } from '../layout'
 //import { Aside } from '../layout/Aside'
 import { 
@@ -9,7 +9,10 @@ import {
     LibraryCanvas, 
     SectionHeader, 
 } from '../../assets/styles/components'
+import { Drawer } from '../../assets/styles/components/sidebar'
 import API from '../../utils/API'
+
+import { Backdrop, } from '../components/Backdrop'
 
 
 class Profile extends React.Component {
@@ -18,11 +21,23 @@ class Profile extends React.Component {
         toClub: false,
         user: {},
         clubs: [],
+        sidebarVisible: window.innerWidth < 769 ? false : true,
+        height: window.innerHeight, 
+        width: window.innerWidth,
     }
 
     componentWillMount = () => {
         this.setState({ user: this.props.user, toClub: false }, this.loadClubs)
+        window.removeEventListener('resize', this.updateDimensions)
     }
+    componentDidMount() { 
+        window.addEventListener('resize', this.updateDimensions)
+    }
+    updateDimensions = () => 
+        this.setState({
+            height: window.innerHeight, 
+            width: window.innerWidth,
+        })
 
     loadClubs = () => {
         API.getUserClubs( this.state.user.email )
@@ -54,41 +69,83 @@ class Profile extends React.Component {
         this.setState({toClub: true})
     }
 
+    sidebarToggleClickHandler = () => {
+        this.setState((prevState) => {
+            return {
+                sidebarVisible: !prevState.sidebarVisible,
+            }
+        })
+    }
+
+    backdropClickHandler = () => {
+        this.setState({
+            sidebarVisible: false,
+        })
+    }
+
     render() {
         const title = `Profile of ${this.state.user.firstname} ${this.state.user.lastname}`
-        const { user, } = this.state
+        const { sidebarVisible, user, } = this.state
+        let backdrop
 
         if (this.state.toClub)
             return <Redirect to="/club" />
 
+        if(sidebarVisible) 
+            backdrop = <Backdrop click={this.backdropClickHandler} />
+        
         return (
 
             <Fragment>
                 <Navbar 
                     header={true}
                     page={title} 
+                    sidebarClickHandler={this.sidebarToggleClickHandler}
                 />
-
+                {backdrop}
                 <Grid columns={2}>
                     <Grid.Row>
-                        <Grid.Column 
-                            width={4}
-                            as={Responsive}
-                            minWidth={980}
-                            style={{ paddingRight: 0 }}
-                        >
-                            <Aside
-                                address={this.state.user.address}
-                                clubs={this.state.clubs}
-                                email={this.state.user.email}
-                                phone={this.state.user.phone}
-                                profile={true}
-                                user={user}
-                                onCreateClubClose={this.onCreateClubClose}
-                                profileEditClose={this.onProfileEditClose}
-                                viewClub={this.viewClub}
-                            />
-                        </Grid.Column>
+                        <Fragment>
+                            {window.innerWidth > 890
+                                ?
+                                    <Grid.Column 
+                                        width={4}
+                                        style={{ paddingRight: 0 }}
+                                    >
+                                        <Aside
+                                            address={this.state.user.address}
+                                            clubs={this.state.clubs}
+                                            email={this.state.user.email}
+                                            phone={this.state.user.phone}
+                                            profile={true}
+                                            user={user}
+                                            onCreateClubClose={this.onCreateClubClose}
+                                            profileEditClose={this.onProfileEditClose}
+                                            viewClub={this.viewClub}
+                                        />
+                                    </Grid.Column>
+                                :
+                                    <Fragment>
+                                        <Drawer 
+                                            show={sidebarVisible ? 'translateX(0)' : 'translateX(-100%)'}
+                                        >
+                                            <Aside
+                                                address={this.state.user.address}
+                                                clubs={this.state.clubs}
+                                                email={this.state.user.email}
+                                                phone={this.state.user.phone}
+                                                profile={true}
+                                                user={user}
+                                                onCreateClubClose={this.onCreateClubClose}
+                                                profileEditClose={this.onProfileEditClose}
+                                                viewClub={this.viewClub}
+                                            />
+                                        </Drawer>
+                                    </Fragment>
+                            }
+                            
+                        </Fragment>
+
                         <Grid.Column 
                             computer={12}
                             tablet={16} 
@@ -102,7 +159,7 @@ class Profile extends React.Component {
                                 <SectionHeader>Your Books</SectionHeader>
                             </LibraryCanvas>
                         </Grid.Column>
-                    </Grid.Row>
+                    </Grid.Row>                 
                 </Grid>
                 <Navbar page={title}/>
             </Fragment>

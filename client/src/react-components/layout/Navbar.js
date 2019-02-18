@@ -62,7 +62,10 @@ class Navbar extends Component {
                                                     as={Responsive}
                                                     maxWidth={980}    
                                                 >
-                                                    <SidebarButton icon='sidebar' />
+                                                    <SidebarButton
+                                                        onClick={this.props.sidebarClickHandler}
+                                                        icon='sidebar' 
+                                                    />
                                                 </Header.Item>
                                             </Header.Menu>
                                             <Header.Menu position='right'>
@@ -96,7 +99,10 @@ class Navbar extends Component {
                                                     as={Responsive}
                                                     maxWidth={980}    
                                                 >
-                                                    <SidebarButton icon='sidebar' />
+                                                    <SidebarButton
+                                                        onClick={this.props.sidebarClickHandler}
+                                                        icon='sidebar' 
+                                                    />
                                                 </Header.Item>
                                             </Header.Menu>
                                             <Header.Item position='left' header>

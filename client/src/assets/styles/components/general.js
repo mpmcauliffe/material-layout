@@ -9,6 +9,9 @@ const ActionBarCanvas = styled.div`
     width: 100%;
     padding: 1rem;
     background-color: #FBF8F9;  
+    @media (max-width: 76.9rem) {
+        top: -100vh;
+    }
 `
 const AppModal = styled(Modal)`
     &&&&&& {
@@ -39,6 +42,15 @@ const CenterContainer = styled.div`
 `
 const Content = styled.div` 
     padding: 1rem;
+`
+const Cover = styled.div`
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0,0,0, 0.3);
 `
 const CreateClubButton = styled(Button)`
     &&&&&& {
@@ -95,7 +107,7 @@ const LibraryCanvas = styled.div`
     background-color: #FBF8F9;
     @media (max-width: 102.4rem) {
         padding: .5rem 2rem;
-    }
+    } 
 `
 const ProfilePicture = styled(Image)`
     &&& {
@@ -155,6 +167,7 @@ export {
     Carousel,
     CenterContainer,
     Content,
+    Cover,
     CreateClubButton,
     Header,
     HeaderLogo,

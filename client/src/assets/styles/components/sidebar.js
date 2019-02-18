@@ -1,7 +1,17 @@
 import styled from 'styled-components'
 import { Button } from 'semantic-ui-react'
 
-
+const Drawer = styled.div`
+    width: 67vw;
+    position: absolute;
+    z-index: 200;
+    transform: ${props => props.show || 'translateX(-100%)' };
+    box-shadow: 1px 0px 7px rgba(0,0,0, 0.5);
+    transition: transform 500ms ease-out;
+    @media (max-width: 48rem) {
+        width: 77vw;
+    }
+`
 const SidebarButton = styled(Button)`
     &&&&&& {
         background: #B7B1BA;
@@ -21,6 +31,9 @@ const SidebarCanvas = styled.div`
     justify-content: space-between;
     background: ${props => props.inputcolor || '#275B70'};    
     padding: 1rem; 
+    @media (max-width: 76.9rem) {
+        
+    }
 `
 const SidebarContainer = styled.div`
     height: 46.5vh;
@@ -78,6 +91,7 @@ const Submenu = styled.div`
 
 
 export { 
+    Drawer,
     SidebarButton,
     SidebarCanvas, 
     SidebarContainer, 
