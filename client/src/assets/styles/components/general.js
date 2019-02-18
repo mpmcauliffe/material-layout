@@ -42,6 +42,16 @@ const CenterContainer = styled.div`
 `
 const Content = styled.div` 
     padding: 1rem;
+    @media (max-width: 769px) {
+        &&&&&& {
+            width: 57vw;
+        }
+    }
+    @media (max-width: 480px) {
+        &&&&&& {
+            width: 65vw;
+        }
+    }
 `
 const Cover = styled.div`
     height: 100vh;
@@ -131,6 +141,12 @@ const ProfilePicture = styled(Image)`
             margin-bottom: 3rem;
         }
     }
+    @media (max-width: 360px) {
+        &&&&&& {
+            height: 6rem;
+            margin-bottom: 1.5rem;
+        }
+    }
 `
 const Rate = styled(Image)`
     &&& {
@@ -149,11 +165,23 @@ const SectionHeader = styled.h2`
     opacity: .4;
 `
 const Sidescroll = styled(SimpleBar)` 
-    &&&&&& {
+    &&& {
         height: 33vh; 
         width: 22vw;
         overflow-x: hidden; 
         margin-top: 1rem;
+    }
+    @media (max-width: 769px) {
+        &&&&&& {
+            width: 57vw;
+            padding-left: 1.5rem;
+        }
+    }
+    @media (max-width: 480px) {
+        &&&&&& {
+            width: 65vw;
+            padding: 1rem;
+        }
     }
 `
 const SmallText = styled.p`

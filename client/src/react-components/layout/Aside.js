@@ -72,12 +72,15 @@ const Aside = ({
                 :
                 <SidebarCanvas inputcolor='#88372F'>
                     <SidebarContainer>
-                        <SidebarHeader>Messages</SidebarHeader>
+                        <Submenu>
+                            <SidebarHeader>Messages</SidebarHeader>
 
-                        <IconButtonContainer>
-                            <SidebarButton icon='align justify' />
-                            <SidebarButton icon='comment' />
-                        </IconButtonContainer>
+                            <IconButtonContainer>
+                                <SidebarButton icon='align justify' />
+                                <SidebarButton icon='comment' />
+                            </IconButtonContainer>
+                        </Submenu>
+                        
                         
 
                         <Sidescroll>
@@ -109,12 +112,15 @@ const Aside = ({
                     
                 
                     <SidebarContainer>
-                        <SidebarHeader>Members</SidebarHeader>
+                        <Submenu>
+                            <SidebarHeader>Members</SidebarHeader>
 
-                        <IconButtonContainer>
-                            <SidebarButton icon='align justify' />
-                            <SidebarButton icon='user plus' />
-                        </IconButtonContainer>
+                            <IconButtonContainer>
+                                <SidebarButton icon='align justify' />
+                                <SidebarButton icon='user plus' />
+                            </IconButtonContainer>
+                        </Submenu>
+                        
                         
                         <Sidescroll>
                             <Content>

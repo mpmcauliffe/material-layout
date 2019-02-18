@@ -56,6 +56,9 @@ const SidebarHeader = styled.h3`
     @media (max-width: 980px) {
         font-size: 2.1rem;
     }
+    @media (max-width: 460px) {
+        font-size: 1.7rem;
+    }
 `
 const SidebarLink = styled.h4`
     font-family: fairplex-narrow, serif;
