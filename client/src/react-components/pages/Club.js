@@ -9,12 +9,17 @@ import {
     LibraryCanvas,
     SectionHeader,
 } from '../../assets/styles/components'
+import { Drawer } from '../../assets/styles/components/sidebar'
+import { Backdrop, } from '../components/Backdrop'
 
 
 class Club extends React.Component {
 
     state = {
-        club: {}
+        club: {},
+        sidebarVisible: window.innerWidth < 769 ? false : true,
+        height: window.innerHeight, 
+        width: window.innerWidth,
     }
 
     componentWillMount = () => {
@@ -27,7 +32,24 @@ class Club extends React.Component {
         sortedClub.events.sort( this.compareEvents )
 
         // then set the state
-        this.setState({ club: sortedClub})
+        this.setState({ club: sortedClub })
+
+        window.removeEventListener('resize', this.updateDimensions)    
+        
+        // if(window.innerWidth < 769) {
+        //     this.setState({
+        //         sidebarVisible: false,
+        //     })
+        // }
+    }
+    componentDidMount() { 
+        window.addEventListener('resize', this.updateDimensions)    
+    }
+    updateDimensions = () => {
+        this.setState({
+            height: window.innerHeight, 
+            width: window.innerWidth,
+        })
     }
 
     // sort members alphabetically
@@ -38,7 +60,7 @@ class Club extends React.Component {
         if ( mem1.name > mem2.name )
             return 1
 
-    return 0
+        return 0
     }
 
     // sort events in reverse chronological order
@@ -56,43 +78,81 @@ class Club extends React.Component {
         this.setState({ club: updatedClub })
     }
 
+    sidebarToggleClickHandler = () => {
+        this.setState((prevState) => {
+            return {
+                sidebarVisible: !prevState.sidebarVisible,
+            }
+        })
+    }
+
+    backdropClickHandler = () => {
+        this.setState({
+            sidebarVisible: false,
+        })
+    }
+
+
     render() {
         const title = `Club Details for ${this.state.club.clubname}`
+        const { sidebarVisible } = this.state
+        let backdrop
+
+        if(sidebarVisible && window.innerWidth < 769) 
+            backdrop = <Backdrop click={this.backdropClickHandler} />
+        
         return (
             <Fragment>
                 <Navbar 
                     page={title} 
                     header={true}
+                    sidebarClickHandler={this.sidebarToggleClickHandler}
                 />
+                {backdrop}
+                <Grid columns={2}>
+                    <Grid.Row>
+                        <Fragment>
+                            {window.innerWidth > 890
+                                ?
+                                    <Grid.Column 
+                                        width={4}
+                                        style={{ paddingRight: 0 }}
+                                    >
+                                        <Aside 
+                                            club={this.state.club}
+                                            profile={false}
+                                        />
+                                    </Grid.Column>
+                                :
+                                    <Fragment>
+                                        <Drawer 
+                                            show={sidebarVisible ? 'translateX(0)' : 'translateX(-100%)'}
+                                        >
+                                            <Aside 
+                                                club={this.state.club}
+                                                profile={false}
+                                            />
+                                        </Drawer>
+                                    </Fragment>
+                            }
+                            
+                        </Fragment>
 
-                <Grid>
-                    <Grid.Column 
-                        width={4}
-                        as={Responsive}
-                        minWidth={980}
-                        style={{ paddingRight: 0 }}
-                    >
-                        <Aside 
-                            club={this.state.club}
-                            profile={false}
-                        />
-                    </Grid.Column>
-                    
-
-                    <Grid.Column 
-                        computer={12}
-                        tablet={16} 
-                        mobile={16}
-                        style={{ paddingLeft: 0, paddingRight: 0, }}
-                    >
-                        <ActionBarCanvas>
-                            <SectionHeader>Events</SectionHeader>
-                        </ActionBarCanvas>
-                        <LibraryCanvas>
-                            <SectionHeader>Library</SectionHeader>
-                            <Carousel />
-                        </LibraryCanvas>
-                    </Grid.Column>
+                        <Grid.Column 
+                            computer={12}
+                            tablet={16} 
+                            mobile={16}
+                            style={{ paddingLeft: 0, paddingRight: 0, }}
+                        >
+                            <ActionBarCanvas>
+                                <SectionHeader>Events</SectionHeader>
+                            </ActionBarCanvas>
+                            <LibraryCanvas>
+                                <SectionHeader>Library</SectionHeader>
+                                <Carousel />
+                            </LibraryCanvas>
+                        </Grid.Column>
+                    </Grid.Row>
                 </Grid>
                 <Navbar page={title}/>
             </Fragment>

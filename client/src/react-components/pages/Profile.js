@@ -91,7 +91,7 @@ class Profile extends React.Component {
         if (this.state.toClub)
             return <Redirect to="/club" />
 
-        if(sidebarVisible) 
+        if(sidebarVisible && window.innerWidth < 769) 
             backdrop = <Backdrop click={this.backdropClickHandler} />
         
         return (
