@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Responsive, } from 'semantic-ui-react'
 import { Header, HeaderLogo, } from '../../assets/styles/components/general'
 import { SidebarButton } from '../../assets/styles/components/sidebar'
+import { truncate } from '../../assets/javascript'
 
 
 class Navbar extends Component {
@@ -50,7 +51,7 @@ class Navbar extends Component {
                                                 />
                                                 <Header.Item 
                                                     position='right'
-                                                    name={this.props.page}
+                                                    name={truncate(this.props.page, 27)}
                                                 />
                                             </Header.Item>
                                         </Header>
@@ -115,7 +116,7 @@ class Navbar extends Component {
                                             </Header.Item>
                                             <Header.Item 
                                                 position='left'
-                                                name={this.props.page}
+                                                name={truncate(this.props.page, 27)}
                                             />
                                             <Header.Menu position='right'>
                                                 {isClub ?
