@@ -12,7 +12,7 @@ import { bookList } from '../../assets/store/store'
 class Carousel extends Component {
     state = {
         numberOfSlidesToScroll: 4,
-        widthOfSlide: 120,
+        widthOfSlide: 200,
         timeToMoveOneSlide: 200,
         widthToScroll: 6,
     }
@@ -87,7 +87,7 @@ class Carousel extends Component {
                             key={book.number}
                             number={book.number}
                             information={book}
-                            isEvent={false}
+                            isEvent={this.props.isEvent}
                         />
                     )}
                 </CarouselViewport>
@@ -95,7 +95,6 @@ class Carousel extends Component {
                     onClick={this.handleRightNav}
                     icon='angle right'    
                 />
-            
             </CarouselContainer>
         )
     }

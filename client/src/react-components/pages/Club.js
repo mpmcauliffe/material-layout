@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Responsive, } from 'semantic-ui-react'
 import { Aside, Navbar, } from '../layout'
-//import { Aside, } from '../layout/Aside'
 import { Carousel, MeetingDetails, } from '../components'
 import { 
     ActionBarCanvas, 
@@ -146,10 +145,20 @@ class Club extends React.Component {
                         >
                             <ActionBarCanvas>
                                 <SectionHeader>Events</SectionHeader>
+                                <Grid columns={2}>
+                                    <Grid.Column width={13}>
+                                        
+                                    </Grid.Column>
+                                    <Grid.Column width={3}>
+
+                                    </Grid.Column>
+                                </Grid>
                             </ActionBarCanvas>
                             <LibraryCanvas>
                                 <SectionHeader>Library</SectionHeader>
-                                <Carousel />
+                                <Carousel 
+                                    isEvent={false}
+                                />
                             </LibraryCanvas>
                         </Grid.Column>
                     </Grid.Row>
@@ -180,6 +189,22 @@ export { Club }
 { this.state.club.members.map( member => (
                             <h5>{member.name}</h5>
                         )) }
+
+                        <div 
+                                            style={{
+                                                height: 240,
+                                                background: '#3d3d4f',
+                                                opacity: .3,
+                                            }}
+                                        />
+
+                                                                                <div 
+                                            style={{
+                                                height: 240,
+                                                background: '#4f3d3d',
+                                                opacity: .3,
+                                            }}
+                                        />
 
 <h4>Meetings:</h4>
 

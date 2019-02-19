@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Grid, } from 'semantic-ui-react'
+import { Grid, Tab } from 'semantic-ui-react'
 import { Aside, Navbar, } from '../layout'
 //import { Aside } from '../layout/Aside'
 import { 
@@ -88,6 +88,25 @@ class Profile extends React.Component {
         const { sidebarVisible, user, } = this.state
         let backdrop
 
+        const panes = [
+            { 
+                menuItem: 'Current Activity', 
+                render: () =>   <Tab.Pane style={{ padding: 0 }}>
+                                    <ActionBarCanvas>
+                                        <SectionHeader>Activity</SectionHeader>
+                                    </ActionBarCanvas>
+                                </Tab.Pane>, 
+            }, { 
+                menuItem: 'Your Books', 
+                render: () =>   <Tab.Pane style={{ padding: 0 }}>
+                                    <LibraryCanvas>
+                                        <SectionHeader>Your Books</SectionHeader>
+                                    </LibraryCanvas>
+                                </Tab.Pane>, 
+            },
+        ]
+
+
         if (this.state.toClub)
             return <Redirect to="/club" />
 
@@ -142,23 +161,32 @@ class Profile extends React.Component {
                                             />
                                         </Drawer>
                                     </Fragment>
-                            }
-                            
+                            }                            
                         </Fragment>
 
-                        <Grid.Column 
-                            computer={12}
-                            tablet={16} 
-                            mobile={16}
-                            style={{ paddingLeft: 0, paddingRight: 0, }}
-                        >
-                            <ActionBarCanvas>
-                                <SectionHeader>Current Activity</SectionHeader>
-                            </ActionBarCanvas>
-                            <LibraryCanvas>
-                                <SectionHeader>Your Books</SectionHeader>
-                            </LibraryCanvas>
-                        </Grid.Column>
+                        <Fragment>
+                            {window.innerWidth > 460
+                                ?
+                                    <Grid.Column 
+                                        computer={12}
+                                        tablet={16} 
+                                        mobile={16}
+                                        style={{ paddingLeft: 0, paddingRight: 0, }}
+                                    >
+                                        <ActionBarCanvas>
+                                            <SectionHeader>Activity</SectionHeader>
+                                        </ActionBarCanvas>
+                                        <LibraryCanvas>
+                                            <SectionHeader>Your Books</SectionHeader>
+                                        </LibraryCanvas>
+                                    </Grid.Column>
+                                :
+                                    <Tab 
+                                        panes={panes} 
+                                        grid={{ paneWidth: 16, tabWidth: 8 }}  
+                                    />
+                            }  
+                        </Fragment>
                     </Grid.Row>                 
                 </Grid>
                 <Navbar page={title}/>

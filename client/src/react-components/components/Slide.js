@@ -24,25 +24,18 @@ const Slide = ({ isEvent, information, number, }) =>
                             {truncate(information.title, 21)}
                         </em>
                     </TopicText>
-                    {isEvent ?
-                        <div>
-                            <InfoText>{information.location}</InfoText> 
-                            <InfoText>{information.time}</InfoText> 
-                        </div> 
-                    :
-                        <div>
-                            <InfoText>
-                                {information.author}
-                            </InfoText>
-                            {starGenerator(information.rating).map((score, index) => 
-                                <Rate 
-                                    key={index} 
-                                    src={require(`../../assets/img/rating/${score}.svg`)}
-                                    alt={'rating'} 
-                                />    
-                            )}
-                        </div>
-                    }
+                    <div>
+                        <InfoText>
+                            {information.author}
+                        </InfoText>
+                        {starGenerator(information.rating).map((score, index) => 
+                            <Rate 
+                                key={index} 
+                                src={require(`../../assets/img/rating/${score}.svg`)}
+                                alt={'rating'} 
+                            />    
+                        )}
+                    </div>
                 </div>
             </div>
         </Card>
