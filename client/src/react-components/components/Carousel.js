@@ -12,7 +12,7 @@ import { bookList, events } from '../../assets/store/store'
 class Carousel extends Component {
     state = {
         numberOfSlidesToScroll: 4,
-        widthOfSlide: 200,
+        widthOfSlide: window.innerWidth / 7.5,
         timeToMoveOneSlide: 200,
         widthToScroll: 6,
     }
@@ -81,15 +81,14 @@ class Carousel extends Component {
                     onClick={this.handleLeftNav}
                     icon='angle left'    
                 />
-                    {this.state.isEvent 
+                    {this.props.isEvent 
                         ?
                             <CarouselViewport ref='carouselViewport'>
-                                {events.map(event =>
+                                {events.map((event, index) =>
                                     <Slide
                                         key={event.id}
-                                        number={event.id}
                                         information={event}
-                                        isEvent={true}  
+                                        isEvent={this.props.isEvent}  
                                     />
                                 )}
                             </CarouselViewport>
@@ -98,7 +97,6 @@ class Carousel extends Component {
                                 {alphabetize(bookList).map(book =>
                                     <Slide
                                         key={book.number}
-                                        number={book.number}
                                         information={book}
                                         isEvent={this.props.isEvent}
                                     />

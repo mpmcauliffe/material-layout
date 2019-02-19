@@ -7,7 +7,6 @@ import {
     BookwormzLogo, 
     MainButton, 
 } from '../../assets/styles/components'
-//import { AppModalHeader, } from '../../assets/styles/components/general'
 
 
 const Landing = ({ appAuth }) => 

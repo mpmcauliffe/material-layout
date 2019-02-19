@@ -7,7 +7,11 @@ import {
     Modal, 
     Segment, 
 } from 'semantic-ui-react'
-import { AppModal, AppModalHeader, CreateButton, } from '../../assets/styles/components/general'
+import { 
+    AppModal, 
+    AppModalHeader, 
+    CreateButton, 
+} from '../../assets/styles/components'
 import { InlineError } from '../components'
 import API from '../../utils/API'
 

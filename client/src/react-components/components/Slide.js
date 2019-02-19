@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { 
     BookCover,
     Card,
+    EventCard,
     InfoText,
     Rate,
     TopicText,  
@@ -9,36 +10,45 @@ import {
 import { starGenerator, truncate } from '../../assets/javascript'
 
 
-const Slide = ({ isEvent, information, number, }) => 
+const Slide = ({ isEvent, information, }) => 
 
-        <Card>
-            <BookCover
-                src={isEvent ? require(`../../assets/img/book_img/${number+1}.jpg`) : 
-                        require(`../../assets/img/book_img/${information.number}.jpg`)}
-                alt='book cover'
-            />
-            <div>
+    <Fragment>
+        {isEvent
+            ?
+            <EventCard>
+                <BookCover
+                    src={require(`../../assets/img/book_img/${information.number}.jpg`)}
+                    size={'33vh'}
+                    alt='book cover'
+                />
+            </EventCard>
+            :
+            <Card>
+                <BookCover
+                    src={require(`../../assets/img/book_img/${information.number}.jpg`)}
+                    size={'17vh'}
+                    alt='book cover'
+                />
+                <TopicText>
+                    <em>
+                        {truncate(information.title, 21)}
+                    </em>
+                </TopicText>
                 <div>
-                    <TopicText>
-                        <em>
-                            {truncate(information.title, 21)}
-                        </em>
-                    </TopicText>
-                    <div>
-                        <InfoText>
-                            {information.author}
-                        </InfoText>
-                        {starGenerator(information.rating).map((score, index) => 
-                            <Rate 
-                                key={index} 
-                                src={require(`../../assets/img/rating/${score}.svg`)}
-                                alt={'rating'} 
-                            />    
-                        )}
-                    </div>
+                    <InfoText>
+                        {information.author}
+                    </InfoText>
+                    {starGenerator(information.rating).map((score, index) => 
+                        <Rate 
+                            key={index} 
+                            src={require(`../../assets/img/rating/${score}.svg`)}
+                            alt={'rating'} 
+                        />    
+                    )}
                 </div>
-            </div>
-        </Card>
+            </Card>
+        }
+    </Fragment>
     
 
 export { Slide }

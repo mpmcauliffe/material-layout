@@ -31,7 +31,11 @@ const SidebarButton = styled(Button)`
 `
 const SidebarCanvas = styled.div` 
     height: 100vh;
+    width: 100%;
     display: flex;
+    position: fixed;
+    /* margin-top: 7vh; */
+    margin-bottom: 7vh; 
     flex-direction: column;
     justify-content: space-between;
     background: ${props => props.inputcolor || '#275B70'};    

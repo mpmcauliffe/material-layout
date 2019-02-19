@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 const BookCover = styled.img`
-    height: 20vh;
+    height: ${props => props.size};
 `
 const Card = styled.div`
     width: 15rem;
@@ -21,6 +21,10 @@ const Card = styled.div`
         margin: 2rem auto;
     }
 `
+const EventCard = styled.div`
+    display: inline-block;
+    width: ${window.innerWidth / 1.09}
+`
 
 
-export { BookCover, Card, }
+export { BookCover, Card, EventCard, }

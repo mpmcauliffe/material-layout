@@ -5,7 +5,7 @@ import { FormHeader } from '../themes/themes'
 
 
 const ActionBarCanvas = styled.div` 
-    height: 50vh;
+    height: 86vh;
     width: 100%;
     padding: 1rem;
     background-color: #FBF8F9;  
@@ -126,15 +126,15 @@ const IconButtonContainer = styled.div`
     opacity: .5;
 `
 const InfoText = styled.p`
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0;
     color: #7d92a0;
 `
 const LibraryCanvas = styled.div`
-    height: 50vh;        
+    height: 86vh;        
     width: 100%;
     padding: .5rem 1rem;
-    background-color: #FBF8F9;
+    background-color: #ECF1F4;
     @media (max-width: 1024px) {
         padding: .5rem 2rem;
     } 
@@ -210,7 +210,7 @@ const SmallText = styled.p`
 `
 const TopicText = styled.p`
     font-family: fairplex-narrow, serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-top: .3rem;
     margin-bottom: .1rem;
     color: #9F97A4;

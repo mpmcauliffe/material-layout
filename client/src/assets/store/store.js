@@ -23,43 +23,50 @@ export const events = [
         id: 47878,
         title: 'Oliver Twist',
         location: 'Castle Grayskull',
-        time: '01/23/2019 7:00pm'
+        time: '01/23/2019 7:00pm',
+        number: 1,
     },
     {
         id: 37891,
         title: 'The Necronomicon',
         location: 'R\'lyeh',
-        time: '02/9/2019 7:00pm'
+        time: '02/9/2019 7:00pm',
+        number: 2,
     },
     {
         id: 14738,
         title: 'The Fountainhead',
         location: 'Chernobyl Reactor 4',
-        time: '02/27/2019 5:30pm'
+        time: '02/27/2019 5:30pm',
+        number: 3,
     },
     {
         id: 56778,
         title: 'Catch 22',
         location: 'Ziggurat of Ur',
-        time: '03/15/2019 8:00pm'
+        time: '03/15/2019 8:00pm',
+        number: 4,
     },
     {
         id: 67890,
         title: 'Tacuinum Sanitatis',
         location: 'Point Nemo',
-        time: '04/23/2019 7:00pm'
+        time: '04/23/2019 7:00pm',
+        number: 5,
     },
     {
         id: 36782,
         title: 'The Doors of Perception',
         location: 'Pyrenees Mountains',
-        time: '05/13/2019 7:30pm'
+        time: '05/13/2019 7:30pm',
+        number: 6,
     },
     {
         id: 26839,
         title: 'Big brown bear, blue bull, beautiful baboon blowing bubbles',
         location: 'Mt Damavand',
-        time: '05/21/2019 5:30pm'
+        time: '05/21/2019 5:30pm',
+        number: 7,
     },
 ]
 

@@ -4,10 +4,10 @@ import { Carousel, Slide, } from '../components'
 import { 
     ActionBarCanvas,
     Content,
+    CreateButton,
     SectionHeader,
 } from '../../assets/styles/components'
-import { CreateButton, } from '../../assets/styles/components/general'
-import { events } from '../../assets/store/store'
+
 
 const ActionBar = () => {
 
@@ -19,10 +19,10 @@ const ActionBar = () => {
                         <SectionHeader>Events</SectionHeader>
                         <Grid columns={2}>
                             <Grid.Column width={13}>
-                                <Carousel />
+                                <Carousel isEvent={true} />
                             </Grid.Column>
                             <Grid.Column width={3}>
-                                <CreateButton>Create New Event</CreateButton>
+                                <CreateButton style={{ marginBottom: 10, }}>Create New Event</CreateButton>
                                 <CreateButton>Find Event Questions</CreateButton>
                             </Grid.Column>
                         </Grid>

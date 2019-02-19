@@ -1,18 +1,21 @@
 import React, { Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Grid, Tab } from 'semantic-ui-react'
-import { Aside, Navbar, } from '../layout'
-//import { Aside } from '../layout/Aside'
+import { Grid, Tab, } from 'semantic-ui-react'
+import { 
+    ActionBar, 
+    Aside, 
+    Library, 
+    Navbar, 
+} from '../layout'
+import { Backdrop, } from '../components/'
 import { 
     ActionBarCanvas, 
+    Drawer,
     LibraryCanvas, 
     SectionHeader, 
 } from '../../assets/styles/components'
-import { Drawer } from '../../assets/styles/components/sidebar'
 import API from '../../utils/API'
-
-import { Backdrop, } from '../components/Backdrop'
 
 
 class Profile extends React.Component {

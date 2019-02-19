@@ -7,10 +7,8 @@ import {
     Library, 
     Navbar, 
 } from '../layout'
-import { MeetingDetails, } from '../components'
+import { Backdrop, MeetingDetails, } from '../components'
 import { Drawer } from '../../assets/styles/components/sidebar'
-import { Backdrop, } from '../components/Backdrop'
-
 
 
 class Club extends React.Component {
