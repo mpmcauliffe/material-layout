@@ -3,15 +3,20 @@ import styled from 'styled-components'
 
 const BookCover = styled.img`
     height: ${props => props.size};
+    overflow-y: hidden;
+    &:hover {
+        overflow-y: hidden;
+    }
 `
 const Card = styled.div`
-    width: 15rem;
+    width: 19rem;
     min-width: 15rem;
     display: inline-block;
     vertical-align: top;
     white-space: normal;
     margin-left: 1rem;
     margin-right: 1rem;
+    overflow-y: hidden;
     transition: color 1000;
     &:hover {
         cursor: pointer;

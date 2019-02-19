@@ -12,6 +12,26 @@ const Drawer = styled.div`
         width: 77vw;
     }
 `
+const SidebarBulk = styled.div`
+    display: flex;
+    height: 80vh;
+    width: 20vw;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: 769px) {
+        &&& {
+            height: 90vh;
+            width: 63vw;
+        }
+    }
+    @media (max-width: 480px) {
+        &&& {
+            height: 86vh;
+            width: 69vw;
+        }
+    }
+`
 const SidebarButton = styled(Button)`
     &&&&&& {
         background: #B7B1BA;
@@ -25,23 +45,22 @@ const SidebarButton = styled(Button)`
     }
     @media (max-width: 980px) {
         &&&&&&&&& {
-
+            height: 3rem;
         }
     }
 `
 const SidebarCanvas = styled.div` 
-    height: 100vh;
+    height: 172vh;
     width: 100%;
     display: flex;
-    position: fixed;
-    /* margin-top: 7vh; */
-    margin-bottom: 7vh; 
+    /* position: fixed; */
     flex-direction: column;
     justify-content: space-between;
     background: ${props => props.inputcolor || '#275B70'};    
     padding: 1rem; 
     @media (max-width: 480px) {
         &&& {
+            height: 100vh;
             width: 81vw;
         }
     }
@@ -124,6 +143,7 @@ const Submenu = styled.div`
 
 export { 
     Drawer,
+    SidebarBulk,
     SidebarButton,
     SidebarCanvas, 
     SidebarContainer, 

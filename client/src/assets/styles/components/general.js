@@ -168,7 +168,7 @@ const ProfilePicture = styled(Image)`
 const Rate = styled(Image)`
     &&& {
         display: inline;
-        height: 1rem;
+        height: 2rem;
         margin-top: .5rem;
         opacity: .4;
     }
@@ -183,10 +183,13 @@ const SectionHeader = styled.h2`
 `
 const Sidescroll = styled(SimpleBar)` 
     &&& {
-        height: 33vh; 
+        height: 27vh; 
         width: 22vw;
         overflow-x: hidden; 
-        margin-top: 1rem;
+        margin-top: .3rem;
+    }
+    @media (min-width: 1599px) {
+        height: 30vh;
     }
     @media (max-width: 769px) {
         &&&&&& {
@@ -211,7 +214,7 @@ const SmallText = styled.p`
 const TopicText = styled.p`
     font-family: fairplex-narrow, serif;
     font-size: 1.4rem;
-    margin-top: .3rem;
+    margin-top: .1rem;
     margin-bottom: .1rem;
     color: #9F97A4;
 `

@@ -5,12 +5,14 @@ import { Button } from 'semantic-ui-react'
 const CarouselContainer = styled.div`
     display: flex;
     margin-top: 2rem;
+    overflow-y: hidden;
 `
 const CarouselViewport = styled.div`
     white-space: nowrap;
     padding-bottom: 1rem;
     overflow-y: hidden;
     overflow-x: auto;
+    margin-top: 3rem;
     -webkit-overflow-scrolling: touch;
 `
 const CarouselNav = styled(Button)`
@@ -18,10 +20,11 @@ const CarouselNav = styled(Button)`
         flex-basis: 4rem;
         flex-grow: 1;
         flex-shrink: 0;
-        height: 35vh;
+        height: 49vh;
         max-width: 3vw;
         background-color: #F6F0F2;
         padding:0;
+        margin-top: 3rem;
         border: .07rem solid #54899D;
         opacity: .2;
         outline: none;

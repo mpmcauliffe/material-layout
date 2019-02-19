@@ -7,6 +7,7 @@ import {
 } from '../../assets/styles/components'
 import { alphabetize, scrollTo } from '../../assets/javascript'
 import { bookList, events } from '../../assets/store/store'
+import 'simplebar/dist/simplebar.min.css'
 
 
 class Carousel extends Component {

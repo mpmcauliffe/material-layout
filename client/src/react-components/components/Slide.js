@@ -18,7 +18,7 @@ const Slide = ({ isEvent, information, }) =>
             <EventCard>
                 <BookCover
                     src={require(`../../assets/img/book_img/${information.number}.jpg`)}
-                    size={'33vh'}
+                    size={'49vh'}
                     alt='book cover'
                 />
             </EventCard>
@@ -26,7 +26,7 @@ const Slide = ({ isEvent, information, }) =>
             <Card>
                 <BookCover
                     src={require(`../../assets/img/book_img/${information.number}.jpg`)}
-                    size={'17vh'}
+                    size={'35vh'}
                     alt='book cover'
                 />
                 <TopicText>
