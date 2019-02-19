@@ -63,7 +63,7 @@ const Cover = styled.div`
     z-index: 100;
     background: rgba(0,0,0, 0.3);
 `
-const CreateClubButton = styled(Button)`
+const CreateButton = styled(Button)`
     &&&&&& {
         font-family: multi-display, sans-serif;
         font-weight: 400;
@@ -109,6 +109,18 @@ const HeaderLogo = styled.img.attrs({
         }
     }
 `
+const IconButton = styled(Button)`
+    &&&&&& {
+        background: #B7B1BA;
+        border-radius: 50%;
+        opacity: .6;
+        transition: 500ms;
+    }
+    &&&&&&:hover {
+        transform: scale(1.1);
+        opacity: 1;        
+    }
+` 
 const IconButtonContainer = styled.div`
     float: right;
     opacity: .5;
@@ -214,9 +226,10 @@ export {
     CenterContainer,
     Content,
     Cover,
-    CreateClubButton,
+    CreateButton,
     Header,
     HeaderLogo,
+    IconButton,
     IconButtonContainer,
     InfoText,
     LibraryCanvas,

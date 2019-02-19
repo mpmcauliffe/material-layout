@@ -1,19 +1,16 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Grid, Tab, } from 'semantic-ui-react'
-import { Aside, Navbar, } from '../layout'
-import { Carousel, MeetingDetails, Slide } from '../components'
 import { 
-    ActionBarCanvas, 
-    Content,
-    LibraryCanvas,
-    SectionHeader,
-    Sidescroll,
-} from '../../assets/styles/components'
+    ActionBar, 
+    Aside, 
+    Library, 
+    Navbar, 
+} from '../layout'
+import { MeetingDetails, } from '../components'
 import { Drawer } from '../../assets/styles/components/sidebar'
 import { Backdrop, } from '../components/Backdrop'
-import { bookList } from '../../assets/store/store'
-import { alphabetize } from '../../assets/javascript'
+
 
 
 class Club extends React.Component {
@@ -104,28 +101,13 @@ class Club extends React.Component {
         const panes = [
             { 
                 menuItem: 'Events', 
-                render: () =>   <Tab.Pane style={{ padding: 0 }}>
-                                    <ActionBarCanvas>
-                                        <SectionHeader>Events</SectionHeader>
-                                    </ActionBarCanvas>
+                render: () =>   <Tab.Pane style={{ padding: 0 }}>                   
+                                        <ActionBar />
                                 </Tab.Pane>, 
             }, { 
                 menuItem: 'Library', 
                 render: () =>   <Tab.Pane style={{ padding: 0 }}>
-                                        <LibraryCanvas>
-                                            <SectionHeader>Library</SectionHeader>
-                                        
-                                            <Sidescroll style={{ height: '85vh' }}>
-                                                {alphabetize(bookList).map(book =>
-                                                    <Slide
-                                                        key={book.number}
-                                                        number={book.number}
-                                                        information={book}
-                                                        isEvent={false}
-                                                    />
-                                                )}
-                                            </Sidescroll>
-                                        </LibraryCanvas>
+                                    <Library />
                                 </Tab.Pane>,
             },
         ]
@@ -178,23 +160,8 @@ class Club extends React.Component {
                                         mobile={16}
                                         style={{ paddingLeft: 0, paddingRight: 0, }}
                                     >
-                                        <ActionBarCanvas>
-                                            <SectionHeader>Events</SectionHeader>
-                                            <Grid columns={2}>
-                                                <Grid.Column width={13}>
-                                                    
-                                                </Grid.Column>
-                                                <Grid.Column width={3}>
-
-                                                </Grid.Column>
-                                            </Grid>
-                                        </ActionBarCanvas>
-                                        <LibraryCanvas>
-                                            <SectionHeader>Library</SectionHeader>
-                                            <Carousel 
-                                                isEvent={false}
-                                            />
-                                        </LibraryCanvas>
+                                        <ActionBar />
+                                        <Library />
                                     </Grid.Column>
                                 :
                                     <Tab 
@@ -226,37 +193,3 @@ Club.propTypes = {
 
 
 export { Club }
-
-
-/*
-{ this.state.club.members.map( member => (
-                            <h5>{member.name}</h5>
-                        )) }
-
-                        <div 
-                                            style={{
-                                                height: 240,
-                                                background: '#3d3d4f',
-                                                opacity: .3,
-                                            }}
-                                        />
-
-                                                                                <div 
-                                            style={{
-                                                height: 240,
-                                                background: '#4f3d3d',
-                                                opacity: .3,
-                                            }}
-                                        />
-
-<h4>Meetings:</h4>
-
-                        { this.state.club.events.map( meeting => (
-                            <h5>{meeting.date.slice(0,10)}: {meeting.book}</h5>
-                        )) }
-
-                        <MeetingDetails className='sidebar__button'
-                                        user={this.props.user}
-                                        club={this.state.club} 
-                                        onClose={this.onCreateMeetingClose} />
-*/

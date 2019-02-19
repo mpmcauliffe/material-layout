@@ -7,7 +7,7 @@ import {
     Modal, 
     Segment, 
 } from 'semantic-ui-react'
-import { AppModal, AppModalHeader, CreateClubButton, } from '../../assets/styles/components/general'
+import { AppModal, AppModalHeader, CreateButton, } from '../../assets/styles/components/general'
 import { InlineError } from '../components'
 import API from '../../utils/API'
 
@@ -87,7 +87,7 @@ class CreateClub extends React.Component {
 
         return (
             <AppModal  
-                trigger={<CreateClubButton>Create Club</CreateClubButton>}
+                trigger={<CreateButton>Create Club</CreateButton>}
                 open={open}
                 onOpen={this.open}
                 onClose={this.close}  

@@ -6,7 +6,7 @@ import {
     CarouselViewport,
 } from '../../assets/styles/components'
 import { alphabetize, scrollTo } from '../../assets/javascript'
-import { bookList } from '../../assets/store/store'
+import { bookList, events } from '../../assets/store/store'
 
 
 class Carousel extends Component {
@@ -74,23 +74,37 @@ class Carousel extends Component {
     }
     
     render() {
-        console.log('render')
+        
         return (
             <CarouselContainer>
                 <CarouselNav 
                     onClick={this.handleLeftNav}
                     icon='angle left'    
                 />
-                <CarouselViewport ref='carouselViewport'>
-                    {alphabetize(bookList).map(book =>
-                        <Slide
-                            key={book.number}
-                            number={book.number}
-                            information={book}
-                            isEvent={this.props.isEvent}
-                        />
-                    )}
-                </CarouselViewport>
+                    {this.state.isEvent 
+                        ?
+                            <CarouselViewport ref='carouselViewport'>
+                                {events.map(event =>
+                                    <Slide
+                                        key={event.id}
+                                        number={event.id}
+                                        information={event}
+                                        isEvent={true}  
+                                    />
+                                )}
+                            </CarouselViewport>
+                        :
+                            <CarouselViewport ref='carouselViewport'>
+                                {alphabetize(bookList).map(book =>
+                                    <Slide
+                                        key={book.number}
+                                        number={book.number}
+                                        information={book}
+                                        isEvent={this.props.isEvent}
+                                    />
+                                )}
+                            </CarouselViewport>
+                    }
                 <CarouselNav
                     onClick={this.handleRightNav}
                     icon='angle right'    

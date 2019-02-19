@@ -1,60 +1,55 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Grid, } from 'semantic-ui-react' 
+import { Carousel, Slide, } from '../components'
 import { 
-    Grid, 
-    IconButton,
-    Paper, 
-    Tabs, 
-} from '@material-ui/core'
-import { Add } from '@material-ui/icons'
-import { Slide } from '../components'
-import { 
-    Carousel,
-    Content,
-    IconButtonContainer,
     ActionBarCanvas,
+    Content,
     SectionHeader,
 } from '../../assets/styles/components'
+import { CreateButton, } from '../../assets/styles/components/general'
+import { events } from '../../assets/store/store'
 
-
-const ActionBar = ({ events, handleValueChange, value }) => {
+const ActionBar = () => {
 
     return (
-        <Paper square={true} elevation={0}>
             <ActionBarCanvas>
-
-                <IconButtonContainer>
-                    <IconButton>
-                        <Add fontSize='default' />
-                    </IconButton>    
-                </IconButtonContainer>
-                
-                <SectionHeader>Events</SectionHeader>
-
-                <Content>
-                    <Grid container>
-                        <Carousel>
-                            <Tabs
-                                value={value}
-                                onChange={handleValueChange}
-                                scrollButtons='auto'
-                                indicatorColor='primary'
-                                scrollable
-                            >
-                                {events.map((event, index) => 
-                                    <Slide
-                                        key={event.id}
-                                        number={index}
-                                        information={event}
-                                        isEvent={true}  
-                                    />
-                                )}
-                            </Tabs>
-                        </Carousel>
-                    </Grid>
-                </Content>
+                {window.innerWidth > 480
+                    ?
+                    <Fragment>
+                        <SectionHeader>Events</SectionHeader>
+                        <Grid columns={2}>
+                            <Grid.Column width={13}>
+                                <Carousel />
+                            </Grid.Column>
+                            <Grid.Column width={3}>
+                                <CreateButton>Create New Event</CreateButton>
+                                <CreateButton>Find Event Questions</CreateButton>
+                            </Grid.Column>
+                        </Grid>
+                    </Fragment>
+                    :
+                    <Fragment></Fragment>                        
+                }                        
             </ActionBarCanvas>
-        </Paper>
     )
 }
 
 export { ActionBar }
+
+
+/*
+                            <Content>
+                                <Grid container>
+                                    <Carousel>
+                                        {events.map((event, index) => 
+                                            <Slide
+                                                key={event.id}
+                                                number={index}
+                                                information={event}
+                                                isEvent={true}  
+                                            />
+                                        )}
+                                    </Carousel>
+                                </Grid>
+                            </Content>
+*/
