@@ -9,13 +9,16 @@ const Card = styled.div`
     min-width: 15rem;
     display: inline-block;
     vertical-align: top;
-    whiteSpace: normal;
+    white-space: normal;
     margin-left: 1rem;
     margin-right: 1rem;
     transition: color 1000;
     &:hover {
         cursor: pointer;
-
+    }
+    @media (max-width: 480px) {
+        display: block;
+        margin: 1.5rem auto;
     }
 `
 

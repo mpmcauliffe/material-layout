@@ -9,7 +9,7 @@ const ActionBarCanvas = styled.div`
     width: 100%;
     padding: 1rem;
     background-color: #FBF8F9;  
-    @media (max-width: 460px) {
+    @media (max-width: 480px) {
         height: 95vh;
         width: 100vw;
     }
@@ -126,7 +126,7 @@ const LibraryCanvas = styled.div`
     @media (max-width: 1024px) {
         padding: .5rem 2rem;
     } 
-    @media (max-width: 460px) {
+    @media (max-width: 480px) {
         height: 95vh;
         width: 100vw;
     }

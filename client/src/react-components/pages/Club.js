@@ -1,15 +1,19 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Responsive, } from 'semantic-ui-react'
+import { Grid, Tab, } from 'semantic-ui-react'
 import { Aside, Navbar, } from '../layout'
-import { Carousel, MeetingDetails, } from '../components'
+import { Carousel, MeetingDetails, Slide } from '../components'
 import { 
     ActionBarCanvas, 
+    Content,
     LibraryCanvas,
     SectionHeader,
+    Sidescroll,
 } from '../../assets/styles/components'
 import { Drawer } from '../../assets/styles/components/sidebar'
 import { Backdrop, } from '../components/Backdrop'
+import { bookList } from '../../assets/store/store'
+import { alphabetize } from '../../assets/javascript'
 
 
 class Club extends React.Component {
@@ -97,6 +101,35 @@ class Club extends React.Component {
         const { sidebarVisible } = this.state
         let backdrop
 
+        const panes = [
+            { 
+                menuItem: 'Events', 
+                render: () =>   <Tab.Pane style={{ padding: 0 }}>
+                                    <ActionBarCanvas>
+                                        <SectionHeader>Events</SectionHeader>
+                                    </ActionBarCanvas>
+                                </Tab.Pane>, 
+            }, { 
+                menuItem: 'Library', 
+                render: () =>   <Tab.Pane style={{ padding: 0 }}>
+                                        <LibraryCanvas>
+                                            <SectionHeader>Library</SectionHeader>
+                                        
+                                            <Sidescroll style={{ height: '85vh' }}>
+                                                {alphabetize(bookList).map(book =>
+                                                    <Slide
+                                                        key={book.number}
+                                                        number={book.number}
+                                                        information={book}
+                                                        isEvent={false}
+                                                    />
+                                                )}
+                                            </Sidescroll>
+                                        </LibraryCanvas>
+                                </Tab.Pane>,
+            },
+        ]
+
         if(sidebarVisible && window.innerWidth < 769) 
             backdrop = <Backdrop click={this.backdropClickHandler} />
         
@@ -134,33 +167,43 @@ class Club extends React.Component {
                                         </Drawer>
                                     </Fragment>
                             }
-                            
                         </Fragment>
 
-                        <Grid.Column 
-                            computer={12}
-                            tablet={16} 
-                            mobile={16}
-                            style={{ paddingLeft: 0, paddingRight: 0, }}
-                        >
-                            <ActionBarCanvas>
-                                <SectionHeader>Events</SectionHeader>
-                                <Grid columns={2}>
-                                    <Grid.Column width={13}>
-                                        
-                                    </Grid.Column>
-                                    <Grid.Column width={3}>
+                        <Fragment>
+                            {window.innerWidth > 480
+                                ?
+                                    <Grid.Column 
+                                        computer={12}
+                                        tablet={16} 
+                                        mobile={16}
+                                        style={{ paddingLeft: 0, paddingRight: 0, }}
+                                    >
+                                        <ActionBarCanvas>
+                                            <SectionHeader>Events</SectionHeader>
+                                            <Grid columns={2}>
+                                                <Grid.Column width={13}>
+                                                    
+                                                </Grid.Column>
+                                                <Grid.Column width={3}>
 
+                                                </Grid.Column>
+                                            </Grid>
+                                        </ActionBarCanvas>
+                                        <LibraryCanvas>
+                                            <SectionHeader>Library</SectionHeader>
+                                            <Carousel 
+                                                isEvent={false}
+                                            />
+                                        </LibraryCanvas>
                                     </Grid.Column>
-                                </Grid>
-                            </ActionBarCanvas>
-                            <LibraryCanvas>
-                                <SectionHeader>Library</SectionHeader>
-                                <Carousel 
-                                    isEvent={false}
-                                />
-                            </LibraryCanvas>
-                        </Grid.Column>
+                                :
+                                    <Tab 
+                                        panes={panes} 
+                                        grid={{ paneWidth: 16, tabWidth: 8 }}  
+                                    />
+                            }
+                        </Fragment>
+                        
                     </Grid.Row>
                 </Grid>
                 <Navbar page={title}/>
