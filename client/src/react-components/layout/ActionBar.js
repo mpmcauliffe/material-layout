@@ -17,15 +17,11 @@ const ActionBar = () => {
                     ?
                     <Fragment>
                         <SectionHeader>Events</SectionHeader>
-                        <Grid columns={2}>
-                            <Grid.Column width={13}>
-                                <Carousel isEvent={true} />
-                            </Grid.Column>
-                            <Grid.Column width={3}>
-                                <CreateButton style={{ marginBottom: 10, }}>Create New Event</CreateButton>
-                                <CreateButton>Find Event Questions</CreateButton>
-                            </Grid.Column>
-                        </Grid>
+                        <Carousel isEvent={true} />
+                        <div style={{ marginTop: '9vh' }}>
+                            <CreateButton style={{ marginright: '2vw' }}>Create New Event</CreateButton>
+                            <CreateButton>Find Event Questions</CreateButton>
+                        </div>
                     </Fragment>
                     :
                     <Fragment></Fragment>                        

@@ -29,8 +29,10 @@ const Library = () => {
                             <IconButtonContainer>
                                 <IconButton icon='add' />
                             </IconButtonContainer>
-                            <SectionHeader>Library</SectionHeader>
-                            <Sidescroll style={{ height: '85vh' }}>
+                            <SectionHeader>
+                                Library
+                            </SectionHeader>
+                            <Sidescroll style={{ height: '85vh', marginTop: '29px', }}>
                                 {alphabetize(bookList).map(book =>
                                     <Slide
                                         key={book.number}

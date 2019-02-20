@@ -5,12 +5,22 @@ import { FormHeader } from '../themes/themes'
 
 
 const ActionBarCanvas = styled.div` 
-    height: 86vh;
+    height: 98vh;
     width: 100%;
     padding: 1rem;
     background-color: #FBF8F9;  
     @media (max-width: 480px) {
         height: 95vh;
+        width: 100vw;
+    }
+    @media (max-width: 768px) {
+        height: 70vh;
+        width: 100vw;
+        padding: 2vh;
+        margin-right: 0;
+    } 
+    @media (max-width: 1024px) {
+        height: 80vh;
         width: 100vw;
     }
 `
@@ -77,7 +87,7 @@ const CreateButton = styled(Button)`
         background: #B7B1BA;
         border: .1rem solid #B7B1BA;
     }
-    @media (max-width: 48rem) {
+    @media (max-width: 480px) {
         &&&&&&&&&&{
             padding-top: 1.6rem;
             padding-bottom: 1.6rem;
@@ -131,15 +141,20 @@ const InfoText = styled.p`
     color: #7d92a0;
 `
 const LibraryCanvas = styled.div`
-    height: 86vh;        
+    height: 98vh;        
     width: 100%;
     padding: .5rem 1rem;
     background-color: #ECF1F4;
-    @media (max-width: 1024px) {
-        padding: .5rem 2rem;
-    } 
     @media (max-width: 480px) {
         height: 95vh;
+        width: 100vw;
+    }
+    @media (max-width: 768px) {
+        height: 70vh;
+        padding: 2vh;
+    } 
+    @media (max-width: 1024px) {
+        height: 80vh;
         width: 100vw;
     }
 `
@@ -168,7 +183,7 @@ const ProfilePicture = styled(Image)`
 const Rate = styled(Image)`
     &&& {
         display: inline;
-        height: 2rem;
+        height: 1.5rem;
         margin-top: .5rem;
         opacity: .4;
     }

@@ -6,6 +6,13 @@ const CarouselContainer = styled.div`
     display: flex;
     margin-top: 2rem;
     overflow-y: hidden;
+    overflow-x: hidden;
+    @media (max-width: 1024px) {
+        width: 73vw;
+    }
+    @media (max-width: 769px) {
+        width: 93vw;
+    }
 `
 const CarouselViewport = styled.div`
     white-space: nowrap;
@@ -35,6 +42,11 @@ const CarouselNav = styled(Button)`
     }
     &&&:focus {
         border: .1rem solid #9D5B54;
+    }
+    @media (max-width: 1024px) {
+        &&&&&& {
+            height: 39vh;
+        }
     }
 `
 

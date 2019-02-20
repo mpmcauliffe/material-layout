@@ -13,7 +13,7 @@ import 'simplebar/dist/simplebar.min.css'
 class Carousel extends Component {
     state = {
         numberOfSlidesToScroll: 4,
-        widthOfSlide: window.innerWidth / 7.5,
+        widthOfSlide: window.innerWidth / 5.87,
         timeToMoveOneSlide: 200,
         widthToScroll: 6,
     }

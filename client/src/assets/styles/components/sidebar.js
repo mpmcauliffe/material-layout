@@ -50,7 +50,7 @@ const SidebarButton = styled(Button)`
     }
 `
 const SidebarCanvas = styled.div` 
-    height: 172vh;
+    height: 196vh;
     width: 100%;
     display: flex;
     /* position: fixed; */
@@ -62,6 +62,11 @@ const SidebarCanvas = styled.div`
         &&& {
             height: 100vh;
             width: 81vw;
+        }
+    }
+    @media (max-width: 1024px) {
+        &&& {
+            height: 160vh;
         }
     }
 `
