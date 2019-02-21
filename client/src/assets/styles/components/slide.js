@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Image } from 'semantic-ui-react'
 
 
 const BookCover = styled.img`
@@ -61,6 +62,14 @@ const ColTwo = styled.div`
     flex-direction: column;
     justify-content: space-between;
 `
+const MapCanvas = styled(Image)`
+    height: 290px;
+    width: 250px;
+    border: 1px solid #E8CCBF;
+    @media (max-width: 769px) {
+        margin: 5rem 2rem 3rem 9.5rem;
+    }
+`
 
 
 export { 
@@ -71,4 +80,5 @@ export {
     EventHeader,
     EventInfo,
     EventText,
+    MapCanvas,
 }

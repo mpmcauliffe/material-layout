@@ -153,9 +153,7 @@ class Club extends React.Component {
                             {window.innerWidth > 480
                                 ?
                                     <Grid.Column 
-                                        computer={12}
-                                        tablet={16} 
-                                        mobile={16}
+                                        width={window.innerWidth > 768 ? 12 : 16}
                                         style={{ paddingLeft: 0, paddingRight: 0, }}
                                     >
                                         <ActionBar />
@@ -191,3 +189,9 @@ Club.propTypes = {
 
 
 export { Club }
+
+/*
+computer={12}
+tablet={16} 
+mobile={16}
+*/

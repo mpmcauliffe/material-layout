@@ -10,14 +10,13 @@ const ActionBarCanvas = styled.div`
     padding: 1rem;
     background-color: #FBF8F9;  
     @media (max-width: 480px) {
-        height: 95vh;
-        width: 100vw;
+        height: 100vh;
+        width: 100%;
     }
     @media (max-width: 768px) {
         height: 70vh;
-        width: 100vw;
+        width: 100%;
         padding: 2vh;
-        margin-right: 0;
     } 
     @media (max-width: 1024px) {
         height: 80vh;
@@ -146,11 +145,12 @@ const LibraryCanvas = styled.div`
     padding: .5rem 1rem;
     background-color: #ECF1F4;
     @media (max-width: 480px) {
-        height: 95vh;
-        width: 100vw;
+        height: 100vh;
+        width: 100%;
     }
     @media (max-width: 768px) {
         height: 70vh;
+        width: 100%;
         padding: 2vh;
     } 
     @media (max-width: 1024px) {

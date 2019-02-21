@@ -60,13 +60,18 @@ const SidebarCanvas = styled.div`
     padding: 1rem; 
     @media (max-width: 480px) {
         &&& {
-            height: 100vh;
+            height: 95vh;
             width: 81vw;
         }
     }
-    @media (max-width: 1024px) {
+    @media (min-width: 768px) {
         &&& {
             height: 160vh;
+        }
+    }
+    @media (min-width: 1025px) {
+        &&& {
+            height: 196vh;
         }
     }
 `

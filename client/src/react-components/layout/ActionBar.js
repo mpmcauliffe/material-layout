@@ -1,11 +1,17 @@
 import React, { Fragment } from 'react'
 import { Grid, } from 'semantic-ui-react' 
-import { Carousel, Slide, } from '../components'
+import { 
+    BookInfo, 
+    Carousel, 
+    EventInfo, 
+    Slide, 
+} from '../components'
 import { 
     ActionBarCanvas,
-    Content,
+    BookCover,
     CreateButton,
     SectionHeader,
+    Sidescroll,
 } from '../../assets/styles/components'
 
 
@@ -24,7 +30,12 @@ const ActionBar = () => {
                         </div>
                     </Fragment>
                     :
-                    <Fragment></Fragment>                        
+                    <Fragment>
+                        <SectionHeader>Events</SectionHeader>
+                        <Sidescroll style={{ height: '85vh', marginTop: '29px', }}>
+                               
+                        </Sidescroll>            
+                    </Fragment>                        
                 }                        
             </ActionBarCanvas>
     )

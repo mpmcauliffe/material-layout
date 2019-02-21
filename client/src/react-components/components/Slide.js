@@ -3,19 +3,18 @@ import { Grid, Responsive } from 'semantic-ui-react'
 import { 
     BookCover,
     Card,
+    ColTwo,
     EventCard,
+    EventHeader,
+    EventInfo,
+    EventText,
     InfoText,
+    MapCanvas,
     Rate,
     SidebarButton,
     TopicText,  
 } from '../../assets/styles/components'
 import { starGenerator, truncate } from '../../assets/javascript'
-import {
-    ColTwo,
-    EventHeader,
-    EventInfo,
-    EventText,
-} from '../../assets/styles/components/slide'
 
 
 const BookInfo = ({ information }) =>
@@ -46,13 +45,13 @@ const LocationInfo = ({ information }) =>
         {window.innerWidth < 769
             ?
             <Grid columns={2}>
-                <Grid.Column width={5} style={{ textAlign: 'right' }}>
+                <Grid.Column width={9} style={{ textAlign: 'right' }}>
                     <div style={{ textAlign: 'right' }}>
                         <EventInfo>{information.date}</EventInfo>
                         <EventText>{information.time}</EventText>
                     </div>
                 </Grid.Column>
-                <Grid.Column width={11} style={{ textAlign: 'right' }}>
+                <Grid.Column width={7} style={{ textAlign: 'right' }}>
                     <div style={{ textAlign: 'right' }}>
                         <EventInfo>{truncate(information.location, 30)}</EventInfo>
                         <EventText>{information.street}</EventText>
@@ -110,7 +109,10 @@ const Slide = ({ isEvent, information, }) => {
                                 ?
                                 <Fragment>
                                     <LocationInfo information={information} />
-                                    <div style={{ height: '100%', width: '100%', background: '#EAF8DB', }} />                                
+                                    <MapCanvas
+                                        src={require(`../../assets/img/other/map.png`)}
+                                        alt='Map'
+                                    />                                
                                 </Fragment>
                                 :
                                 <ColTwo>
@@ -135,7 +137,10 @@ const Slide = ({ isEvent, information, }) => {
                             as={Responsive}
                             minWidth={769}
                         >
-                            <div style={{ height: '100%', width: '100%', background: '#EAF8DB', }} />
+                            <MapCanvas
+                                src={require(`../../assets/img/other/map.png`)}
+                                alt='Map'
+                            />      
                         </Grid.Column>
                     </Grid>
                 </EventCard>
@@ -169,6 +174,10 @@ const Slide = ({ isEvent, information, }) => {
     )
 }
 
-export { Slide }
+export {
+    EventInfo,
+    BookInfo, 
+    Slide 
+}
 
 //<SmallText>Rating: {score}</SmallText>

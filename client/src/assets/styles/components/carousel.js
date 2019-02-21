@@ -11,7 +11,7 @@ const CarouselContainer = styled.div`
         width: 73vw;
     }
     @media (max-width: 769px) {
-        width: 93vw;
+        width: 97vw;
     }
 `
 const CarouselViewport = styled.div`
@@ -45,7 +45,12 @@ const CarouselNav = styled(Button)`
     }
     @media (max-width: 1024px) {
         &&&&&& {
-            height: 39vh;
+            height: 33vh;
+        }
+    }
+    @media (max-width: 769px) {
+        &&&&&& {
+            max-width: 5vw;
         }
     }
 `
