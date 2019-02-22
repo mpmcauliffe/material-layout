@@ -11,7 +11,7 @@ import {
     InfoText,
     MapCanvas,
     Rate,
-    SidebarButton,
+    IconButton,
     TopicText,  
 } from '../../assets/styles/components'
 import { starGenerator, truncate } from '../../assets/javascript'
@@ -32,7 +32,7 @@ const BookInfo = ({ information }) =>
         </div>
         <div>
             {window.innerWidth > 768 
-                ? <SidebarButton icon='edit' />
+                ? <IconButton icon='edit' />
                 : <Fragment />
             }             
         </div>
@@ -43,21 +43,17 @@ const LocationInfo = ({ information }) =>
     <Fragment>
         {window.innerWidth < 769
             ?
-            <Grid columns={2}>
-                <Grid.Column width={9} style={{ textAlign: 'right' }}>
-                    <div style={{ textAlign: 'right' }}>
-                        <EventInfo>{information.date}</EventInfo>
-                        <EventText>{information.time}</EventText>
-                    </div>
-                </Grid.Column>
-                <Grid.Column width={7} style={{ textAlign: 'right' }}>
-                    <div style={{ textAlign: 'right' }}>
-                        <EventInfo>{truncate(information.location, 30)}</EventInfo>
-                        <EventText>{information.street}</EventText>
-                        <EventText>{information.town}</EventText>
-                    </div>
-                </Grid.Column>
-            </Grid>
+            <div style={{ textAlign: 'right' }}>
+                <EventInfo>{information.date}</EventInfo>
+                <EventText>{information.time}</EventText>
+                <EventInfo>{truncate(information.location, 30)}</EventInfo>
+                <EventText>{information.street}</EventText>
+                <EventText>{information.town}</EventText>
+                <div style={{ marginTop: '2rem', }}>
+                    <IconButton icon='map' />
+                    <IconButton icon='edit' />              
+                </div>
+            </div> 
             :
             <Fragment>
                 <div style={{ textAlign: 'right' }}>
@@ -101,69 +97,73 @@ const Slide = ({ isEvent, information, }) => {
         <Fragment>
             {isEvent
                 ?
-                <EventCard>
-                    <Grid columns={window.innerWidth < 769 ? 2 : 4}>
-                        <Grid.Column 
-                            width={window.innerWidth < 769 ? 6 : 4} 
-                            style={{ paddingRight: 7, }}
-                        >
-                            <BookCover
-                                src={require(`../../assets/img/book_img/${information.number}.jpg`)}
-                                size={window.innerWidth > 1024 ? '49vh' : (window.innerWidth > 768) ? '30vh' : '15vh'}
-                                alt='book cover'
-                            />
-                            {window.innerWidth < 769 
-                                ?
-                                <BookInfo information={information} />
-                                :
-                                <Fragment />                  
-                            }
-                        </Grid.Column>
+                <Fragment>
+                    {window.innerWidth > 768 
+                        ?
+                        <EventCard>
+                            <Grid columns={4}>
+                                <Grid.Column 
+                                    width={4} 
+                                    style={{ paddingRight: 7, }}
+                                >
+                                    <BookCover
+                                        src={require(`../../assets/img/book_img/${information.number}.jpg`)}
+                                        size={window.innerWidth > 1024 ? '49vh' : '30vh'}
+                                        alt='book cover'
+                                    />
+                                </Grid.Column>
 
+                                <Grid.Column 
+                                    width={4} 
+                                    style={{ paddingLeft: 0, }}
+                                >
+                                    <ColTwo>
+                                        <BookInfo information={information} />
+                                    </ColTwo>
+                                </Grid.Column>
 
-                        <Grid.Column 
-                            width={window.innerWidth < 769 ? 10 : 4} 
-                            style={{ paddingLeft: 0, }}
-                        >
-                            {window.innerWidth < 769
-                                ?
-                                <Fragment>
-                                    <LocationInfo information={information} />
+                                <Grid.Column 
+                                    width={3} 
+                                    as={Responsive}
+                                    minWidth={769}
+                                    style={{ paddingLeft: 0, paddingRight: 0, }}
+                                >
+                                    <ColTwo>
+                                        <LocationInfo information={information} />                        
+                                    </ColTwo>
+                                </Grid.Column>
+                                <Grid.Column 
+                                    width={5}
+                                    as={Responsive}
+                                    minWidth={769}
+                                >
                                     <MapCanvas
                                         src={require(`../../assets/img/other/map.png`)}
                                         alt='Map'
-                                    />                                
-                                </Fragment>
-                                :
-                                <ColTwo>
-                                    <BookInfo information={information} />
-                                </ColTwo>
-                            }
-                        </Grid.Column>
-
-
-                        <Grid.Column 
-                            width={3} 
-                            as={Responsive}
-                            minWidth={769}
-                            style={{ paddingLeft: 0, paddingRight: 0, }}
-                        >
-                            <ColTwo>
-                                <LocationInfo information={information} />                        
-                            </ColTwo>
-                        </Grid.Column>
-                        <Grid.Column 
-                            width={5}
-                            as={Responsive}
-                            minWidth={769}
-                        >
-                            <MapCanvas
-                                src={require(`../../assets/img/other/map.png`)}
-                                alt='Map'
-                            />      
-                        </Grid.Column>
-                    </Grid>
-                </EventCard>
+                                    />      
+                                </Grid.Column>
+                            </Grid>
+                        </EventCard>
+                        :
+                        <MobileCard>
+                            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', }}>
+                                <div>
+                                    <BookCover
+                                        src={require(`../../assets/img/book_img/${information.number}.jpg`)}
+                                        size={'15vh'}
+                                        alt='book cover'
+                                        style={{ marginRight: '1rem' }}
+                                    />
+                                </div>
+                                <BookInfo information={information} />
+                                <div>
+                                    <RatingGenerator rating={information.rating} />
+                                </div>
+                            </div>
+                            <LocationInfo information={information} />
+                        </MobileCard>
+                    }
+                </Fragment>
                 :
                 <Fragment>
                     {window.innerWidth > 768 

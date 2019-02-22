@@ -19,6 +19,11 @@ const AppModal = styled(Modal)`
     &&&&&& {
         width: 30rem;
     }
+    @media (max-width: 640px) {
+        &&&&&&{
+            width: 100vw;
+        }
+    }
 `
 const AppModalHeader = styled(Modal.Header)`    
     &&&&&& {

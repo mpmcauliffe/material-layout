@@ -1,25 +1,25 @@
 import React, { Fragment } from 'react'
 import { Grid, } from 'semantic-ui-react' 
 import { 
-    BookInfo, 
     Carousel, 
-    EventInfo, 
     Slide, 
 } from '../components'
 import { 
     ActionBarCanvas,
-    BookCover,
     CreateButton,
+    IconButton,
+    IconButtonContainer,
     SectionHeader,
     Sidescroll,
 } from '../../assets/styles/components'
+import { events } from '../../assets/store/store'
 
 
 const ActionBar = () => {
 
     return (
             <ActionBarCanvas>
-                {window.innerWidth > 480
+                {window.innerWidth > 768
                     ?
                     <Fragment>
                         <SectionHeader>Events</SectionHeader>
@@ -31,9 +31,19 @@ const ActionBar = () => {
                     </Fragment>
                     :
                     <Fragment>
+                        <IconButtonContainer>
+                            <IconButton icon='add' />
+                        </IconButtonContainer>
                         <SectionHeader>Events</SectionHeader>
-                        <Sidescroll style={{ height: '85vh', marginTop: '29px', }}>
-                               
+                        <Sidescroll style={{ height: '80vh', marginTop: '29px', }}>
+                            {events.map(event =>
+                                <Slide
+                                    key={event.id}
+                                    number={event.number}
+                                    information={event}
+                                    isEvent={true}
+                                />
+                            )}
                         </Sidescroll>            
                     </Fragment>                        
                 }                        
