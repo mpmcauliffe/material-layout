@@ -15,7 +15,7 @@ const Library = () => {
     return (
             <LibraryCanvas>
                 <Fragment>
-                    {window.innerWidth > 480
+                    {window.innerWidth > 768
                         ?
                         <Fragment>
                             <IconButtonContainer>

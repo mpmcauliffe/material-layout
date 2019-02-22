@@ -189,9 +189,3 @@ Club.propTypes = {
 
 
 export { Club }
-
-/*
-computer={12}
-tablet={16} 
-mobile={16}
-*/

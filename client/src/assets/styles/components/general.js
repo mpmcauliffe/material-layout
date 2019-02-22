@@ -197,14 +197,7 @@ const Sidescroll = styled(SimpleBar)`
     }
     @media (max-width: 769px) {
         &&&&&& {
-            width: 57vw;
-            padding-left: 1.5rem;
-        }
-    }
-    @media (max-width: 480px) {
-        &&&&&& {
-            width: 65vw;
-            padding: 1rem;
+            width: 100%;
         }
     }
 `

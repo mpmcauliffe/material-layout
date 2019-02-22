@@ -22,21 +22,19 @@ const BookInfo = ({ information }) =>
     <Fragment>      
         <EventHeader>{truncate(information.title, 13)}</EventHeader>    
         <div>
-            <EventInfo style={{ marginBottom: 5, }}>
+            <EventInfo style={window.innerWidth > 768 ? { marginBottom: 5, } : {}}>
                 {truncate(information.author, 20)}
             </EventInfo>
-            <div style={{ display: 'flex', flexDirection: 'row', marginBottom: 27, }}>
-                {starGenerator(information.rating).map((score, index) => 
-                    <Rate 
-                        key={index} 
-                        src={require(`../../assets/img/rating/${score}.svg`)}
-                        alt={'rating'} 
-                    />    
-                )}    
-            </div>
+            {window.innerWidth > 768 
+                ? <RatingGenerator rating={information.rating} />
+                : <Fragment />
+            }
         </div>
         <div>
-            <SidebarButton icon='edit' />
+            {window.innerWidth > 768 
+                ? <SidebarButton icon='edit' />
+                : <Fragment />
+            }             
         </div>
     </Fragment>
 
@@ -74,6 +72,27 @@ const LocationInfo = ({ information }) =>
             </Fragment>
         }
     </Fragment>
+
+
+const RatingGenerator = ({ rating }) => 
+        <Fragment>
+            <div style={window.innerWidth > 768 
+                ? { 
+                    display: 'flex', 
+                    flexDirection: 'row',
+                    marginBottom: 27, 
+                    }
+                : {}}>
+                {starGenerator(rating).map((score, index) => 
+                    <Rate 
+                        key={index} 
+                        src={require(`../../assets/img/rating/${score}.svg`)}
+                        // modifier={window.innerWidth > 768 ? '1.5rem' : '1rem'}
+                        alt={'rating'} 
+                    />    
+                )}    
+            </div>
+        </Fragment>
 
 
 const Slide = ({ isEvent, information, }) => {
@@ -175,15 +194,25 @@ const Slide = ({ isEvent, information, }) => {
                         </Card>
                         :
                         <MobileCard>
-                            <div>
+                            <div style={{ display: 'flex' }}>
                                 <BookCover
                                     src={require(`../../assets/img/book_img/${information.number}.jpg`)}
                                     size={'15vh'}
                                     alt='book cover'
+                                    style={{ marginRight: '1rem' }}
                                 />
+                                <div style={{ 
+                                    display: 'flex', 
+                                    flexDirection: 'column', 
+                                    height: '100%', 
+                                    alignItems: 'flexEnd', 
+                                }}>
+                                    <BookInfo information={information} />
+                                </div>
                             </div>
+                            
                             <div>
-                                <BookInfo information={information} />
+                                <RatingGenerator rating={information.rating} />
                             </div>
                         </MobileCard>
                     }

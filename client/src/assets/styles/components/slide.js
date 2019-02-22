@@ -73,9 +73,10 @@ const MapCanvas = styled(Image)`
 const MobileCard = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
-    padding: .5rem;
-    border: .1rem solid #7B7182;
+    padding: 1rem;
+    border-bottom: .1rem solid #CFCBD1;
 `
 
 
