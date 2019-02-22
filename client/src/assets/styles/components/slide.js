@@ -70,6 +70,13 @@ const MapCanvas = styled(Image)`
         margin: 5rem 2rem 3rem 9.5rem;
     }
 `
+const MobileCard = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: .5rem;
+    border: .1rem solid #7B7182;
+`
 
 
 export { 
@@ -81,4 +88,5 @@ export {
     EventInfo,
     EventText,
     MapCanvas,
+    MobileCard,
 }

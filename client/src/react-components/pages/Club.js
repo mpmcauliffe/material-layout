@@ -99,12 +99,12 @@ class Club extends React.Component {
         const panes = [
             { 
                 menuItem: 'Events', 
-                render: () =>   <Tab.Pane style={{ padding: 0 }}>                   
-                                        <ActionBar />
+                render: () =>   <Tab.Pane style={{ padding: 0, }}>                   
+                                    <ActionBar />
                                 </Tab.Pane>, 
             }, { 
                 menuItem: 'Library', 
-                render: () =>   <Tab.Pane style={{ padding: 0 }}>
+                render: () =>   <Tab.Pane style={{ padding: 0, }}>
                                     <Library />
                                 </Tab.Pane>,
             },
@@ -150,7 +150,7 @@ class Club extends React.Component {
                         </Fragment>
 
                         <Fragment>
-                            {window.innerWidth > 480
+                            {window.innerWidth > 768
                                 ?
                                     <Grid.Column 
                                         width={window.innerWidth > 768 ? 12 : 16}
@@ -162,7 +162,7 @@ class Club extends React.Component {
                                 :
                                     <Tab 
                                         panes={panes} 
-                                        grid={{ paneWidth: 16, tabWidth: 8 }}  
+                                        grid={{ paneWidth: 16, tabWidth: 16 }}  
                                     />
                             }
                         </Fragment>

@@ -168,7 +168,7 @@ class Profile extends React.Component {
                         </Fragment>
 
                         <Fragment>
-                            {window.innerWidth > 480
+                            {window.innerWidth > 768
                                 ?
                                     <Grid.Column 
                                         computer={12}

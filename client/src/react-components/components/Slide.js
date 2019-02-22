@@ -15,6 +15,7 @@ import {
     TopicText,  
 } from '../../assets/styles/components'
 import { starGenerator, truncate } from '../../assets/javascript'
+import { MobileCard } from '../../assets/styles/components/slide'
 
 
 const BookInfo = ({ information }) =>
@@ -89,7 +90,7 @@ const Slide = ({ isEvent, information, }) => {
                         >
                             <BookCover
                                 src={require(`../../assets/img/book_img/${information.number}.jpg`)}
-                                size={window.innerWidth > 1024 ? '49vh' : '30vh'}
+                                size={window.innerWidth > 1024 ? '49vh' : (window.innerWidth > 768) ? '30vh' : '15vh'}
                                 alt='book cover'
                             />
                             {window.innerWidth < 769 
@@ -145,30 +146,48 @@ const Slide = ({ isEvent, information, }) => {
                     </Grid>
                 </EventCard>
                 :
-                <Card>
-                    <BookCover
-                        src={require(`../../assets/img/book_img/${information.number}.jpg`)}
-                        size={window.innerWidth > 768 ? '35vh' : '27vh'}
-                        alt='book cover'
-                    />
-                    <TopicText>
-                        <em>
-                            {truncate(information.title, 21)}
-                        </em>
-                    </TopicText>
-                    <div>
-                        <InfoText>
-                            {information.author}
-                        </InfoText>
-                        {starGenerator(information.rating).map((score, index) => 
-                            <Rate 
-                                key={index} 
-                                src={require(`../../assets/img/rating/${score}.svg`)}
-                                alt={'rating'} 
-                            />    
-                        )}
-                    </div>
-                </Card>
+                <Fragment>
+                    {window.innerWidth > 768 
+                        ? 
+                        <Card>
+                            <BookCover
+                                src={require(`../../assets/img/book_img/${information.number}.jpg`)}
+                                size={'35vh'}
+                                alt='book cover'
+                            />
+                            <TopicText>
+                                <em>
+                                    {truncate(information.title, 21)}
+                                </em>
+                            </TopicText>
+                            <div>
+                                <InfoText>
+                                    {information.author}
+                                </InfoText>
+                                {starGenerator(information.rating).map((score, index) => 
+                                    <Rate 
+                                        key={index} 
+                                        src={require(`../../assets/img/rating/${score}.svg`)}
+                                        alt={'rating'} 
+                                    />    
+                                )}
+                            </div>
+                        </Card>
+                        :
+                        <MobileCard>
+                            <div>
+                                <BookCover
+                                    src={require(`../../assets/img/book_img/${information.number}.jpg`)}
+                                    size={'15vh'}
+                                    alt='book cover'
+                                />
+                            </div>
+                            <div>
+                                <BookInfo information={information} />
+                            </div>
+                        </MobileCard>
+                    }
+                </Fragment>
             }
         </Fragment>
     )

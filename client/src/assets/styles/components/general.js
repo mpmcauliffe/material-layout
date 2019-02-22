@@ -9,18 +9,10 @@ const ActionBarCanvas = styled.div`
     width: 100%;
     padding: 1rem;
     background-color: #FBF8F9;  
-    @media (max-width: 480px) {
-        height: 100vh;
-        width: 100%;
-    }
     @media (max-width: 768px) {
-        height: 70vh;
-        width: 100%;
-        padding: 2vh;
-    } 
-    @media (max-width: 1024px) {
-        height: 80vh;
+        height: 86vh;
         width: 100vw;
+        padding: 2vh;
     }
 `
 const AppModal = styled(Modal)`
@@ -144,19 +136,16 @@ const LibraryCanvas = styled.div`
     width: 100%;
     padding: .5rem 1rem;
     background-color: #ECF1F4;
-    @media (max-width: 480px) {
-        height: 100vh;
-        width: 100%;
-    }
     @media (max-width: 768px) {
-        height: 70vh;
-        width: 100%;
-        padding: 2vh;
-    } 
-    @media (max-width: 1024px) {
-        height: 80vh;
+        height: 86vh;
         width: 100vw;
+        padding: 2vh;
     }
+`
+const MobileContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 `
 const ProfilePicture = styled(Image)`
     &&& {
@@ -251,6 +240,7 @@ export {
     IconButtonContainer,
     InfoText,
     LibraryCanvas,
+    MobileContainer,
     ProfilePicture,
     Rate,
     SectionHeader,
