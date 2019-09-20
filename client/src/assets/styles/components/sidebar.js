@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Button } from 'semantic-ui-react'
 
+
 const Drawer = styled.div`
     width: 67vw;
     position: absolute;
