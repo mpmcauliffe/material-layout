@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import App from './react-components/App'
-import { CssBaseline } from '@material-ui/core'
-import './assets/themes/base.css'
+import App from './App'
+import 'normalize.css/normalize.css'
+import './assets/styles/global.css'
+import 'semantic-ui-css/semantic.min.css'
+import './assets/fonts/typekit.css'
 
 
 ReactDOM.render (
-    <CssBaseline>
+    <Fragment>
         <App />
-    </CssBaseline>,
+    </Fragment>, 
     document.getElementById('root')
-);
+)

@@ -22,44 +22,74 @@ export const events = [
     {
         id: 47878,
         title: 'Oliver Twist',
+        author: 'Charles Dickens',
         location: 'Castle Grayskull',
-        time: '01/23/2019 7:00pm'
+        street: '205 Vineyard Rd',
+        town: 'Edison, NJ 08817',
+        date: '21 July, 2019',
+        time: '7:30pm',
+        rating: 3.86,
+        number: 1,
     },
     {
         id: 37891,
         title: 'The Necronomicon',
+        author: 'H.P. Lovecraft',
         location: 'R\'lyeh',
-        time: '02/9/2019 7:00pm'
+        street: '100 Parsonage Rd',
+        town: 'Edison, NJ 08837',
+        date: '07 August, 2019',
+        time: '7:00pm',
+        rating: 4.30,
+        number: 2,
     },
     {
         id: 14738,
         title: 'The Fountainhead',
+        author: 'Ayn Rand',
         location: 'Chernobyl Reactor 4',
-        time: '02/27/2019 5:30pm'
+        street: '1601 Livingston Ave',
+        town: 'North Brunswick, NJ 08902',
+        date: '23 August, 2019',
+        time: '5:30pm',
+        rating: 3.86,
+        number: 3,
     },
     {
         id: 56778,
         title: 'Catch 22',
+        author: 'Joseph Heller',
         location: 'Ziggurat of Ur',
-        time: '03/15/2019 8:00pm'
-    },
-    {
-        id: 67890,
-        title: 'Tacuinum Sanitatis',
-        location: 'Point Nemo',
-        time: '04/23/2019 7:00pm'
+        street: '613 George St',
+        town: 'New Brunswick, NJ 08901',
+        date: '15 September, 2019',
+        time: '8:00pm',
+        rating: 3.98,
+        number: 4,
     },
     {
         id: 36782,
         title: 'The Doors of Perception',
+        author: 'Aldous Huxley',
         location: 'Pyrenees Mountains',
-        time: '05/13/2019 7:30pm'
+        street: '300 Atrium Dr',
+        town: 'Somerset, NJ 08873',
+        date: '03 October, 2019',
+        time: '7:30pm',
+        rating: 3.98,
+        number: 6,
     },
     {
         id: 26839,
         title: 'Big brown bear, blue bull, beautiful baboon blowing bubbles',
+        author: 'Stan & Jan Berenstain',
         location: 'Mt Damavand',
-        time: '05/21/2019 5:30pm'
+        street: '1 US-206',
+        town: 'Somerville, NJ 08876',
+        date: '21 October, 2019',
+        time: '6:00pm',
+        rating: 'not rated',
+        number: 7,
     },
 ]
 

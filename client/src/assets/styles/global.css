@@ -1,0 +1,31 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+    width: 100%;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+}
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 62.5%;
+}
+a {
+    color: #8D8F9C;
+}
+ul {
+    list-style: none;
+}
+.simplebar-scrollbar:before {
+    background-color: #A86D67;
+    width: 100%;
+}
+
+/* * {
+    outline: 1px solid red;
+} */

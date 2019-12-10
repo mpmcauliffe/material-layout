@@ -1,63 +1,53 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Carousel, Slide, } from '../components'
 import { 
-    IconButton,
-    Paper, 
-    Tabs, 
-} from '@material-ui/core'
-import { Add, Apps } from '@material-ui/icons'
-import { Slide } from '../components'
-import { 
-    Carousel,
     IconButtonContainer,
     LibraryCanvas,
     SectionHeader,
-} from '../../assets/themes/styles'
+    Sidescroll,
+} from '../../assets/styles/components'
+import { IconButton } from '../../assets/styles/components/general'
+import { bookList } from '../../assets/store/store'
 import { alphabetize } from '../../assets/javascript'
 
 
-const Library = ({ bookList, handleValueChange, value }) => { 
+const Library = () => { 
     return (
-        <Paper square={true} elevation={0}>
             <LibraryCanvas>
-                <IconButtonContainer>
-                    <IconButton>
-                        <Apps fontSize='default' />
-                    </IconButton>
-                    <IconButton>
-                        <Add fontSize='default' />
-                    </IconButton>
-                </IconButtonContainer>
-
-                <SectionHeader>Reading List</SectionHeader>
-
-                <Carousel>
-                    <Tabs
-                        value={value} 
-                        onChange={handleValueChange}
-                        indicatorColor='primary'
-                        scrollButtons='auto'
-                        scrollable
-                    >
-                        {alphabetize(bookList).map(book =>
-                            <Slide
-                                key={book.number}
-                                number={book.number}
-                                information={book}
-                                isEvent={false}
-                            />
-                        )}
-                    </Tabs>
-                </Carousel>
-                
+                <Fragment>
+                    {window.innerWidth > 768
+                        ?
+                        <Fragment>
+                            <IconButtonContainer>
+                                <IconButton icon='add' />
+                            </IconButtonContainer>
+                            <SectionHeader>Library</SectionHeader>
+                            <Carousel isEvent={false} />
+                        </Fragment>                        
+                        :
+                        <Fragment>
+                            <IconButtonContainer>
+                                <IconButton icon='add' />
+                            </IconButtonContainer>
+                            <SectionHeader>
+                                Library
+                            </SectionHeader>
+                            <Sidescroll style={{ height: '80vh', marginTop: '29px', }}>
+                                {alphabetize(bookList).map(book =>
+                                    <Slide
+                                        key={book.number}
+                                        number={book.number}
+                                        information={book}
+                                        isEvent={false}
+                                    />
+                                )}
+                            </Sidescroll>                        
+                        </Fragment>
+                    }
+                </Fragment>
             </LibraryCanvas>
-        </Paper>
     )
 }   
 
 
 export { Library }
-
-
-// number={book.number}
-//                                 title={book.title}
-//                                 information={book.author}    

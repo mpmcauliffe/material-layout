@@ -1,60 +1,72 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { Grid, } from 'semantic-ui-react' 
 import { 
-    Grid, 
-    IconButton,
-    Paper, 
-    Tabs, 
-} from '@material-ui/core'
-import { Add } from '@material-ui/icons'
-import { Slide } from '../components'
+    Carousel, 
+    Slide, 
+} from '../components'
 import { 
-    Carousel,
-    Content,
-    IconButtonContainer,
     ActionBarCanvas,
+    CreateButton,
+    IconButton,
+    IconButtonContainer,
     SectionHeader,
-} from '../../assets/themes/styles'
+    Sidescroll,
+} from '../../assets/styles/components'
+import { events } from '../../assets/store/store'
 
 
-const ActionBar = ({ events, handleValueChange, value }) => {
+const ActionBar = () => {
 
     return (
-        <Paper square={true} elevation={0}>
             <ActionBarCanvas>
-
-                <IconButtonContainer>
-                    <IconButton>
-                        <Add fontSize='default' />
-                    </IconButton>    
-                </IconButtonContainer>
-                
-                <SectionHeader>Events</SectionHeader>
-
-                <Content>
-                    <Grid container>
-                        <Carousel>
-                            <Tabs
-                                value={value}
-                                onChange={handleValueChange}
-                                scrollButtons='auto'
-                                indicatorColor='primary'
-                                scrollable
-                            >
-                                {events.map((event, index) => 
-                                    <Slide
-                                        key={event.id}
-                                        number={index}
-                                        information={event}
-                                        isEvent={true}  
-                                    />
-                                )}
-                            </Tabs>
-                        </Carousel>
-                    </Grid>
-                </Content>
+                {window.innerWidth > 768
+                    ?
+                    <Fragment>
+                        <SectionHeader>Events</SectionHeader>
+                        <Carousel isEvent={true} />
+                        <div style={{ marginTop: '9vh' }}>
+                            <CreateButton style={{ marginright: '2vw' }}>Create New Event</CreateButton>
+                            <CreateButton>Find Event Questions</CreateButton>
+                        </div>
+                    </Fragment>
+                    :
+                    <Fragment>
+                        <IconButtonContainer>
+                            <IconButton icon='add' />
+                        </IconButtonContainer>
+                        <SectionHeader>Events</SectionHeader>
+                        <Sidescroll style={{ height: '80vh', marginTop: '29px', }}>
+                            {events.map(event =>
+                                <Slide
+                                    key={event.id}
+                                    number={event.number}
+                                    information={event}
+                                    isEvent={true}
+                                />
+                            )}
+                        </Sidescroll>            
+                    </Fragment>                        
+                }                        
             </ActionBarCanvas>
-        </Paper>
     )
 }
 
 export { ActionBar }
+
+
+/*
+                            <Content>
+                                <Grid container>
+                                    <Carousel>
+                                        {events.map((event, index) => 
+                                            <Slide
+                                                key={event.id}
+                                                number={index}
+                                                information={event}
+                                                isEvent={true}  
+                                            />
+                                        )}
+                                    </Carousel>
+                                </Grid>
+                            </Content>
+*/
